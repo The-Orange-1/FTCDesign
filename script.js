@@ -90,13 +90,48 @@
     { title: 'Contributing', sub: 'How to add to the library', url: 'resources.html#contributing' }
   ];
 
+  // Lazy-loaded text content of each unique page URL in the index.
+  // Built on first search open so the modal stays instant on first paint.
+  let bodyCache = null;
+  const buildBodyCache = async () => {
+    if (bodyCache) return bodyCache;
+    const map = new Map();
+    const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const urls = [...new Set(index.map((it) => it.url.split('#')[0]).filter(Boolean))];
+    await Promise.all(urls.map(async (url) => {
+      try {
+        let doc;
+        if (url.toLowerCase() === here) {
+          doc = document;
+        } else {
+          const res = await fetch(url);
+          const html = await res.text();
+          doc = new DOMParser().parseFromString(html, 'text/html');
+        }
+        const main = doc.querySelector('.prose') || doc.querySelector('.main');
+        const text = main ? (main.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase() : '';
+        map.set(url, text);
+      } catch (e) {
+        map.set(url, '');
+      }
+    }));
+    bodyCache = map;
+    return bodyCache;
+  };
+
   let activeIdx = 0;
   const renderResults = (q) => {
     if (!searchResults) return;
     const query = q.toLowerCase().trim();
     const matches = !query
       ? index.slice(0, 10)
-      : index.filter((it) => (it.title + ' ' + it.sub).toLowerCase().includes(query));
+      : index.filter((it) => {
+          const haystack = (it.title + ' ' + it.sub).toLowerCase();
+          if (haystack.includes(query)) return true;
+          const pageUrl = it.url.split('#')[0];
+          const body = bodyCache && bodyCache.get(pageUrl);
+          return body ? body.includes(query) : false;
+        }).slice(0, 30);
     if (!matches.length) {
       searchResults.innerHTML = '<li class="search-results__empty">No matches.</li>';
       return;
@@ -119,6 +154,13 @@
       renderResults('');
       setTimeout(() => searchInput.focus(), 30);
     }
+    // Kick off the body fetch in the background. Once it lands, re-render so
+    // body matches show up without the user having to retype.
+    buildBodyCache().then(() => {
+      if (searchModal.classList.contains('open') && searchInput) {
+        renderResults(searchInput.value || '');
+      }
+    });
   };
   const closeSearch = () => {
     if (!searchModal) return;
