@@ -277,14 +277,14 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
 }
 
 .sidebar h4 {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--ink-muted);
-  margin: 18px 0 6px;
-  padding: 0 10px;
+  font-family: var(--sans);
+  font-size: 0.82rem;
   font-weight: 600;
-  font-family: var(--mono);
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--ink-soft);
+  margin: 20px 0 6px;
+  padding: 0 10px;
   transition: color 120ms ease;
 }
 .sidebar h4.active-section { color: var(--orange); }
