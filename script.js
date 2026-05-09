@@ -2,16 +2,16 @@
 (function () {
   const root = document.documentElement;
 
-  // Theme (persisted, respects prefers-color-scheme on first visit)
+  // Theme: default is the warm dark; "light" is opt-in.
   const stored = localStorage.getItem('ftc-theme');
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if ((stored || (prefersDark ? 'dark' : 'light')) === 'dark') root.setAttribute('data-theme', 'dark');
+  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  if ((stored || (prefersLight ? 'light' : 'dark')) === 'light') root.setAttribute('data-theme', 'light');
 
   const themeToggle = document.querySelector('.theme-toggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      if (next === 'dark') root.setAttribute('data-theme', 'dark');
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      if (next === 'light') root.setAttribute('data-theme', 'light');
       else root.removeAttribute('data-theme');
       localStorage.setItem('ftc-theme', next);
     });
