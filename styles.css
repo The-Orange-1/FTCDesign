@@ -170,6 +170,8 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
 
 .site-header__inner {
   width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -251,9 +253,9 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
   color: var(--ink-muted);
   font: 0.86rem var(--sans);
   cursor: pointer;
-  flex: 1;
-  max-width: 320px;
-  margin-left: auto;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-left: 24px;
 }
 .search-trigger:hover { border-color: var(--ink-muted); color: var(--ink); }
 .search-trigger__label { flex: 1; text-align: left; }
