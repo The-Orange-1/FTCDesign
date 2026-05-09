@@ -14,6 +14,8 @@
   --orange-dark: #f5a443;
   --orange-soft: #2c1c08;
 
+  --track: #100f0e;
+
   --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --mono: "JetBrains Mono", Menlo, Consolas, monospace;
 
@@ -37,6 +39,8 @@
   --orange: #f08913;
   --orange-dark: #b8650c;
   --orange-soft: #fce4c4;
+
+  --track: #ebe7df;
 }
 
 * { box-sizing: border-box; }
@@ -44,7 +48,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 72px;
-  scrollbar-color: var(--line-strong) var(--bg);
+  scrollbar-color: var(--line-strong) var(--track);
   scrollbar-width: thin;
   background: var(--bg);
   color-scheme: dark;
@@ -86,14 +90,14 @@ html[data-theme="light"] { color-scheme: light; }
 @keyframes vtFadeIn { from { opacity: 0; } }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-track { background: var(--track); }
 ::-webkit-scrollbar-thumb {
   background: var(--line-strong);
   border-radius: 999px;
-  border: 2px solid var(--bg);
+  border: 2px solid var(--track);
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--orange); }
-::-webkit-scrollbar-corner { background: var(--bg); }
+::-webkit-scrollbar-corner { background: var(--track); }
 
 html, body { height: 100%; }
 body {
