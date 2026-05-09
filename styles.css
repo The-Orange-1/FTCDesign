@@ -587,7 +587,7 @@ body.no-scroll { overflow: hidden; }
 /* ---- Section timeline (homepage) ---- */
 .section-grid {
   list-style: none;
-  padding: 0 0 0 38px;
+  padding: 0 0 0 22px;
   margin: 24px 0 0;
   position: relative;
   counter-reset: section-num;
@@ -598,9 +598,9 @@ body.no-scroll { overflow: hidden; }
 .section-grid::before {
   content: "";
   position: absolute;
-  left: 11px;
-  top: 12px;
-  bottom: 12px;
+  left: 5px;
+  top: 0;
+  bottom: 0;
   width: 2px;
   background: var(--line);
 }
@@ -611,23 +611,14 @@ body.no-scroll { overflow: hidden; }
   counter-increment: section-num;
 }
 .section-grid li::before {
-  content: counter(section-num, decimal-leading-zero);
+  content: "";
   position: absolute;
-  left: -38px;
+  left: -17px;
   top: 0;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--bg);
-  color: var(--orange);
-  border: 2px solid var(--orange);
-  font-family: var(--mono);
-  font-weight: 600;
-  font-size: 0.66rem;
-  letter-spacing: -0.02em;
-  display: grid;
-  place-items: center;
-  z-index: 1;
+  width: 17px;
+  height: 3px;
+  background: var(--orange);
+  border-radius: 0;
 }
 .section-grid a, .paths a {
   border-bottom-style: none !important;
@@ -651,15 +642,24 @@ body.no-scroll { overflow: hidden; }
   background: var(--orange);
   margin: 0 -16px 10px;
 }
+.section-grid a::after {
+  content: counter(section-num, decimal-leading-zero);
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  pointer-events: none;
+}
 .section-grid a:hover {
   border-color: var(--orange);
   transform: translateX(2px);
   text-decoration: none;
 }
-.section-grid li:hover::before {
-  background: var(--orange);
-  color: var(--bg);
-}
+.section-grid a:hover::after { color: var(--orange); }
 .section-grid .section__num { display: none; }
 .section-grid .section__title {
   display: block;
@@ -667,6 +667,7 @@ body.no-scroll { overflow: hidden; }
   color: var(--ink);
   font-size: 1rem;
   margin: 0 0 3px;
+  padding-right: 32px;
   letter-spacing: -0.01em;
 }
 .section-grid .section__sub {
