@@ -10,9 +10,9 @@
   --line: #383735;
   --line-strong: #4a4845;
 
-  --orange: #f0a813;
-  --orange-dark: #f5bc3d;
-  --orange-soft: #2a1f06;
+  --orange: #f08913;
+  --orange-dark: #f5a443;
+  --orange-soft: #2c1c08;
 
   --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --mono: "JetBrains Mono", Menlo, Consolas, monospace;
@@ -34,9 +34,9 @@
   --line: #e5e5e5;
   --line-strong: #cccccc;
 
-  --orange: #f0a813;
-  --orange-dark: #b87a08;
-  --orange-soft: #fef3d0;
+  --orange: #f08913;
+  --orange-dark: #ad6109;
+  --orange-soft: #fde9d0;
 }
 
 * { box-sizing: border-box; }
@@ -112,7 +112,6 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
   height: var(--header-h);
   display: flex;
   align-items: center;
-  box-shadow: inset 56px -2px 0 var(--orange);
 }
 
 .site-header__inner {
@@ -124,27 +123,49 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
 }
 
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   font-weight: 600;
-  font-size: 1.05rem;
-  letter-spacing: -0.01em;
+  font-size: 1.02rem;
+  letter-spacing: -0.015em;
   color: var(--ink);
   text-decoration: none;
   flex: 0 0 auto;
+  line-height: 1;
 }
-.brand:hover { color: var(--orange-dark); text-decoration: none; }
+.brand:hover { color: var(--ink); text-decoration: none; }
+.brand:hover .brand__mark { background: var(--orange-dark); }
 .brand__mark {
-  width: 26px; height: 26px;
-  border-radius: var(--radius);
+  width: 30px; height: 30px;
+  border-radius: 6px;
   background: var(--orange);
-  color: #fff;
+  color: #1a1a1a;
   display: inline-grid;
   place-items: center;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.86rem;
+  font-family: var(--mono);
+  letter-spacing: -0.06em;
+  transition: background 120ms ease;
 }
+.brand__sep {
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background: var(--line-strong);
+  margin: 0 2px;
+}
+.brand__sub {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  padding-top: 2px;
+}
+@media (max-width: 540px) { .brand__sep, .brand__sub { display: none; } }
 
 .hamburger {
   display: none;
