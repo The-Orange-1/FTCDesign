@@ -670,7 +670,7 @@ body.no-scroll { overflow: hidden; }
   overflow: hidden;
   text-decoration: none;
   color: var(--ink);
-  transition: border-color 120ms ease, transform 120ms ease;
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
   min-height: 104px;
 }
 .section-grid a::before {
@@ -679,13 +679,16 @@ body.no-scroll { overflow: hidden; }
   height: 6px;
   background: var(--orange);
   margin: 0 -16px 16px;
+  transition: background-color 160ms ease;
 }
 .section-grid a:hover {
-  border-color: var(--orange);
+  border-color: var(--line);
+  background: color-mix(in srgb, var(--orange) 12%, var(--bg-alt));
   transform: translateX(2px);
   text-decoration: none;
 }
 .section-grid a:hover::before { background: var(--orange-dark); }
+.section-grid a:hover .section__title { color: var(--orange); }
 .section-grid .section__num { display: none; }
 .section-grid .section__title {
   display: block;
