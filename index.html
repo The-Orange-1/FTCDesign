@@ -3,284 +3,132 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FTCDesign — A learning guide and reference for FIRST Tech Challenge</title>
-  <meta name="description" content="A learning guide and technical reference for FTC robot design using Onshape." />
+  <title>FTCDesign — Learn FTC robot design in Onshape</title>
+  <meta name="description" content="A learning guide and technical reference for FIRST Tech Challenge robot design in Onshape." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <button class="hamburger" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
       <a class="brand" href="index.html"><span class="brand__mark">F</span><span>FTCDesign</span></a>
-      <button class="search-trigger" aria-label="Search (Alt+C)" aria-controls="search-modal">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-        <span class="search-trigger__label">Search…</span>
-        <span class="kbd-group"><kbd>Alt</kbd><kbd>C</kbd></span>
+      <button class="search-trigger" aria-label="Search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <span class="search-trigger__label">Search</span>
+        <span><kbd>Alt</kbd> <kbd>C</kbd></span>
       </button>
-      <span class="header-spacer"></span>
-      <nav id="primary-nav" class="nav" aria-label="Primary">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="learn.html">Learning Course</a>
-        <a href="handbook.html">Design Handbook</a>
-        <a href="mechanisms.html">Mechanisms</a>
-        <a href="best-practices.html">Best Practices</a>
-        <a href="resources.html">Resources</a>
-      </nav>
+      <a class="header-link" href="https://github.com/The-Orange-1/FTCDesign" aria-label="GitHub repository" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97 0 1.95.13 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.66.8.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+      </a>
       <button class="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
-        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero__inner">
-        <div>
-          <span class="eyebrow">A learning guide for FIRST Tech Challenge</span>
-          <h1 class="hero__title">Learn to design FTC robots in <em>Onshape</em>.</h1>
-          <p class="hero__sub">FTCDesign is a learning guide and technical reference for FTC teams. A guided course takes you from your first sketch to a competition-ready robot. The handbook fills in the why behind every decision.</p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="learn.html">Start the course</a>
-            <a class="btn btn--ghost" href="handbook.html">Open the handbook</a>
-          </div>
+  <div class="layout layout--no-toc">
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar__close" aria-label="Close menu">&times;</button>
+      <nav>
+        <a href="index.html" data-page="index">Home</a>
+
+        <h4>Learning Course</h4>
+        <a href="learn.html" data-page="learn">Overview</a>
+        <div class="sub">
+          <a href="learn.html#setup">Setup</a>
+          <a href="learn.html#stage-1">Stage 1 · Foundations</a>
+          <a href="learn.html#stage-2">Stage 2 · Subsystems</a>
+          <a href="learn.html#stage-3">Stage 3 · Integration</a>
+          <a href="learn.html#stage-4">Stage 4 · Strategy</a>
         </div>
-        <div class="hero__visual" aria-hidden="true">
-          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M20 0H0V20" fill="none" stroke="#e5e5e5" stroke-width="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="400" height="300" fill="url(#grid)"/>
-            <g transform="translate(80,90)">
-              <rect x="0" y="40" width="240" height="120" rx="4" fill="#ff6a00" stroke="#cc5500" stroke-width="2"/>
-              <circle cx="30" cy="170" r="20" fill="#111" stroke="#777" stroke-width="2"/>
-              <circle cx="30" cy="170" r="6" fill="#ff6a00"/>
-              <circle cx="210" cy="170" r="20" fill="#111" stroke="#777" stroke-width="2"/>
-              <circle cx="210" cy="170" r="6" fill="#ff6a00"/>
-              <rect x="100" y="-20" width="40" height="80" rx="2" fill="#fff" stroke="#cc5500" stroke-width="2"/>
-              <rect x="108" y="-10" width="24" height="60" rx="2" fill="#fff" stroke="#ff6a00" stroke-width="1.5"/>
-              <rect x="60" y="20" width="120" height="14" rx="2" fill="#cc5500"/>
-              <circle cx="65" cy="27" r="6" fill="#fff" stroke="#111" stroke-width="1.5"/>
-              <circle cx="175" cy="27" r="6" fill="#fff" stroke="#111" stroke-width="1.5"/>
-              <rect x="170" y="10" width="24" height="34" rx="2" fill="#111"/>
-            </g>
-            <g stroke="#777" stroke-width="0.7" fill="none">
-              <line x1="60" y1="260" x2="340" y2="260"/>
-              <line x1="60" y1="255" x2="60" y2="265"/>
-              <line x1="340" y1="255" x2="340" y2="265"/>
-            </g>
-            <text x="200" y="278" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#777">18 in starting size</text>
-          </svg>
+
+        <h4>Design Handbook</h4>
+        <a href="handbook.html" data-page="handbook">Overview</a>
+        <div class="sub">
+          <a href="handbook.html#strategic-design">Strategic Design</a>
+          <a href="handbook.html#hardware">Hardware</a>
+          <a href="handbook.html#power-transmission">Power Transmission</a>
+          <a href="handbook.html#mechanisms">Mechanisms</a>
+          <a href="handbook.html#write-ups">Design Write-ups</a>
         </div>
+
+        <h4>Mechanism Examples</h4>
+        <a href="mechanisms.html" data-page="mechanisms">Overview</a>
+        <div class="sub">
+          <a href="mechanisms.html#drivebases">Drivebases</a>
+          <a href="mechanisms.html#intakes">Intakes</a>
+          <a href="mechanisms.html#manipulation">Game-piece manipulation</a>
+          <a href="mechanisms.html#linear">Linear extensions</a>
+          <a href="mechanisms.html#rotating">Rotating mechanisms</a>
+        </div>
+
+        <h4>Best Practices</h4>
+        <a href="best-practices.html" data-page="best-practices">Overview</a>
+        <div class="sub">
+          <a href="best-practices.html#document-setup">1. Document setup</a>
+          <a href="best-practices.html#sub-document">2. Sub-document setup</a>
+          <a href="best-practices.html#layout-sketch">3. Layout sketches</a>
+          <a href="best-practices.html#part-studio">4. Part studio</a>
+          <a href="best-practices.html#assembly">5. Assembly</a>
+        </div>
+
+        <h4>Other</h4>
+        <a href="resources.html" data-page="resources">Resources</a>
+      </nav>
+    </aside>
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main">
+      <div class="main__inner">
+        <article class="prose">
+          <h1>FTCDesign</h1>
+          <p class="lede">A learning guide and technical reference for FIRST Tech Challenge robot design in Onshape.</p>
+
+          <p>FTCDesign is organized into five sections. The Learning Course is a guided path; the rest are references you open as needed.</p>
+
+          <h2>Sections</h2>
+          <ul class="index-list">
+            <li><a href="learn.html"><span><span class="index__title">Learning Course</span><span class="index__sub">Setup, then four stages from CAD basics to a full robot.</span></span><span class="index__num">5 stages</span></a></li>
+            <li><a href="handbook.html"><span><span class="index__title">Design Handbook</span><span class="index__sub">Reference covering strategic design, hardware, power transmission, mechanisms, and write-ups.</span></span><span class="index__num">5 sections</span></a></li>
+            <li><a href="mechanisms.html"><span><span class="index__title">Mechanism Examples</span><span class="index__sub">Annotated mechanisms organized by category.</span></span><span class="index__num">5 categories</span></a></li>
+            <li><a href="best-practices.html"><span><span class="index__title">CAD Best Practices</span><span class="index__sub">Five articles, in order. Document setup through assembly.</span></span><span class="index__num">5 articles</span></a></li>
+            <li><a href="resources.html"><span><span class="index__title">Resources</span><span class="index__sub">External tools, libraries, and community links.</span></span><span class="index__num">&nbsp;</span></a></li>
+          </ul>
+
+          <h2>Where to start</h2>
+          <p>If you've never used CAD before, begin with <a href="learn.html#setup">Setup</a> in the Learning Course. If you know Onshape basics, jump to <a href="learn.html#stage-1">Stage&nbsp;1</a>. If you only need a reference, the <a href="handbook.html">Handbook</a> is browsable in any order.</p>
+
+          <h2>Conventions</h2>
+          <p>Examples use Onshape, goBILDA, and REV Robotics hardware — these are what most FTC teams use. Principles transfer to other tools and parts.</p>
+
+          <p>Search anything with <kbd style="font-family:var(--mono);font-size:0.78rem;padding:1px 5px;border:1px solid var(--line-strong);border-radius:3px;background:var(--bg-alt);">Alt</kbd> + <kbd style="font-family:var(--mono);font-size:0.78rem;padding:1px 5px;border:1px solid var(--line-strong);border-radius:3px;background:var(--bg-alt);">C</kbd> from any page. Toggle dark mode with the icon in the top right.</p>
+
+          <nav class="pager" aria-label="Pagination">
+            <a class="pager--next" style="grid-column: 2 / 3;" href="learn.html">
+              <span class="pager__label">Next &rarr;</span>
+              <span class="pager__title">Learning Course</span>
+            </a>
+          </nav>
+        </article>
       </div>
-    </section>
-
-    <section class="section section--tight" style="background: var(--bg-alt); border-bottom: 1px solid var(--line);">
-      <div class="container">
-        <div class="section-title-row">
-          <div>
-            <span class="eyebrow">Where to start</span>
-            <h2>Pick the path that matches you.</h2>
-            <p>You don't have to read everything. Pick one of the three doors below and we'll point you at the right page.</p>
-          </div>
-        </div>
-        <div class="paths">
-          <a class="path" href="learn.html#setup">
-            <span class="path__tag">Rookie</span>
-            <h3>I've never used CAD.</h3>
-            <p>Begin with Course Setup. Learn what Onshape is, make an account, and get oriented before any design work.</p>
-            <span class="path__cta">Go to Course Setup &rarr;</span>
-          </a>
-          <a class="path" href="learn.html#stage-1">
-            <span class="path__tag">2nd year</span>
-            <h3>I know Onshape basics.</h3>
-            <p>Skip the orientation and start with Stage&nbsp;1: sketching, parts, assemblies, and FTC-specific power transmissions.</p>
-            <span class="path__cta">Jump to Stage&nbsp;1 &rarr;</span>
-          </a>
-          <a class="path" href="handbook.html">
-            <span class="path__tag">Experienced</span>
-            <h3>I want a reference.</h3>
-            <p>Open the Design Handbook. Browse strategic design, hardware, power transmission, mechanisms, and write-ups.</p>
-            <span class="path__cta">Open the handbook &rarr;</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-title-row">
-          <div>
-            <span class="eyebrow">What's on the site</span>
-            <h2>Six sections, one library.</h2>
-            <p>Each works on its own. Use the navigation any time — the path picker above is a suggestion, not a rule.</p>
-          </div>
-        </div>
-
-        <div class="grid grid--3">
-          <a class="card" href="learn.html">
-            <span class="card__num">01 — Learning Course</span>
-            <h3 class="card__title">Setup &rarr; Stage 1 &rarr; 2 &rarr; 3 &rarr; 4</h3>
-            <p class="card__body">A guided curriculum in four stages. Foundations first, then four FTC subsystems you actually build. Stages 3 and 4 cover full-robot integration and advanced design.</p>
-            <span class="card__footer">Start the course &rarr;</span>
-          </a>
-
-          <a class="card" href="handbook.html">
-            <span class="card__num">02 — Design Handbook</span>
-            <h3 class="card__title">The why behind every choice</h3>
-            <p class="card__body">A reference covering Strategic Design, Hardware, Power Transmission, Mechanisms, and Design Write-ups. Mostly CAD-agnostic; examples use Onshape.</p>
-            <span class="card__footer">Browse the handbook &rarr;</span>
-          </a>
-
-          <a class="card" href="mechanisms.html">
-            <span class="card__num">03 — Mechanism Examples</span>
-            <h3 class="card__title">Drivetrains, intakes, scoring</h3>
-            <p class="card__body">Annotated examples organized by category. Each one names the trade-off it makes — what it's good at, where it fails, what to copy.</p>
-            <span class="card__footer">View examples &rarr;</span>
-          </a>
-
-          <a class="card" href="best-practices.html">
-            <span class="card__num">04 — CAD Best Practices</span>
-            <h3 class="card__title">Five articles, in order</h3>
-            <p class="card__body">Document setup, sub-document setup, layout sketches, part studios, assemblies. Read in order; each builds on the previous.</p>
-            <span class="card__footer">Read the practices &rarr;</span>
-          </a>
-
-          <a class="card" href="resources.html">
-            <span class="card__num">05 — Other Resources</span>
-            <h3 class="card__title">Links worth knowing</h3>
-            <p class="card__body">Part libraries, calculators, FeatureScripts, programming references, and community channels. Vetted, not exhaustive.</p>
-            <span class="card__footer">View resources &rarr;</span>
-          </a>
-
-          <a class="card" href="resources.html#contributing">
-            <span class="card__num">06 — Contributing</span>
-            <h3 class="card__title">Help build the library</h3>
-            <p class="card__body">FTCDesign is community-built. The bar for contributions is a working example, an opinion, and the trade-offs called out.</p>
-            <span class="card__footer">How to contribute &rarr;</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--tight" style="border-top: 1px solid var(--line); background: var(--bg-alt);">
-      <div class="container">
-        <div class="stat-row">
-          <div><div class="stat__num">42</div><div class="stat__label">Handbook articles</div></div>
-          <div><div class="stat__num">28</div><div class="stat__label">Annotated mechanisms</div></div>
-          <div><div class="stat__num">4</div><div class="stat__label">Course stages</div></div>
-          <div><div class="stat__num">100%</div><div class="stat__label">Free &amp; open</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="split">
-          <div>
-            <span class="eyebrow">What FTCDesign is</span>
-            <h2>A teaching-first design library.</h2>
-            <p>FTCDesign is opinionated. We teach <strong>Onshape</strong> because it's free, browser-based, and the FTC ecosystem has converged on it. Mechanisms here lean on <strong>goBILDA</strong> and <strong>REV Robotics</strong> hardware because those are what most teams have. The principles transfer to other tools and parts; the specifics are easier to follow with one concrete example.</p>
-            <p>Almost all of the writing here was made for this site. It isn't a link aggregator — it's a curriculum and a reference, written together.</p>
-          </div>
-          <div class="helper">
-            <h3>Frequently asked</h3>
-            <p>Quick answers to the questions that come up first.</p>
-            <ul>
-              <li><span>Is this affiliated with FIRST?</span><a href="#">No</a></li>
-              <li><span>Does it cost anything?</span><a href="#">No</a></li>
-              <li><span>Do I need to know CAD?</span><a href="learn.html#setup">Start here</a></li>
-              <li><span>Where can I ask questions?</span><a href="resources.html#community">Discord</a></li>
-              <li><span>How do I contribute?</span><a href="resources.html#contributing">GitHub</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    </main>
+  </div>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <div class="site-footer__about">
-        <a class="brand" href="index.html" style="margin-bottom: 12px;"><span class="brand__mark">F</span><span>FTCDesign</span></a>
-        <p>A community-built design library for FIRST Tech Challenge teams. Independent, non-commercial, and free.</p>
-      </div>
-      <div><h5>Learn</h5><ul><li><a href="learn.html">Learning Course</a></li><li><a href="handbook.html">Design Handbook</a></li><li><a href="best-practices.html">CAD Best Practices</a></li></ul></div>
-      <div><h5>Reference</h5><ul><li><a href="mechanisms.html">Mechanism Gallery</a></li><li><a href="resources.html">Tools &amp; Resources</a></li></ul></div>
-      <div><h5>Community</h5><ul><li><a href="resources.html#community">Discord</a></li><li><a href="resources.html#contributing">Contribute</a></li></ul></div>
+      <span>&copy; 2026 FTCDesign · Independent of FIRST<sup>&reg;</sup></span>
+      <span><a href="https://github.com/The-Orange-1/FTCDesign" target="_blank" rel="noopener">GitHub</a> · Built by FTC students, alumni, and mentors</span>
     </div>
-    <div class="site-footer__bottom"><span>&copy; 2026 FTCDesign. Independent of FIRST<sup>&reg;</sup> and its program partners.</span><span>Built by FTC students, alumni, and mentors.</span></div>
   </footer>
-
-  <aside class="sidebar" id="sidebar" aria-hidden="true" aria-label="Site navigation">
-    <div class="sidebar__head">
-      <a class="brand" href="index.html"><span class="brand__mark">F</span><span>FTCDesign</span></a>
-      <button class="sidebar__close" aria-label="Close menu">&times;</button>
-    </div>
-    <nav>
-      <a href="index.html" data-page="index">Home</a>
-
-      <h4>Learning Course</h4>
-      <a href="learn.html" data-page="learn">Overview</a>
-      <div class="sub">
-        <a href="learn.html#setup">Course Setup</a>
-        <a href="learn.html#stage-1">Stage 1 · Foundations</a>
-        <a href="learn.html#stage-2">Stage 2 · Subsystems</a>
-        <a href="learn.html#stage-3">Stage 3 · Integration</a>
-        <a href="learn.html#stage-4">Stage 4 · Strategy</a>
-      </div>
-
-      <h4>Design Handbook</h4>
-      <a href="handbook.html" data-page="handbook">Overview</a>
-      <div class="sub">
-        <a href="handbook.html#strategy-game-analysis">Strategic Design</a>
-        <a href="handbook.html#hw-materials">Hardware</a>
-        <a href="handbook.html#pt-motion">Power Transmission</a>
-        <a href="handbook.html#mech-drivetrains">Mechanisms</a>
-        <a href="handbook.html#wu-controllability">Design Write-ups</a>
-      </div>
-
-      <h4>Mechanism Examples</h4>
-      <a href="mechanisms.html" data-page="mechanisms">Overview</a>
-      <div class="sub">
-        <a href="mechanisms.html#drivebases">Drivebases</a>
-        <a href="mechanisms.html#intakes">Intakes</a>
-        <a href="mechanisms.html#manipulation">Game-piece manipulation</a>
-        <a href="mechanisms.html#linear">Linear extensions</a>
-        <a href="mechanisms.html#rotating">Rotating mechanisms</a>
-      </div>
-
-      <h4>Best Practices</h4>
-      <a href="best-practices.html" data-page="best-practices">Overview</a>
-      <div class="sub">
-        <a href="best-practices.html#document-setup">1. Document setup</a>
-        <a href="best-practices.html#sub-document">2. Sub-document setup</a>
-        <a href="best-practices.html#layout-sketch">3. Layout sketches</a>
-        <a href="best-practices.html#part-studio">4. Part studio</a>
-        <a href="best-practices.html#assembly">5. Assembly</a>
-      </div>
-
-      <h4>Resources</h4>
-      <a href="resources.html" data-page="resources">Tools &amp; links</a>
-      <div class="sub">
-        <a href="resources.html#community">Community</a>
-        <a href="resources.html#contributing">Contributing</a>
-      </div>
-    </nav>
-  </aside>
-  <div class="sidebar-backdrop"></div>
 
   <div class="search-modal" id="search-modal" aria-hidden="true" role="dialog" aria-label="Search">
     <div class="search-modal__panel">
       <div class="search-modal__input-wrap">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
         <input class="search-modal__input" type="search" placeholder="Search the site…" aria-label="Search" autocomplete="off" />
         <button class="search-modal__close" aria-label="Close search">Esc</button>
       </div>

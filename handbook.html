@@ -4,264 +4,167 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Design Handbook — FTCDesign</title>
-  <meta name="description" content="A reference handbook covering strategic design, hardware, power transmission, mechanisms, and design write-ups for FTC robots." />
+  <meta name="description" content="A reference handbook for FTC robot design — strategic design, hardware, power transmission, mechanisms, write-ups." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <button class="hamburger" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
       <a class="brand" href="index.html"><span class="brand__mark">F</span><span>FTCDesign</span></a>
-      <button class="search-trigger" aria-label="Search (Alt+C)" aria-controls="search-modal">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-        <span class="search-trigger__label">Search…</span>
-        <span class="kbd-group"><kbd>Alt</kbd><kbd>C</kbd></span>
+      <button class="search-trigger" aria-label="Search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <span class="search-trigger__label">Search</span>
+        <span><kbd>Alt</kbd> <kbd>C</kbd></span>
       </button>
-      <span class="header-spacer"></span>
-      <nav id="primary-nav" class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="learn.html">Learning Course</a>
-        <a href="handbook.html" aria-current="page">Design Handbook</a>
-        <a href="mechanisms.html">Mechanisms</a>
-        <a href="best-practices.html">Best Practices</a>
-        <a href="resources.html">Resources</a>
-      </nav>
+      <a class="header-link" href="https://github.com/The-Orange-1/FTCDesign" aria-label="GitHub repository" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97 0 1.95.13 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.66.8.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+      </a>
       <button class="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
-        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
     </div>
   </header>
 
-  <section class="page-head">
-    <div class="page-head__inner">
-      <nav class="crumbs" aria-label="Breadcrumb">
-        <a href="index.html">Home</a><span>/</span>Design Handbook
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar__close" aria-label="Close menu">&times;</button>
+      <nav>
+        <a href="index.html" data-page="index">Home</a>
+        <h4>Learning Course</h4>
+        <a href="learn.html" data-page="learn">Overview</a>
+        <div class="sub">
+          <a href="learn.html#setup">Setup</a>
+          <a href="learn.html#stage-1">Stage 1 · Foundations</a>
+          <a href="learn.html#stage-2">Stage 2 · Subsystems</a>
+          <a href="learn.html#stage-3">Stage 3 · Integration</a>
+          <a href="learn.html#stage-4">Stage 4 · Strategy</a>
+        </div>
+        <h4>Design Handbook</h4>
+        <a href="handbook.html" data-page="handbook">Overview</a>
+        <div class="sub">
+          <a href="handbook.html#strategic-design">Strategic Design</a>
+          <a href="handbook.html#hardware">Hardware</a>
+          <a href="handbook.html#power-transmission">Power Transmission</a>
+          <a href="handbook.html#mechanisms">Mechanisms</a>
+          <a href="handbook.html#write-ups">Design Write-ups</a>
+        </div>
+        <h4>Mechanism Examples</h4>
+        <a href="mechanisms.html" data-page="mechanisms">Overview</a>
+        <div class="sub">
+          <a href="mechanisms.html#drivebases">Drivebases</a>
+          <a href="mechanisms.html#intakes">Intakes</a>
+          <a href="mechanisms.html#manipulation">Game-piece manipulation</a>
+          <a href="mechanisms.html#linear">Linear extensions</a>
+          <a href="mechanisms.html#rotating">Rotating mechanisms</a>
+        </div>
+        <h4>Best Practices</h4>
+        <a href="best-practices.html" data-page="best-practices">Overview</a>
+        <div class="sub">
+          <a href="best-practices.html#document-setup">1. Document setup</a>
+          <a href="best-practices.html#sub-document">2. Sub-document setup</a>
+          <a href="best-practices.html#layout-sketch">3. Layout sketches</a>
+          <a href="best-practices.html#part-studio">4. Part studio</a>
+          <a href="best-practices.html#assembly">5. Assembly</a>
+        </div>
+        <h4>Other</h4>
+        <a href="resources.html" data-page="resources">Resources</a>
       </nav>
-      <span class="eyebrow">Design Handbook</span>
-      <h1 class="page-head__title">A reference for the why behind every part.</h1>
-      <p class="page-head__sub">Five sections, ordered roughly by how often you'll use them. Strategic design first, because every other choice flows from it. Browse the left rail or skim the section overviews below.</p>
-    </div>
-  </section>
+    </aside>
+    <div class="sidebar-backdrop"></div>
 
-  <main class="container">
-    <div class="book">
-      <aside class="book__rail" aria-label="Handbook navigation">
-        <div class="book__search">
-          <input type="search" placeholder="Filter articles…" aria-label="Filter handbook articles" />
-        </div>
+    <main class="main">
+      <div class="main__inner">
+        <nav class="crumbs"><a href="index.html">Home</a><span>/</span>Design Handbook</nav>
 
-        <h4>Strategic Design</h4>
-        <ul>
-          <li><a href="#strategy-game-analysis">Game analysis</a></li>
-          <li><a href="#strategy-scope">Scope &amp; build schedule</a></li>
-          <li><a href="#strategy-execution">Execution within capability</a></li>
-        </ul>
+        <article class="prose">
+          <h1>Design Handbook</h1>
+          <p class="lede">A reference for the why behind every part. Mostly CAD-agnostic — examples use Onshape because the rest of the site does. Read in any order.</p>
 
-        <h4>Hardware</h4>
-        <ul>
-          <li><a href="#hw-materials">Materials &amp; DFM</a></li>
-          <li><a href="#hw-structure">Structural design</a></li>
-          <li><a href="#hw-fasteners">Fasteners &amp; standards</a></li>
-          <li><a href="#hw-3dp">3D printing</a></li>
-          <li><a href="#hw-tolerances">Tolerances &amp; weight</a></li>
-        </ul>
+          <h2 id="strategic-design">Strategic Design</h2>
+          <p>The decisions you make before opening Onshape determine whether the rest matters.</p>
+          <ul>
+            <li><a href="#">Game analysis</a> — turning the manual into a design brief.</li>
+            <li><a href="#">Scope &amp; build schedule</a> — how much robot a team can finish.</li>
+            <li><a href="#">Execution within capability</a> — picking what your team can build.</li>
+          </ul>
 
-        <h4>Power Transmission</h4>
-        <ul>
-          <li><a href="#pt-motion">Motion components</a></li>
-          <li><a href="#pt-rotational">Rotational transfer</a></li>
-          <li><a href="#pt-linear">Linear extension</a></li>
-          <li><a href="#pt-motors">Motors &amp; calculations</a></li>
-          <li><a href="#pt-wheels">Wheels &amp; rollers</a></li>
-          <li><a href="#pt-electronics">Electronics &amp; sensors</a></li>
-        </ul>
+          <h2 id="hardware">Hardware</h2>
+          <p>Robustness and manufacturability — the unglamorous decisions that determine whether the robot survives match four.</p>
+          <ul>
+            <li><a href="#">Materials &amp; design for manufacturing</a></li>
+            <li><a href="#">Structural design</a></li>
+            <li><a href="#">Fasteners &amp; standards</a></li>
+            <li><a href="#">3D printing for FTC</a></li>
+            <li><a href="#">Tolerances &amp; weight savings</a></li>
+          </ul>
 
-        <h4>Mechanisms</h4>
-        <ul>
-          <li><a href="#mech-drivetrains">Drivetrains</a></li>
-          <li><a href="#mech-elevators">Elevators &amp; slides</a></li>
-          <li><a href="#mech-arms">Arms</a></li>
-          <li><a href="#mech-intakes">Intakes</a></li>
-          <li><a href="#mech-shooters">Shooters</a></li>
-          <li><a href="#mech-bumpers">Bumpers &amp; guards</a></li>
-        </ul>
+          <h2 id="power-transmission">Power Transmission</h2>
+          <p>Getting motor torque from the spec sheet to where it does work.</p>
+          <ul>
+            <li><a href="#">Motion components</a> — bearings, bushings, axles.</li>
+            <li><a href="#">Rotational transfer</a> — gears, belts, chain.</li>
+            <li><a href="#">Linear extension</a> — cascade vs. continuous rigging.</li>
+            <li><a href="#">Motors &amp; calculations</a></li>
+            <li><a href="#">Wheels &amp; rollers</a></li>
+            <li><a href="#">Electronics &amp; sensors</a></li>
+          </ul>
 
-        <h4>Design Write-ups</h4>
-        <ul>
-          <li><a href="#wu-controllability">Controllability</a></li>
-          <li><a href="#wu-tensioning">Chain &amp; belt tensioning</a></li>
-          <li><a href="#wu-springs">Springs &amp; shocks</a></li>
-          <li><a href="#wu-the-18-inch-rule">The 18-inch rule</a></li>
-        </ul>
-      </aside>
+          <h2 id="mechanisms">Mechanisms</h2>
+          <p>Categories of subsystem that show up on every FTC robot. Cross-referenced with the <a href="mechanisms.html">Mechanism Examples</a>.</p>
+          <ul>
+            <li><a href="#">Drivetrains</a></li>
+            <li><a href="#">Elevators &amp; slides</a></li>
+            <li><a href="#">Arms</a></li>
+            <li><a href="#">Intakes</a></li>
+            <li><a href="#">Shooters</a></li>
+            <li><a href="#">Bumpers &amp; guards</a></li>
+          </ul>
 
-      <article class="prose" style="max-width: none;">
-        <p class="lede" style="margin-bottom: 32px;">The handbook is mostly CAD-agnostic — examples use Onshape because the rest of the site does, but the principles transfer. It's a work in progress; sections marked <em>(in progress)</em> are stubs we'll fill in as the season runs.</p>
+          <h2 id="write-ups">Design Write-ups</h2>
+          <p>Deeper essays that don't fit the reference format.</p>
+          <ul>
+            <li><a href="#">Controllability</a></li>
+            <li><a href="#">Chain &amp; belt tensioning</a></li>
+            <li><a href="#">Springs &amp; shock applications</a></li>
+            <li><a href="#">Working with the 18-inch rule</a></li>
+          </ul>
 
-        <!-- Section: Strategic Design -->
-        <div class="topic" id="strategy-game-analysis">
-          <div class="topic__head">
-            <h2>Strategic Design</h2>
-            <p>The decisions you make before opening Onshape determine whether the rest matters. Read this section first.</p>
-          </div>
-          <div class="topic__list">
-            <a href="#"><span class="topic__title">Game analysis</span><span class="topic__desc">Reading the game manual and turning it into a design brief.</span></a>
-            <a href="#" id="strategy-scope"><span class="topic__title">Scope &amp; build schedule</span><span class="topic__desc">How much robot can a team realistically finish in six weeks.</span></a>
-            <a href="#" id="strategy-execution"><span class="topic__title">Execution within capability</span><span class="topic__desc">Picking designs your team can build, not designs that look impressive on Discord.</span></a>
-          </div>
-        </div>
+          <nav class="pager">
+            <a class="pager--prev" href="learn.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">Learning Course</span></a>
+            <a class="pager--next" href="mechanisms.html"><span class="pager__label">Next &rarr;</span><span class="pager__title">Mechanism Examples</span></a>
+          </nav>
+        </article>
+      </div>
+    </main>
 
-        <!-- Section: Hardware -->
-        <div class="topic" id="hw-materials">
-          <div class="topic__head">
-            <h2>Hardware</h2>
-            <p>Robustness and manufacturability. The unglamorous decisions that determine whether the robot survives match four.</p>
-          </div>
-          <div class="topic__list">
-            <a href="#"><span class="topic__title">Materials &amp; DFM</span><span class="topic__desc">Aluminum vs. steel vs. polycarb, and design for the tools you actually have.</span></a>
-            <a href="#" id="hw-structure"><span class="topic__title">Structural design for versatility</span><span class="topic__desc">Triangulation, U-channel sizing, mounting points that survive iteration.</span></a>
-            <a href="#" id="hw-fasteners"><span class="topic__title">Fasteners &amp; standards</span><span class="topic__desc">M3 vs. M4, threadlocker, threaded inserts, and screw lengths to stock.</span></a>
-            <a href="#" id="hw-3dp"><span class="topic__title">3D printing for FTC</span><span class="topic__desc">Where 3DP wins, where it fails, and how to design parts that print well.</span></a>
-            <a href="#" id="hw-tolerances"><span class="topic__title">Tolerances &amp; weight savings</span><span class="topic__desc">Designing parts that fit the first time and don't haul dead weight.</span></a>
-          </div>
-        </div>
-
-        <!-- Section: Power Transmission -->
-        <div class="topic" id="pt-motion">
-          <div class="topic__head">
-            <h2>Power Transmission</h2>
-            <p>Getting motor torque from the spec sheet to the place it does work.</p>
-          </div>
-          <div class="topic__list">
-            <a href="#"><span class="topic__title">Motion components</span><span class="topic__desc">Bearings, bushings, axles, and what each one is for.</span></a>
-            <a href="#" id="pt-rotational"><span class="topic__title">Rotational transfer</span><span class="topic__desc">Gears, belts, and chain. When to use which, and why.</span></a>
-            <a href="#" id="pt-linear"><span class="topic__title">Linear extension</span><span class="topic__desc">Cascade vs. continuous slide rigging, and what each gives up.</span></a>
-            <a href="#" id="pt-motors"><span class="topic__title">Motors &amp; calculations</span><span class="topic__desc">Free speed, stall torque, and what those numbers really mean under load.</span></a>
-            <a href="#" id="pt-wheels"><span class="topic__title">Wheels &amp; rollers</span><span class="topic__desc">Picking the right wheel for the right job — drive, intake, or pinch.</span></a>
-            <a href="#" id="pt-electronics"><span class="topic__title">Electronics &amp; sensors <span class="topic__soon">In progress</span></span><span class="topic__desc">Control Hub layout, encoders, and the wiring you should plan in CAD.</span></a>
-          </div>
-        </div>
-
-        <!-- Section: Mechanisms -->
-        <div class="topic" id="mech-drivetrains">
-          <div class="topic__head">
-            <h2>Mechanisms</h2>
-            <p>The categories of subsystem you'll see on every FTC robot. Cross-referenced with the <a href="mechanisms.html">Mechanism Gallery</a> for examples.</p>
-          </div>
-          <div class="topic__list">
-            <a href="#"><span class="topic__title">Drivetrains</span><span class="topic__desc">Tank, mecanum, and swerve. Geometry rules and trade-offs.</span></a>
-            <a href="#" id="mech-elevators"><span class="topic__title">Elevators &amp; slides</span><span class="topic__desc">Cascade and continuous-rigged vertical lifts, with rigging diagrams.</span></a>
-            <a href="#" id="mech-arms"><span class="topic__title">Arms</span><span class="topic__desc">Single-pivot, dual-pivot, and virtual four-bar arms.</span></a>
-            <a href="#" id="mech-intakes"><span class="topic__title">Intakes</span><span class="topic__desc">Active vs. passive intakes, and how to design for the season's piece.</span></a>
-            <a href="#" id="mech-shooters"><span class="topic__title">Shooters <span class="topic__soon">Season-dependent</span></span><span class="topic__desc">Flywheels, hood angles, and the math that makes them repeatable.</span></a>
-            <a href="#" id="mech-bumpers"><span class="topic__title">Bumpers &amp; guards <span class="topic__soon">In progress</span></span><span class="topic__desc">Protecting the robot from contact without violating the size rule.</span></a>
-          </div>
-        </div>
-
-        <!-- Section: Design Write-ups -->
-        <div class="topic" id="wu-controllability">
-          <div class="topic__head">
-            <h2>Design Write-ups</h2>
-            <p>Deeper essays that don't fit the reference format. Read once; the ideas come up everywhere.</p>
-          </div>
-          <div class="topic__list">
-            <a href="#"><span class="topic__title">Controllability</span><span class="topic__desc">Why some mechanisms feel intuitive to drive and others don't.</span></a>
-            <a href="#" id="wu-tensioning"><span class="topic__title">Chain &amp; belt tensioning</span><span class="topic__desc">Tensioners, idlers, and the geometry you should set up in CAD.</span></a>
-            <a href="#" id="wu-springs"><span class="topic__title">Springs &amp; shock applications</span><span class="topic__desc">Where a spring saves a motor, and where it just hides a problem.</span></a>
-            <a href="#" id="wu-the-18-inch-rule"><span class="topic__title">Working with the 18-inch rule</span><span class="topic__desc">Designing mechanisms that start small and become useful when extended.</span></a>
-          </div>
-        </div>
-
-        <nav class="pager" aria-label="Pagination">
-          <a class="pager--prev" href="learn.html">
-            <span class="pager__label">&larr; Previous</span>
-            <span class="pager__title">Learning Course</span>
-          </a>
-          <a class="pager--next" href="mechanisms.html">
-            <span class="pager__label">Next &rarr;</span>
-            <span class="pager__title">Mechanism Examples</span>
-          </a>
-        </nav>
-      </article>
-    </div>
-  </main>
+    <aside class="toc">
+      <h4>On this page</h4>
+      <ul>
+        <li><a href="#strategic-design">Strategic Design</a></li>
+        <li><a href="#hardware">Hardware</a></li>
+        <li><a href="#power-transmission">Power Transmission</a></li>
+        <li><a href="#mechanisms">Mechanisms</a></li>
+        <li><a href="#write-ups">Design Write-ups</a></li>
+      </ul>
+    </aside>
+  </div>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <div class="site-footer__about">
-        <a class="brand" href="index.html" style="margin-bottom: 12px;"><span class="brand__mark">F</span><span>FTCDesign</span></a>
-        <p>A community-built design library for FIRST Tech Challenge teams. Independent, non-commercial, and free.</p>
-      </div>
-      <div><h5>Learn</h5><ul><li><a href="learn.html">Learning Course</a></li><li><a href="handbook.html">Design Handbook</a></li><li><a href="best-practices.html">CAD Best Practices</a></li></ul></div>
-      <div><h5>Reference</h5><ul><li><a href="mechanisms.html">Mechanism Gallery</a></li><li><a href="resources.html">Tools &amp; Resources</a></li></ul></div>
-      <div><h5>Community</h5><ul><li><a href="resources.html#community">Discord</a></li><li><a href="resources.html#contributing">Contribute</a></li></ul></div>
+      <span>&copy; 2026 FTCDesign · Independent of FIRST<sup>&reg;</sup></span>
+      <span><a href="https://github.com/The-Orange-1/FTCDesign" target="_blank" rel="noopener">GitHub</a> · Built by FTC students, alumni, and mentors</span>
     </div>
-    <div class="site-footer__bottom"><span>&copy; 2026 FTCDesign. Independent of FIRST<sup>&reg;</sup> and its program partners.</span><span>Built by FTC students, alumni, and mentors.</span></div>
   </footer>
-
-  <aside class="sidebar" id="sidebar" aria-hidden="true" aria-label="Site navigation">
-    <div class="sidebar__head">
-      <a class="brand" href="index.html"><span class="brand__mark">F</span><span>FTCDesign</span></a>
-      <button class="sidebar__close" aria-label="Close menu">&times;</button>
-    </div>
-    <nav>
-      <a href="index.html" data-page="index">Home</a>
-      <h4>Learning Course</h4>
-      <a href="learn.html" data-page="learn">Overview</a>
-      <div class="sub">
-        <a href="learn.html#setup">Course Setup</a>
-        <a href="learn.html#stage-1">Stage 1 · Foundations</a>
-        <a href="learn.html#stage-2">Stage 2 · Subsystems</a>
-        <a href="learn.html#stage-3">Stage 3 · Integration</a>
-        <a href="learn.html#stage-4">Stage 4 · Strategy</a>
-      </div>
-      <h4>Design Handbook</h4>
-      <a href="handbook.html" data-page="handbook">Overview</a>
-      <div class="sub">
-        <a href="handbook.html#strategy-game-analysis">Strategic Design</a>
-        <a href="handbook.html#hw-materials">Hardware</a>
-        <a href="handbook.html#pt-motion">Power Transmission</a>
-        <a href="handbook.html#mech-drivetrains">Mechanisms</a>
-        <a href="handbook.html#wu-controllability">Design Write-ups</a>
-      </div>
-      <h4>Mechanism Examples</h4>
-      <a href="mechanisms.html" data-page="mechanisms">Overview</a>
-      <div class="sub">
-        <a href="mechanisms.html#drivebases">Drivebases</a>
-        <a href="mechanisms.html#intakes">Intakes</a>
-        <a href="mechanisms.html#manipulation">Game-piece manipulation</a>
-        <a href="mechanisms.html#linear">Linear extensions</a>
-        <a href="mechanisms.html#rotating">Rotating mechanisms</a>
-      </div>
-      <h4>Best Practices</h4>
-      <a href="best-practices.html" data-page="best-practices">Overview</a>
-      <div class="sub">
-        <a href="best-practices.html#document-setup">1. Document setup</a>
-        <a href="best-practices.html#sub-document">2. Sub-document setup</a>
-        <a href="best-practices.html#layout-sketch">3. Layout sketches</a>
-        <a href="best-practices.html#part-studio">4. Part studio</a>
-        <a href="best-practices.html#assembly">5. Assembly</a>
-      </div>
-      <h4>Resources</h4>
-      <a href="resources.html" data-page="resources">Tools &amp; links</a>
-      <div class="sub">
-        <a href="resources.html#community">Community</a>
-        <a href="resources.html#contributing">Contributing</a>
-      </div>
-    </nav>
-  </aside>
-  <div class="sidebar-backdrop"></div>
 
   <div class="search-modal" id="search-modal" aria-hidden="true" role="dialog" aria-label="Search">
     <div class="search-modal__panel">
       <div class="search-modal__input-wrap">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
         <input class="search-modal__input" type="search" placeholder="Search the site…" aria-label="Search" autocomplete="off" />
         <button class="search-modal__close" aria-label="Close search">Esc</button>
       </div>

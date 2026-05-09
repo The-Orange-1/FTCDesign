@@ -3,248 +3,141 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tools &amp; Resources — FTCDesign</title>
-  <meta name="description" content="A short, vetted list of tools and resources worth knowing for FTC robot design." />
+  <title>Resources — FTCDesign</title>
+  <meta name="description" content="External tools, libraries, and community links for FTC robot design." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <button class="hamburger" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
       <a class="brand" href="index.html"><span class="brand__mark">F</span><span>FTCDesign</span></a>
-      <button class="search-trigger" aria-label="Search (Alt+C)" aria-controls="search-modal">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-        <span class="search-trigger__label">Search…</span>
-        <span class="kbd-group"><kbd>Alt</kbd><kbd>C</kbd></span>
+      <button class="search-trigger" aria-label="Search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <span class="search-trigger__label">Search</span>
+        <span><kbd>Alt</kbd> <kbd>C</kbd></span>
       </button>
-      <span class="header-spacer"></span>
-      <nav id="primary-nav" class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="learn.html">Learning Course</a>
-        <a href="handbook.html">Design Handbook</a>
-        <a href="mechanisms.html">Mechanisms</a>
-        <a href="best-practices.html">Best Practices</a>
-        <a href="resources.html" aria-current="page">Resources</a>
-      </nav>
+      <a class="header-link" href="https://github.com/The-Orange-1/FTCDesign" aria-label="GitHub repository" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97 0 1.95.13 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.66.8.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+      </a>
       <button class="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
-        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
     </div>
   </header>
 
-  <section class="page-head">
-    <div class="page-head__inner">
-      <nav class="crumbs" aria-label="Breadcrumb">
-        <a href="index.html">Home</a><span>/</span>Other Resources
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar__close" aria-label="Close menu">&times;</button>
+      <nav>
+        <a href="index.html" data-page="index">Home</a>
+        <h4>Learning Course</h4>
+        <a href="learn.html" data-page="learn">Overview</a>
+        <div class="sub">
+          <a href="learn.html#setup">Setup</a>
+          <a href="learn.html#stage-1">Stage 1 · Foundations</a>
+          <a href="learn.html#stage-2">Stage 2 · Subsystems</a>
+          <a href="learn.html#stage-3">Stage 3 · Integration</a>
+          <a href="learn.html#stage-4">Stage 4 · Strategy</a>
+        </div>
+        <h4>Design Handbook</h4>
+        <a href="handbook.html" data-page="handbook">Overview</a>
+        <div class="sub">
+          <a href="handbook.html#strategic-design">Strategic Design</a>
+          <a href="handbook.html#hardware">Hardware</a>
+          <a href="handbook.html#power-transmission">Power Transmission</a>
+          <a href="handbook.html#mechanisms">Mechanisms</a>
+          <a href="handbook.html#write-ups">Design Write-ups</a>
+        </div>
+        <h4>Mechanism Examples</h4>
+        <a href="mechanisms.html" data-page="mechanisms">Overview</a>
+        <div class="sub">
+          <a href="mechanisms.html#drivebases">Drivebases</a>
+          <a href="mechanisms.html#intakes">Intakes</a>
+          <a href="mechanisms.html#manipulation">Game-piece manipulation</a>
+          <a href="mechanisms.html#linear">Linear extensions</a>
+          <a href="mechanisms.html#rotating">Rotating mechanisms</a>
+        </div>
+        <h4>Best Practices</h4>
+        <a href="best-practices.html" data-page="best-practices">Overview</a>
+        <div class="sub">
+          <a href="best-practices.html#document-setup">1. Document setup</a>
+          <a href="best-practices.html#sub-document">2. Sub-document setup</a>
+          <a href="best-practices.html#layout-sketch">3. Layout sketches</a>
+          <a href="best-practices.html#part-studio">4. Part studio</a>
+          <a href="best-practices.html#assembly">5. Assembly</a>
+        </div>
+        <h4>Other</h4>
+        <a href="resources.html" data-page="resources">Resources</a>
       </nav>
-      <span class="eyebrow">Other Resources</span>
-      <h1 class="page-head__title">A short, vetted list.</h1>
-      <p class="page-head__sub">There are hundreds of FTC resources online. Most aren't useful. This is what we open during a build season — organized by what you'd be doing when you reach for it.</p>
-    </div>
-  </section>
+    </aside>
+    <div class="sidebar-backdrop"></div>
 
-  <main class="container" style="padding: 56px 0 80px;">
+    <main class="main">
+      <div class="main__inner">
+        <nav class="crumbs"><a href="index.html">Home</a><span>/</span>Resources</nav>
 
-    <section style="margin-bottom: 56px;">
-      <h2 style="margin-bottom: 12px;">CAD &amp; part libraries</h2>
-      <p class="lede" style="margin-bottom: 24px;">When you're modeling.</p>
-      <ul class="resource-list">
-        <li><a href="https://onshape.com" target="_blank" rel="noopener">
-          <span class="resource__icon">O</span>
-          <span><span class="resource__name">Onshape</span><div class="resource__desc">Free for FTC teams. Browser-based parametric CAD. The CAD platform every example here uses.</div></span>
-          <span class="resource__type">CAD</span>
-        </a></li>
-        <li><a href="https://www.gobilda.com/cad/" target="_blank" rel="noopener">
-          <span class="resource__icon">g</span>
-          <span><span class="resource__name">goBILDA Onshape library</span><div class="resource__desc">Every goBILDA part as an Onshape Part Studio. The official source — don't grab CAD from random forums.</div></span>
-          <span class="resource__type">Library</span>
-        </a></li>
-        <li><a href="https://www.revrobotics.com/cad-models/" target="_blank" rel="noopener">
-          <span class="resource__icon">R</span>
-          <span><span class="resource__name">REV Robotics CAD</span><div class="resource__desc">REV's parts as Onshape and STEP files. Use the Onshape versions when you can.</div></span>
-          <span class="resource__type">Library</span>
-        </a></li>
-        <li><a href="https://cad.onshape.com/documents?nodeId=&resourceType=public" target="_blank" rel="noopener">
-          <span class="resource__icon">P</span>
-          <span><span class="resource__name">Onshape public documents</span><div class="resource__desc">Other teams' robots are public by default. Search before reinventing.</div></span>
-          <span class="resource__type">Reference</span>
-        </a></li>
-      </ul>
-    </section>
+        <article class="prose">
+          <h1>Resources</h1>
+          <p class="lede">External tools, libraries, and community links worth knowing. Curated, not exhaustive.</p>
 
-    <section style="margin-bottom: 56px;">
-      <h2 style="margin-bottom: 12px;">Calculators &amp; FeatureScripts</h2>
-      <p class="lede" style="margin-bottom: 24px;">For the math you don't want to redo each season.</p>
-      <ul class="resource-list">
-        <li><a href="#" rel="noopener">
-          <span class="resource__icon">&pi;</span>
-          <span><span class="resource__name">JVN design calculator</span><div class="resource__desc">A spreadsheet for sizing motors, gear ratios, and lift loads. The de facto FRC tool — works fine for FTC scale.</div></span>
-          <span class="resource__type">Calculator</span>
-        </a></li>
-        <li><a href="#" rel="noopener">
-          <span class="resource__icon">&fnof;</span>
-          <span><span class="resource__name">Slot FeatureScript</span><div class="resource__desc">Onshape custom feature for parametric slots. Used in nearly every chassis you'll model.</div></span>
-          <span class="resource__type">FeatureScript</span>
-        </a></li>
-        <li><a href="#" rel="noopener">
-          <span class="resource__icon">&Sigma;</span>
-          <span><span class="resource__name">Mass properties helper</span><div class="resource__desc">Estimate where the center of mass sits before you build. Useful for arm balance.</div></span>
-          <span class="resource__type">FeatureScript</span>
-        </a></li>
-      </ul>
-    </section>
+          <h2 id="cad">CAD &amp; part libraries</h2>
+          <ul>
+            <li><a href="https://onshape.com" target="_blank" rel="noopener">Onshape</a> — free for FTC teams. Browser-based parametric CAD.</li>
+            <li><a href="https://www.gobilda.com/cad/" target="_blank" rel="noopener">goBILDA Onshape library</a> — every goBILDA part as an Onshape Part Studio.</li>
+            <li><a href="https://www.revrobotics.com/cad-models/" target="_blank" rel="noopener">REV Robotics CAD</a> — REV's parts as Onshape and STEP files.</li>
+          </ul>
 
-    <section style="margin-bottom: 56px;">
-      <h2 style="margin-bottom: 12px;">Programming</h2>
-      <p class="lede" style="margin-bottom: 24px;">When the CAD is done and the wires are next.</p>
-      <ul class="resource-list">
-        <li><a href="https://ftc-docs.firstinspires.org/" target="_blank" rel="noopener">
-          <span class="resource__icon">D</span>
-          <span><span class="resource__name">FTC official documentation</span><div class="resource__desc">The canonical reference for the FTC SDK, hardware setup, and the season's rules.</div></span>
-          <span class="resource__type">Docs</span>
-        </a></li>
-        <li><a href="https://acmerobotics.github.io/road-runner/" target="_blank" rel="noopener">
-          <span class="resource__icon">R</span>
-          <span><span class="resource__name">Road Runner</span><div class="resource__desc">A motion planning library for autonomous paths. Adopted by serious teams; worth the learning curve in year two.</div></span>
-          <span class="resource__type">Library</span>
-        </a></li>
-        <li><a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController" target="_blank" rel="noopener">
-          <span class="resource__icon">{ }</span>
-          <span><span class="resource__name">FtcRobotController (GitHub)</span><div class="resource__desc">The starter project. Fork this; don't try to build from scratch.</div></span>
-          <span class="resource__type">Code</span>
-        </a></li>
-      </ul>
-    </section>
+          <h2 id="programming">Programming</h2>
+          <ul>
+            <li><a href="https://ftc-docs.firstinspires.org/" target="_blank" rel="noopener">FTC official documentation</a> — the canonical reference for the SDK and rules.</li>
+            <li><a href="https://acmerobotics.github.io/road-runner/" target="_blank" rel="noopener">Road Runner</a> — motion planning library for autonomous paths.</li>
+            <li><a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController" target="_blank" rel="noopener">FtcRobotController</a> — the starter project on GitHub.</li>
+          </ul>
 
-    <section id="community" style="margin-bottom: 56px;">
-      <h2 style="margin-bottom: 12px;">Community</h2>
-      <p class="lede" style="margin-bottom: 24px;">Where to ask, where to read, where to get a design review.</p>
-      <ul class="resource-list">
-        <li><a href="#" rel="noopener">
-          <span class="resource__icon">#</span>
-          <span><span class="resource__name">FTC Discord</span><div class="resource__desc">The main community server. Channels for design, programming, season strategy, and inspection. The place to ask "is this allowed?" and get a real answer.</div></span>
-          <span class="resource__type">Discord</span>
-        </a></li>
-        <li><a href="https://www.chiefdelphi.com/c/first-tech-challenge/" target="_blank" rel="noopener">
-          <span class="resource__icon">CD</span>
-          <span><span class="resource__name">Chief Delphi (FTC section)</span><div class="resource__desc">Long-form posts, build threads, off-season analysis. Less real-time than Discord; more depth.</div></span>
-          <span class="resource__type">Forum</span>
-        </a></li>
-        <li><a href="#" rel="noopener">
-          <span class="resource__icon">YT</span>
-          <span><span class="resource__name">Build season vlogs</span><div class="resource__desc">A handful of teams post weekly build vlogs. Useful for seeing how design decisions actually shake out across a season.</div></span>
-          <span class="resource__type">Video</span>
-        </a></li>
-      </ul>
-    </section>
+          <h2 id="community">Community</h2>
+          <ul>
+            <li><a href="#">FTC Discord</a> — main community server. Channels for design, programming, season strategy, inspection.</li>
+            <li><a href="https://www.chiefdelphi.com/c/first-tech-challenge/" target="_blank" rel="noopener">Chief Delphi (FTC section)</a> — long-form posts and build threads.</li>
+          </ul>
 
-    <section id="contributing" style="margin-bottom: 32px;">
-      <div class="split">
-        <div>
-          <span class="eyebrow">Contributing</span>
-          <h2>Add to the library.</h2>
-          <p>FTCDesign is community-built. If you've got a mechanism worth annotating, a handbook entry to write, or a correction to file, the project lives on GitHub. Open an issue or a pull request — both get read.</p>
-          <p>The bar for contributions: a working example, an opinion attached, and the trade-offs called out. We'd rather have ten well-explained examples than a hundred uncommented ones.</p>
-          <a class="btn btn--primary" href="#">Contribute on GitHub <span class="arrow">&rarr;</span></a>
-        </div>
-        <div class="callout" style="margin: 0;">
-          <div class="callout__icon">i</div>
-          <div>
-            <div class="callout__label">What we don't take</div>
-            <p>We pass on link dumps, generic CAD tutorials, and seasonal strategy guides. The site stays useful by staying small. Plenty of other places host those resources well; we won't compete.</p>
-          </div>
-        </div>
+          <h2 id="contributing">Contributing</h2>
+          <p>FTCDesign is community-built. The bar for contributions: a working example, an opinion, and the trade-offs called out. <a href="https://github.com/The-Orange-1/FTCDesign" target="_blank" rel="noopener">The repo</a> takes issues and pull requests.</p>
+
+          <nav class="pager">
+            <a class="pager--prev" href="best-practices.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">CAD Best Practices</span></a>
+            <a class="pager--next" href="index.html"><span class="pager__label">Back to top &rarr;</span><span class="pager__title">Home</span></a>
+          </nav>
+        </article>
       </div>
-    </section>
+    </main>
 
-    <nav class="pager" aria-label="Pagination">
-      <a class="pager--prev" href="best-practices.html">
-        <span class="pager__label">&larr; Previous</span>
-        <span class="pager__title">CAD Best Practices</span>
-      </a>
-      <a class="pager--next" href="index.html">
-        <span class="pager__label">Back to top &rarr;</span>
-        <span class="pager__title">Home</span>
-      </a>
-    </nav>
-  </main>
+    <aside class="toc">
+      <h4>On this page</h4>
+      <ul>
+        <li><a href="#cad">CAD &amp; part libraries</a></li>
+        <li><a href="#programming">Programming</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#contributing">Contributing</a></li>
+      </ul>
+    </aside>
+  </div>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <div class="site-footer__about">
-        <a class="brand" href="index.html" style="margin-bottom: 12px;"><span class="brand__mark">F</span><span>FTCDesign</span></a>
-        <p>A community-built design library for FIRST Tech Challenge teams. Independent, non-commercial, and free.</p>
-      </div>
-      <div><h5>Learn</h5><ul><li><a href="learn.html">Learning Course</a></li><li><a href="handbook.html">Design Handbook</a></li><li><a href="best-practices.html">CAD Best Practices</a></li></ul></div>
-      <div><h5>Reference</h5><ul><li><a href="mechanisms.html">Mechanism Gallery</a></li><li><a href="resources.html">Tools &amp; Resources</a></li></ul></div>
-      <div><h5>Community</h5><ul><li><a href="resources.html#community">Discord</a></li><li><a href="resources.html#contributing">Contribute</a></li></ul></div>
+      <span>&copy; 2026 FTCDesign · Independent of FIRST<sup>&reg;</sup></span>
+      <span><a href="https://github.com/The-Orange-1/FTCDesign" target="_blank" rel="noopener">GitHub</a> · Built by FTC students, alumni, and mentors</span>
     </div>
-    <div class="site-footer__bottom"><span>&copy; 2026 FTCDesign. Independent of FIRST<sup>&reg;</sup> and its program partners.</span><span>Built with care, not in a hurry.</span></div>
   </footer>
-
-  <aside class="sidebar" id="sidebar" aria-hidden="true" aria-label="Site navigation">
-    <div class="sidebar__head">
-      <a class="brand" href="index.html"><span class="brand__mark">F</span><span>FTCDesign</span></a>
-      <button class="sidebar__close" aria-label="Close menu">&times;</button>
-    </div>
-    <nav>
-      <a href="index.html" data-page="index">Home</a>
-      <h4>Learning Course</h4>
-      <a href="learn.html" data-page="learn">Overview</a>
-      <div class="sub">
-        <a href="learn.html#setup">Course Setup</a>
-        <a href="learn.html#stage-1">Stage 1 · Foundations</a>
-        <a href="learn.html#stage-2">Stage 2 · Subsystems</a>
-        <a href="learn.html#stage-3">Stage 3 · Integration</a>
-        <a href="learn.html#stage-4">Stage 4 · Strategy</a>
-      </div>
-      <h4>Design Handbook</h4>
-      <a href="handbook.html" data-page="handbook">Overview</a>
-      <div class="sub">
-        <a href="handbook.html#strategy-game-analysis">Strategic Design</a>
-        <a href="handbook.html#hw-materials">Hardware</a>
-        <a href="handbook.html#pt-motion">Power Transmission</a>
-        <a href="handbook.html#mech-drivetrains">Mechanisms</a>
-        <a href="handbook.html#wu-controllability">Design Write-ups</a>
-      </div>
-      <h4>Mechanism Examples</h4>
-      <a href="mechanisms.html" data-page="mechanisms">Overview</a>
-      <div class="sub">
-        <a href="mechanisms.html#drivebases">Drivebases</a>
-        <a href="mechanisms.html#intakes">Intakes</a>
-        <a href="mechanisms.html#manipulation">Game-piece manipulation</a>
-        <a href="mechanisms.html#linear">Linear extensions</a>
-        <a href="mechanisms.html#rotating">Rotating mechanisms</a>
-      </div>
-      <h4>Best Practices</h4>
-      <a href="best-practices.html" data-page="best-practices">Overview</a>
-      <div class="sub">
-        <a href="best-practices.html#document-setup">1. Document setup</a>
-        <a href="best-practices.html#sub-document">2. Sub-document setup</a>
-        <a href="best-practices.html#layout-sketch">3. Layout sketches</a>
-        <a href="best-practices.html#part-studio">4. Part studio</a>
-        <a href="best-practices.html#assembly">5. Assembly</a>
-      </div>
-      <h4>Resources</h4>
-      <a href="resources.html" data-page="resources">Tools &amp; links</a>
-      <div class="sub">
-        <a href="resources.html#community">Community</a>
-        <a href="resources.html#contributing">Contributing</a>
-      </div>
-    </nav>
-  </aside>
-  <div class="sidebar-backdrop"></div>
 
   <div class="search-modal" id="search-modal" aria-hidden="true" role="dialog" aria-label="Search">
     <div class="search-modal__panel">
       <div class="search-modal__input-wrap">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
         <input class="search-modal__input" type="search" placeholder="Search the site…" aria-label="Search" autocomplete="off" />
         <button class="search-modal__close" aria-label="Close search">Esc</button>
       </div>

@@ -4,231 +4,158 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CAD Best Practices — FTCDesign</title>
-  <meta name="description" content="Five articles, in order — keep your Onshape documents fast and editable through the whole season." />
+  <meta name="description" content="Five articles on Onshape CAD best practices for FTC robots." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <button class="hamburger" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
       <a class="brand" href="index.html"><span class="brand__mark">F</span><span>FTCDesign</span></a>
-      <button class="search-trigger" aria-label="Search (Alt+C)" aria-controls="search-modal">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-        <span class="search-trigger__label">Search…</span>
-        <span class="kbd-group"><kbd>Alt</kbd><kbd>C</kbd></span>
+      <button class="search-trigger" aria-label="Search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <span class="search-trigger__label">Search</span>
+        <span><kbd>Alt</kbd> <kbd>C</kbd></span>
       </button>
-      <span class="header-spacer"></span>
-      <nav id="primary-nav" class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="learn.html">Learning Course</a>
-        <a href="handbook.html">Design Handbook</a>
-        <a href="mechanisms.html">Mechanisms</a>
-        <a href="best-practices.html" aria-current="page">Best Practices</a>
-        <a href="resources.html">Resources</a>
-      </nav>
+      <a class="header-link" href="https://github.com/The-Orange-1/FTCDesign" aria-label="GitHub repository" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97 0 1.95.13 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.66.8.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+      </a>
       <button class="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
-        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
     </div>
   </header>
 
-  <section class="page-head">
-    <div class="page-head__inner">
-      <nav class="crumbs" aria-label="Breadcrumb">
-        <a href="index.html">Home</a><span>/</span>CAD Best Practices
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar__close" aria-label="Close menu">&times;</button>
+      <nav>
+        <a href="index.html" data-page="index">Home</a>
+        <h4>Learning Course</h4>
+        <a href="learn.html" data-page="learn">Overview</a>
+        <div class="sub">
+          <a href="learn.html#setup">Setup</a>
+          <a href="learn.html#stage-1">Stage 1 · Foundations</a>
+          <a href="learn.html#stage-2">Stage 2 · Subsystems</a>
+          <a href="learn.html#stage-3">Stage 3 · Integration</a>
+          <a href="learn.html#stage-4">Stage 4 · Strategy</a>
+        </div>
+        <h4>Design Handbook</h4>
+        <a href="handbook.html" data-page="handbook">Overview</a>
+        <div class="sub">
+          <a href="handbook.html#strategic-design">Strategic Design</a>
+          <a href="handbook.html#hardware">Hardware</a>
+          <a href="handbook.html#power-transmission">Power Transmission</a>
+          <a href="handbook.html#mechanisms">Mechanisms</a>
+          <a href="handbook.html#write-ups">Design Write-ups</a>
+        </div>
+        <h4>Mechanism Examples</h4>
+        <a href="mechanisms.html" data-page="mechanisms">Overview</a>
+        <div class="sub">
+          <a href="mechanisms.html#drivebases">Drivebases</a>
+          <a href="mechanisms.html#intakes">Intakes</a>
+          <a href="mechanisms.html#manipulation">Game-piece manipulation</a>
+          <a href="mechanisms.html#linear">Linear extensions</a>
+          <a href="mechanisms.html#rotating">Rotating mechanisms</a>
+        </div>
+        <h4>Best Practices</h4>
+        <a href="best-practices.html" data-page="best-practices">Overview</a>
+        <div class="sub">
+          <a href="best-practices.html#document-setup">1. Document setup</a>
+          <a href="best-practices.html#sub-document">2. Sub-document setup</a>
+          <a href="best-practices.html#layout-sketch">3. Layout sketches</a>
+          <a href="best-practices.html#part-studio">4. Part studio</a>
+          <a href="best-practices.html#assembly">5. Assembly</a>
+        </div>
+        <h4>Other</h4>
+        <a href="resources.html" data-page="resources">Resources</a>
       </nav>
-      <span class="eyebrow">CAD Best Practices</span>
-      <h1 class="page-head__title">Five articles, read in order.</h1>
-      <p class="page-head__sub">The point of this section: keep loading times low and stay organized so changes are easy. Conventions that show up here are followed throughout the rest of the site.</p>
-    </div>
-  </section>
+    </aside>
+    <div class="sidebar-backdrop"></div>
 
-  <main class="container">
-    <div class="docs">
-      <aside class="docs__toc">
-        <h4>In this section</h4>
-        <ul>
-          <li><a href="#document-setup">1. Document setup</a></li>
-          <li><a href="#sub-document">2. Sub-document setup</a></li>
-          <li><a href="#layout-sketch">3. Layout sketches</a></li>
-          <li><a href="#part-studio">4. Part studio practices</a></li>
-          <li><a href="#assembly">5. Assembly practices</a></li>
-          <li><a href="#review">Self-review checklist</a></li>
-        </ul>
-      </aside>
+    <main class="main">
+      <div class="main__inner">
+        <nav class="crumbs"><a href="index.html">Home</a><span>/</span>CAD Best Practices</nav>
 
-      <article class="prose">
-        <p class="lede" style="margin-bottom: 28px;">A short, opinionated summary. The goal is consistency across your team — every team member should be able to open any document and find what they're looking for in under a minute.</p>
+        <article class="prose">
+          <h1>CAD Best Practices</h1>
+          <p class="lede">Five articles to read in order. The goal: keep loading times low and stay organized so changes stay easy.</p>
 
-        <section id="document-setup">
-          <h2>1. Document setup</h2>
-          <p>An Onshape <strong>document</strong> holds tabs. Tabs hold Part Studios, Assemblies, and Drawings. The default impulse is to keep adding parts to one Part Studio until it has fifty of them and takes ninety seconds to regenerate. Don't.</p>
-          <h3>What goes in the root document</h3>
+          <h2 id="document-setup">1. Document setup</h2>
+          <p>An Onshape <strong>document</strong> holds tabs. Tabs hold Part Studios, Assemblies, and Drawings. Default impulse: pile parts into one Part Studio. Don't.</p>
+          <p>What goes in the root document:</p>
           <ul>
-            <li>One Part Studio per subsystem (drivetrain, intake, arm, etc.).</li>
-            <li>One Assembly that pulls those subsystems together into the full robot.</li>
-            <li>Drawings only for parts that get fabricated outside Onshape.</li>
+            <li>One Part Studio per subsystem.</li>
+            <li>One Assembly that pulls subsystems into the full robot.</li>
+            <li>Drawings only for parts fabricated outside Onshape.</li>
           </ul>
-          <p>Naming: every tab. Every. Tab. <code>Drivetrain</code> beats <code>Part Studio 4</code> in every scenario.</p>
-        </section>
+          <p>Name every tab. <code>Drivetrain</code> beats <code>Part Studio 4</code>.</p>
 
-        <section id="sub-document">
-          <h2>2. Sub-document setup</h2>
-          <p>Once a subsystem grows past about forty parts, move it to its own document and link it back. Smaller documents load faster and let multiple teammates work in parallel without stepping on each other.</p>
-          <p>The pattern: a parent <em>Robot</em> document with a top-level Assembly that links derived parts from <em>Drivetrain</em>, <em>Intake</em>, and <em>Arm</em> sub-documents.</p>
+          <h2 id="sub-document">2. Sub-document setup</h2>
+          <p>Once a subsystem grows past about forty parts, move it to its own document and link it back. Smaller documents load faster and unblock teammates working in parallel.</p>
           <div class="callout">
-            <div class="callout__icon">i</div>
-            <div>
-              <div class="callout__label">When to split</div>
-              <p>If regeneration takes more than 5–10 seconds, or if two people are blocked editing the same Part Studio, split. Earlier is better than later.</p>
-            </div>
+            <div class="callout__label">When to split</div>
+            <p>If regeneration takes more than 5–10 seconds, or if two people are blocked editing the same Part Studio, split.</p>
           </div>
-        </section>
 
-        <section id="layout-sketch">
-          <h2>3. Layout sketch best practices</h2>
-          <p>A layout sketch is a master sketch that drives downstream parts. Edit one set of dimensions, the whole subsystem updates. Without one, you're committing to manually fix every mate when something changes.</p>
-          <p>What goes in a layout sketch:</p>
+          <h2 id="layout-sketch">3. Layout sketches</h2>
+          <p>A layout sketch is a master sketch that drives downstream parts. Edit one set of dimensions, the whole subsystem updates.</p>
+          <p>What goes in:</p>
           <ul>
-            <li>The chassis outline.</li>
+            <li>Chassis outline.</li>
             <li>Motor positions.</li>
             <li>Wheel positions and contact points.</li>
             <li>Pivot axes for any moving subsystems.</li>
           </ul>
-          <p>What doesn't: per-part details. The layout sketch sets the skeleton; individual parts add flesh.</p>
-        </section>
 
-        <section id="part-studio">
-          <h2>4. Part studio best practices</h2>
-          <p>A Part Studio holds the parts of one subsystem. Two rules:</p>
-          <ol>
-            <li><strong>One subsystem per Part Studio.</strong> The drivetrain gets its own. The arm gets its own. Don't mix.</li>
-            <li><strong>Variables, not magic numbers.</strong> Anything that might change goes in a variable. Define <code>#chassisLength</code>, <code>#wheelDiameter</code>, <code>#frameThickness</code> on day one.</li>
-          </ol>
-          <h3>Naming features</h3>
-          <p>Default Onshape names (<code>Sketch 4</code>, <code>Extrude 7</code>) are useless. Renaming as you create takes five seconds; finding things later takes minutes if you didn't.</p>
-        </section>
+          <h2 id="part-studio">4. Part studio practices</h2>
+          <p>One subsystem per Part Studio. Variables, not magic numbers.</p>
+          <p>For any robot, define on day one: <code>#chassisLength</code>, <code>#chassisWidth</code>, <code>#wheelDiameter</code>, <code>#frameThickness</code>.</p>
+          <p>Rename features as you create them. Default Onshape names (<code>Sketch 4</code>, <code>Extrude 7</code>) cost minutes later.</p>
 
-        <section id="assembly">
-          <h2>5. Assembly best practices</h2>
+          <h2 id="assembly">5. Assembly practices</h2>
           <p>The top-level Assembly is where subsystems meet. Three rules:</p>
           <ol>
-            <li><strong>Use mate connectors.</strong> Add them to every part you'll mate to more than once.</li>
-            <li><strong>Prefer Fastened mates.</strong> Reach for Revolute or Slider only when something actually moves; over-flexible mates make assemblies fragile.</li>
-            <li><strong>Group related parts.</strong> Onshape's grouping keeps the Instances panel readable.</li>
+            <li>Use mate connectors on every part you'll mate to more than once.</li>
+            <li>Prefer Fastened mates. Reach for Revolute or Slider only when something actually moves.</li>
+            <li>Group related parts to keep the Instances panel readable.</li>
           </ol>
-        </section>
 
-        <section id="review">
-          <h2>Self-review checklist</h2>
-          <p>Before calling a document done, run this list with one teammate per item. Half of competition issues are visible in CAD if you look.</p>
-          <ul>
-            <li>Does every Part Studio and Assembly tab have a meaningful name?</li>
-            <li>Do key dimensions reference variables, not hardcoded numbers?</li>
-            <li>Does increasing <code>#chassisLength</code> by 0.5&Prime; update the document cleanly?</li>
-            <li>Can you remove the battery without taking the robot apart?</li>
-            <li>Does any moving part have at least 3&nbsp;mm clearance to anything stationary?</li>
-            <li>Will this robot fit through a 24&Prime; doorway with bumpers on?</li>
-          </ul>
-          <div class="callout">
-            <div class="callout__icon">!</div>
-            <div>
-              <div class="callout__label">Print this</div>
-              <p>Run the checklist out loud, with one person reading each item and another defending the design against it. You'll catch things silently waved past.</p>
-            </div>
-          </div>
-        </section>
+          <nav class="pager">
+            <a class="pager--prev" href="mechanisms.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">Mechanism Examples</span></a>
+            <a class="pager--next" href="resources.html"><span class="pager__label">Next &rarr;</span><span class="pager__title">Resources</span></a>
+          </nav>
+        </article>
+      </div>
+    </main>
 
-        <nav class="pager" aria-label="Pagination">
-          <a class="pager--prev" href="mechanisms.html">
-            <span class="pager__label">&larr; Previous</span>
-            <span class="pager__title">Mechanism Examples</span>
-          </a>
-          <a class="pager--next" href="resources.html">
-            <span class="pager__label">Next &rarr;</span>
-            <span class="pager__title">Other Resources</span>
-          </a>
-        </nav>
-      </article>
-    </div>
-  </main>
+    <aside class="toc">
+      <h4>On this page</h4>
+      <ul>
+        <li><a href="#document-setup">1. Document setup</a></li>
+        <li><a href="#sub-document">2. Sub-document setup</a></li>
+        <li><a href="#layout-sketch">3. Layout sketches</a></li>
+        <li><a href="#part-studio">4. Part studio</a></li>
+        <li><a href="#assembly">5. Assembly</a></li>
+      </ul>
+    </aside>
+  </div>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <div class="site-footer__about">
-        <a class="brand" href="index.html" style="margin-bottom: 12px;"><span class="brand__mark">F</span><span>FTCDesign</span></a>
-        <p>A community-built design library for FIRST Tech Challenge teams. Independent, non-commercial, and free.</p>
-      </div>
-      <div><h5>Learn</h5><ul><li><a href="learn.html">Learning Course</a></li><li><a href="handbook.html">Design Handbook</a></li><li><a href="best-practices.html">CAD Best Practices</a></li></ul></div>
-      <div><h5>Reference</h5><ul><li><a href="mechanisms.html">Mechanism Gallery</a></li><li><a href="resources.html">Tools &amp; Resources</a></li></ul></div>
-      <div><h5>Community</h5><ul><li><a href="resources.html#community">Discord</a></li><li><a href="resources.html#contributing">Contribute</a></li></ul></div>
+      <span>&copy; 2026 FTCDesign · Independent of FIRST<sup>&reg;</sup></span>
+      <span><a href="https://github.com/The-Orange-1/FTCDesign" target="_blank" rel="noopener">GitHub</a> · Built by FTC students, alumni, and mentors</span>
     </div>
-    <div class="site-footer__bottom"><span>&copy; 2026 FTCDesign. Independent of FIRST<sup>&reg;</sup> and its program partners.</span><span>Built by FTC students, alumni, and mentors.</span></div>
   </footer>
-
-  <aside class="sidebar" id="sidebar" aria-hidden="true" aria-label="Site navigation">
-    <div class="sidebar__head">
-      <a class="brand" href="index.html"><span class="brand__mark">F</span><span>FTCDesign</span></a>
-      <button class="sidebar__close" aria-label="Close menu">&times;</button>
-    </div>
-    <nav>
-      <a href="index.html" data-page="index">Home</a>
-      <h4>Learning Course</h4>
-      <a href="learn.html" data-page="learn">Overview</a>
-      <div class="sub">
-        <a href="learn.html#setup">Course Setup</a>
-        <a href="learn.html#stage-1">Stage 1 · Foundations</a>
-        <a href="learn.html#stage-2">Stage 2 · Subsystems</a>
-        <a href="learn.html#stage-3">Stage 3 · Integration</a>
-        <a href="learn.html#stage-4">Stage 4 · Strategy</a>
-      </div>
-      <h4>Design Handbook</h4>
-      <a href="handbook.html" data-page="handbook">Overview</a>
-      <div class="sub">
-        <a href="handbook.html#strategy-game-analysis">Strategic Design</a>
-        <a href="handbook.html#hw-materials">Hardware</a>
-        <a href="handbook.html#pt-motion">Power Transmission</a>
-        <a href="handbook.html#mech-drivetrains">Mechanisms</a>
-        <a href="handbook.html#wu-controllability">Design Write-ups</a>
-      </div>
-      <h4>Mechanism Examples</h4>
-      <a href="mechanisms.html" data-page="mechanisms">Overview</a>
-      <div class="sub">
-        <a href="mechanisms.html#drivebases">Drivebases</a>
-        <a href="mechanisms.html#intakes">Intakes</a>
-        <a href="mechanisms.html#manipulation">Game-piece manipulation</a>
-        <a href="mechanisms.html#linear">Linear extensions</a>
-        <a href="mechanisms.html#rotating">Rotating mechanisms</a>
-      </div>
-      <h4>Best Practices</h4>
-      <a href="best-practices.html" data-page="best-practices">Overview</a>
-      <div class="sub">
-        <a href="best-practices.html#document-setup">1. Document setup</a>
-        <a href="best-practices.html#sub-document">2. Sub-document setup</a>
-        <a href="best-practices.html#layout-sketch">3. Layout sketches</a>
-        <a href="best-practices.html#part-studio">4. Part studio</a>
-        <a href="best-practices.html#assembly">5. Assembly</a>
-      </div>
-      <h4>Resources</h4>
-      <a href="resources.html" data-page="resources">Tools &amp; links</a>
-      <div class="sub">
-        <a href="resources.html#community">Community</a>
-        <a href="resources.html#contributing">Contributing</a>
-      </div>
-    </nav>
-  </aside>
-  <div class="sidebar-backdrop"></div>
 
   <div class="search-modal" id="search-modal" aria-hidden="true" role="dialog" aria-label="Search">
     <div class="search-modal__panel">
       <div class="search-modal__input-wrap">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
         <input class="search-modal__input" type="search" placeholder="Search the site…" aria-label="Search" autocomplete="off" />
         <button class="search-modal__close" aria-label="Close search">Esc</button>
       </div>
