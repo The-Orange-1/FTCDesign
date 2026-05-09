@@ -584,61 +584,104 @@ body.no-scroll { overflow: hidden; }
 .callout p { color: var(--ink); }
 .callout p:last-child { margin-bottom: 0; }
 
-/* ---- Section grid (homepage cards) ---- */
+/* ---- Section timeline (homepage) ---- */
 .section-grid {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  padding: 0 0 0 44px;
+  margin: 28px 0 0;
+  position: relative;
   counter-reset: section-num;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
-.section-grid li { margin: 0; padding: 0; counter-increment: section-num; }
-.section-grid li::before { display: none; }
+.section-grid::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  background: var(--line);
+}
+.section-grid li {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  counter-increment: section-num;
+}
+.section-grid li::before {
+  content: counter(section-num, decimal-leading-zero);
+  position: absolute;
+  left: -42px;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--orange);
+  border: 2px solid var(--orange);
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 0.74rem;
+  letter-spacing: -0.02em;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
 .section-grid a, .paths a {
   border-bottom-style: none !important;
 }
 .section-grid a {
   display: block;
   position: relative;
-  padding: 18px 20px 20px;
+  padding: 0 20px 18px;
   background: var(--bg-alt);
   border: 1px solid var(--line);
-  border-left: 3px solid var(--orange);
   border-radius: var(--radius);
+  overflow: hidden;
   text-decoration: none;
   color: var(--ink);
-  transition: transform 120ms ease, border-color 120ms ease;
+  transition: border-color 120ms ease, transform 120ms ease;
+}
+.section-grid a::before {
+  content: "";
+  display: block;
+  height: 4px;
+  background: var(--orange);
+  margin: 0 -20px 16px;
 }
 .section-grid a:hover {
   border-color: var(--orange);
-  border-left-color: var(--orange);
-  transform: translateY(-1px);
+  transform: translateX(2px);
   text-decoration: none;
+}
+.section-grid li:hover::before {
+  background: var(--orange);
+  color: var(--bg);
 }
 .section-grid .section__num {
   display: inline-block;
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 6px;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
 }
 .section-grid .section__title {
   display: block;
   font-weight: 600;
   color: var(--ink);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-bottom: 6px;
   letter-spacing: -0.01em;
 }
 .section-grid .section__sub {
   display: block;
   color: var(--ink-soft);
-  font-size: 0.92rem;
+  font-size: 0.93rem;
   line-height: 1.5;
 }
 .section-grid .section__meta {
@@ -648,12 +691,12 @@ body.no-scroll { overflow: hidden; }
   background: var(--orange-soft);
   color: var(--orange);
   font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.04em;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: 3px;
+  font-weight: 600;
 }
-@media (max-width: 720px) { .section-grid { grid-template-columns: 1fr; } }
 
 /* ---- Quick paths (3-column homepage helper) ---- */
 .paths {
