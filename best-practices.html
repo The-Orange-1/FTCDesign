@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CAD Best Practices — FTCDesign</title>
+  <meta name="description" content="Five articles, in order — keep your Onshape documents fast and editable through the whole season." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html"><span class="brand__mark">F</span><span>FTCDesign</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learning Course</a>
+        <a href="handbook.html">Design Handbook</a>
+        <a href="mechanisms.html">Mechanisms</a>
+        <a href="best-practices.html" aria-current="page">Best Practices</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="page-head__inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span>/</span>CAD Best Practices
+      </nav>
+      <span class="eyebrow">CAD Best Practices</span>
+      <h1 class="page-head__title">Five articles, read in order.</h1>
+      <p class="page-head__sub">The point of this section: keep loading times low and stay organized so changes are easy. Conventions that show up here are followed throughout the rest of the site.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="docs">
+      <aside class="docs__toc">
+        <h4>In this section</h4>
+        <ul>
+          <li><a href="#document-setup">1. Document setup</a></li>
+          <li><a href="#sub-document">2. Sub-document setup</a></li>
+          <li><a href="#layout-sketch">3. Layout sketches</a></li>
+          <li><a href="#part-studio">4. Part studio practices</a></li>
+          <li><a href="#assembly">5. Assembly practices</a></li>
+          <li><a href="#review">Self-review checklist</a></li>
+        </ul>
+      </aside>
+
+      <article class="prose">
+        <p class="lede" style="margin-bottom: 28px;">A short, opinionated summary. The goal is consistency across your team — every team member should be able to open any document and find what they're looking for in under a minute.</p>
+
+        <section id="document-setup">
+          <h2>1. Document setup</h2>
+          <p>An Onshape <strong>document</strong> holds tabs. Tabs hold Part Studios, Assemblies, and Drawings. The default impulse is to keep adding parts to one Part Studio until it has fifty of them and takes ninety seconds to regenerate. Don't.</p>
+          <h3>What goes in the root document</h3>
+          <ul>
+            <li>One Part Studio per subsystem (drivetrain, intake, arm, etc.).</li>
+            <li>One Assembly that pulls those subsystems together into the full robot.</li>
+            <li>Drawings only for parts that get fabricated outside Onshape.</li>
+          </ul>
+          <p>Naming: every tab. Every. Tab. <code>Drivetrain</code> beats <code>Part Studio 4</code> in every scenario.</p>
+        </section>
+
+        <section id="sub-document">
+          <h2>2. Sub-document setup</h2>
+          <p>Once a subsystem grows past about forty parts, move it to its own document and link it back. Smaller documents load faster and let multiple teammates work in parallel without stepping on each other.</p>
+          <p>The pattern: a parent <em>Robot</em> document with a top-level Assembly that links derived parts from <em>Drivetrain</em>, <em>Intake</em>, and <em>Arm</em> sub-documents.</p>
+          <div class="callout">
+            <div class="callout__icon">i</div>
+            <div>
+              <div class="callout__label">When to split</div>
+              <p>If regeneration takes more than 5–10 seconds, or if two people are blocked editing the same Part Studio, split. Earlier is better than later.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="layout-sketch">
+          <h2>3. Layout sketch best practices</h2>
+          <p>A layout sketch is a master sketch that drives downstream parts. Edit one set of dimensions, the whole subsystem updates. Without one, you're committing to manually fix every mate when something changes.</p>
+          <p>What goes in a layout sketch:</p>
+          <ul>
+            <li>The chassis outline.</li>
+            <li>Motor positions.</li>
+            <li>Wheel positions and contact points.</li>
+            <li>Pivot axes for any moving subsystems.</li>
+          </ul>
+          <p>What doesn't: per-part details. The layout sketch sets the skeleton; individual parts add flesh.</p>
+        </section>
+
+        <section id="part-studio">
+          <h2>4. Part studio best practices</h2>
+          <p>A Part Studio holds the parts of one subsystem. Two rules:</p>
+          <ol>
+            <li><strong>One subsystem per Part Studio.</strong> The drivetrain gets its own. The arm gets its own. Don't mix.</li>
+            <li><strong>Variables, not magic numbers.</strong> Anything that might change goes in a variable. Define <code>#chassisLength</code>, <code>#wheelDiameter</code>, <code>#frameThickness</code> on day one.</li>
+          </ol>
+          <h3>Naming features</h3>
+          <p>Default Onshape names (<code>Sketch 4</code>, <code>Extrude 7</code>) are useless. Renaming as you create takes five seconds; finding things later takes minutes if you didn't.</p>
+        </section>
+
+        <section id="assembly">
+          <h2>5. Assembly best practices</h2>
+          <p>The top-level Assembly is where subsystems meet. Three rules:</p>
+          <ol>
+            <li><strong>Use mate connectors.</strong> Add them to every part you'll mate to more than once.</li>
+            <li><strong>Prefer Fastened mates.</strong> Reach for Revolute or Slider only when something actually moves; over-flexible mates make assemblies fragile.</li>
+            <li><strong>Group related parts.</strong> Onshape's grouping keeps the Instances panel readable.</li>
+          </ol>
+        </section>
+
+        <section id="review">
+          <h2>Self-review checklist</h2>
+          <p>Before calling a document done, run this list with one teammate per item. Half of competition issues are visible in CAD if you look.</p>
+          <ul>
+            <li>Does every Part Studio and Assembly tab have a meaningful name?</li>
+            <li>Do key dimensions reference variables, not hardcoded numbers?</li>
+            <li>Does increasing <code>#chassisLength</code> by 0.5&Prime; update the document cleanly?</li>
+            <li>Can you remove the battery without taking the robot apart?</li>
+            <li>Does any moving part have at least 3&nbsp;mm clearance to anything stationary?</li>
+            <li>Will this robot fit through a 24&Prime; doorway with bumpers on?</li>
+          </ul>
+          <div class="callout">
+            <div class="callout__icon">!</div>
+            <div>
+              <div class="callout__label">Print this</div>
+              <p>Run the checklist out loud, with one person reading each item and another defending the design against it. You'll catch things silently waved past.</p>
+            </div>
+          </div>
+        </section>
+
+        <nav class="pager" aria-label="Pagination">
+          <a class="pager--prev" href="mechanisms.html">
+            <span class="pager__label">&larr; Previous</span>
+            <span class="pager__title">Mechanism Examples</span>
+          </a>
+          <a class="pager--next" href="resources.html">
+            <span class="pager__label">Next &rarr;</span>
+            <span class="pager__title">Other Resources</span>
+          </a>
+        </nav>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__about">
+        <a class="brand" href="index.html" style="margin-bottom: 12px;"><span class="brand__mark">F</span><span>FTCDesign</span></a>
+        <p>A community-built design library for FIRST Tech Challenge teams. Independent, non-commercial, and free.</p>
+      </div>
+      <div><h5>Learn</h5><ul><li><a href="learn.html">Learning Course</a></li><li><a href="handbook.html">Design Handbook</a></li><li><a href="best-practices.html">CAD Best Practices</a></li></ul></div>
+      <div><h5>Reference</h5><ul><li><a href="mechanisms.html">Mechanism Gallery</a></li><li><a href="resources.html">Tools &amp; Resources</a></li></ul></div>
+      <div><h5>Community</h5><ul><li><a href="resources.html#community">Discord</a></li><li><a href="resources.html#contributing">Contribute</a></li></ul></div>
+    </div>
+    <div class="site-footer__bottom"><span>&copy; 2026 FTCDesign. Independent of FIRST<sup>&reg;</sup> and its program partners.</span><span>Built by FTC students, alumni, and mentors.</span></div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

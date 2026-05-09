@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mechanism Examples — FTCDesign</title>
+  <meta name="description" content="Annotated FTC mechanism examples organized by category." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html"><span class="brand__mark">F</span><span>FTCDesign</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learning Course</a>
+        <a href="handbook.html">Design Handbook</a>
+        <a href="mechanisms.html" aria-current="page">Mechanisms</a>
+        <a href="best-practices.html">Best Practices</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="page-head__inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span>/</span>Mechanism Examples
+      </nav>
+      <span class="eyebrow">Mechanism Examples</span>
+      <h1 class="page-head__title">Designs that work, with the trade-offs called out.</h1>
+      <p class="page-head__sub">Five categories. Each example is a real mechanism with a forkable Onshape document and an opinion attached — what it's good at, where it fails, and what to copy.</p>
+    </div>
+  </section>
+
+  <main class="container" style="padding: 32px 0 80px;">
+
+    <div class="filters" role="tablist" aria-label="Mechanism categories">
+      <button class="filter active" data-cat="all">All</button>
+      <button class="filter" data-cat="drive">Drivebases</button>
+      <button class="filter" data-cat="intake">Intakes</button>
+      <button class="filter" data-cat="manipulation">Game-piece manipulation</button>
+      <button class="filter" data-cat="linear">Linear extensions</button>
+      <button class="filter" data-cat="rotating">Rotating mechanisms</button>
+    </div>
+
+    <!-- Drivebases -->
+    <section class="topic" data-cat="drive" id="drivebases">
+      <div class="topic__head">
+        <h2>Drivebases</h2>
+        <p>The chassis carries everything else. Pick this first; everything else flows downstream.</p>
+      </div>
+      <div class="mech-grid" style="margin-top: 18px;">
+        <article class="mech">
+          <div class="mech__visual" aria-hidden="true">
+            <svg viewBox="0 0 400 225" style="width:100%;height:100%;">
+              <defs><pattern id="m1" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#e5e5e5" stroke-width="0.5"/></pattern></defs>
+              <rect width="400" height="225" fill="url(#m1)"/>
+              <g transform="translate(60,60)">
+                <rect x="0" y="20" width="280" height="80" rx="4" fill="#fff" stroke="#cc5500" stroke-width="2"/>
+                <g fill="#111" stroke="#777"><rect x="-12" y="10" width="24" height="32" rx="2"/><rect x="-12" y="78" width="24" height="32" rx="2"/><rect x="268" y="10" width="24" height="32" rx="2"/><rect x="268" y="78" width="24" height="32" rx="2"/></g>
+                <g stroke="#ff6a00" stroke-width="1.4" fill="none">
+                  <line x1="-12" y1="14" x2="12" y2="38"/><line x1="12" y1="14" x2="-12" y2="38"/>
+                  <line x1="-12" y1="82" x2="12" y2="106"/><line x1="12" y1="82" x2="-12" y2="106"/>
+                  <line x1="268" y1="14" x2="292" y2="38"/><line x1="292" y1="14" x2="268" y2="38"/>
+                  <line x1="268" y1="82" x2="292" y2="106"/><line x1="292" y1="82" x2="268" y2="106"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="mech__body">
+            <h3 class="mech__title">Mecanum drivebase, 14&Prime; square</h3>
+            <div class="mech__meta"><span class="tag">Mecanum</span><span class="tag tag--alt">goBILDA 5202 &middot; 19.2:1</span></div>
+            <p class="mech__desc">A balanced first-year drivebase. Strafes cleanly, holds position under contact, leaves room above for a vertical lift.</p>
+          </div>
+        </article>
+
+        <article class="mech">
+          <div class="mech__visual" aria-hidden="true">
+            <svg viewBox="0 0 400 225" style="width:100%;height:100%;">
+              <defs><pattern id="m2" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#e5e5e5" stroke-width="0.5"/></pattern></defs>
+              <rect width="400" height="225" fill="url(#m2)"/>
+              <g transform="translate(60,60)">
+                <rect x="0" y="20" width="280" height="80" rx="4" fill="#fff" stroke="#cc5500" stroke-width="2"/>
+                <circle cx="-2" cy="60" r="22" fill="#111"/>
+                <circle cx="282" cy="60" r="22" fill="#111"/>
+                <rect x="120" y="48" width="40" height="24" rx="2" fill="#ffe9d6" stroke="#ff6a00"/>
+              </g>
+            </svg>
+          </div>
+          <div class="mech__body">
+            <h3 class="mech__title">Tank drive with traction wheels</h3>
+            <div class="mech__meta"><span class="tag">Tank</span><span class="tag tag--alt">REV HD Hex</span></div>
+            <p class="mech__desc">When pushing matters more than strafing, two large traction wheels per side beat any mecanum setup. Trade-off: every position adjustment is a three-point turn.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Intakes -->
+    <section class="topic" data-cat="intake" id="intakes">
+      <div class="topic__head">
+        <h2>Intakes</h2>
+        <p>How a piece gets into the robot. Game-piece dependent — patterns transfer, dimensions don't.</p>
+      </div>
+      <div class="mech-grid" style="margin-top: 18px;">
+        <article class="mech">
+          <div class="mech__visual" aria-hidden="true">
+            <svg viewBox="0 0 400 225" style="width:100%;height:100%;">
+              <defs><pattern id="m5" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#e5e5e5" stroke-width="0.5"/></pattern></defs>
+              <rect width="400" height="225" fill="url(#m5)"/>
+              <g transform="translate(70,80)">
+                <rect x="0" y="0" width="240" height="60" rx="4" fill="#fff" stroke="#cc5500" stroke-width="2"/>
+                <circle cx="40" cy="30" r="22" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+                <circle cx="120" cy="30" r="22" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+                <circle cx="200" cy="30" r="22" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+                <g stroke="#ff6a00" stroke-width="1" fill="none"><circle cx="40" cy="30" r="14"/><circle cx="120" cy="30" r="14"/><circle cx="200" cy="30" r="14"/></g>
+              </g>
+            </svg>
+          </div>
+          <div class="mech__body">
+            <h3 class="mech__title">Active compliant-wheel intake</h3>
+            <div class="mech__meta"><span class="tag">Active</span><span class="tag tag--alt">Stefan compliant wheels</span></div>
+            <p class="mech__desc">Two or three compliant wheels, geared together, pull pieces in and hold them. Forgiving on alignment — the wheels deform to fit.</p>
+          </div>
+        </article>
+
+        <article class="mech">
+          <div class="mech__visual" aria-hidden="true">
+            <svg viewBox="0 0 400 225" style="width:100%;height:100%;">
+              <defs><pattern id="m6" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#e5e5e5" stroke-width="0.5"/></pattern></defs>
+              <rect width="400" height="225" fill="url(#m6)"/>
+              <g transform="translate(110,60)">
+                <rect x="0" y="0" width="180" height="40" rx="2" fill="#fff" stroke="#cc5500" stroke-width="2"/>
+                <line x1="40" y1="40" x2="40" y2="100" stroke="#111" stroke-width="2"/>
+                <line x1="140" y1="40" x2="140" y2="100" stroke="#111" stroke-width="2"/>
+                <rect x="20" y="100" width="40" height="40" rx="2" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+                <rect x="120" y="100" width="40" height="40" rx="2" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+              </g>
+            </svg>
+          </div>
+          <div class="mech__body">
+            <h3 class="mech__title">Under-the-bumper claw</h3>
+            <div class="mech__meta"><span class="tag">Passive</span><span class="tag tag--alt">single servo</span></div>
+            <p class="mech__desc">A geared parallel-jaw claw driven by one servo, mounted low so it ducks under field elements. Repeatable grip, fixed opening width.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Game-piece manipulation -->
+    <section class="topic" data-cat="manipulation" id="manipulation">
+      <div class="topic__head">
+        <h2>Game-piece manipulation</h2>
+        <p>What happens between intake and scoring — indexing, controlling orientation, releasing on cue.</p>
+      </div>
+      <div class="mech-grid" style="margin-top: 18px;">
+        <article class="mech">
+          <div class="mech__visual" aria-hidden="true">
+            <svg viewBox="0 0 400 225" style="width:100%;height:100%;">
+              <defs><pattern id="m7" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#e5e5e5" stroke-width="0.5"/></pattern></defs>
+              <rect width="400" height="225" fill="url(#m7)"/>
+              <g transform="translate(60,50)">
+                <rect x="0" y="0" width="280" height="100" rx="4" fill="#fff" stroke="#cc5500" stroke-width="2"/>
+                <circle cx="50" cy="50" r="20" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+                <circle cx="120" cy="50" r="20" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+                <circle cx="190" cy="50" r="20" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+                <circle cx="260" cy="50" r="20" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+              </g>
+            </svg>
+          </div>
+          <div class="mech__body">
+            <h3 class="mech__title">Belt-driven indexer</h3>
+            <div class="mech__meta"><span class="tag">Indexer</span></div>
+            <p class="mech__desc">A timing-belt indexer that moves pieces single-file from intake to release. Predictable spacing; one motor.</p>
+          </div>
+        </article>
+        <article class="mech">
+          <div class="mech__visual" aria-hidden="true">
+            <svg viewBox="0 0 400 225" style="width:100%;height:100%;">
+              <defs><pattern id="m8" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#e5e5e5" stroke-width="0.5"/></pattern></defs>
+              <rect width="400" height="225" fill="url(#m8)"/>
+              <g transform="translate(140,50)">
+                <rect x="0" y="40" width="120" height="40" rx="2" fill="#fff" stroke="#cc5500" stroke-width="2"/>
+                <rect x="40" y="0" width="40" height="40" rx="2" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+                <line x1="60" y1="80" x2="60" y2="130" stroke="#111" stroke-width="2"/>
+              </g>
+            </svg>
+          </div>
+          <div class="mech__body">
+            <h3 class="mech__title">Servo flap end-effector</h3>
+            <div class="mech__meta"><span class="tag">End effector</span></div>
+            <p class="mech__desc">A servo-driven flap that holds a piece against a back wall, then releases. Simple, fast, and deterministic.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Linear Extensions -->
+    <section class="topic" data-cat="linear" id="linear">
+      <div class="topic__head">
+        <h2>Linear extensions</h2>
+        <p>The reach problem. Cascade, continuous, and telescope rigging — each with a different speed/length tradeoff.</p>
+      </div>
+      <div class="mech-grid" style="margin-top: 18px;">
+        <article class="mech">
+          <div class="mech__visual" aria-hidden="true">
+            <svg viewBox="0 0 400 225" style="width:100%;height:100%;">
+              <defs><pattern id="m3" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#e5e5e5" stroke-width="0.5"/></pattern></defs>
+              <rect width="400" height="225" fill="url(#m3)"/>
+              <g transform="translate(170,30)">
+                <rect x="0" y="0" width="60" height="170" rx="2" fill="#fff" stroke="#cc5500" stroke-width="2"/>
+                <rect x="10" y="10" width="40" height="140" rx="2" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+                <rect x="20" y="20" width="20" height="110" rx="2" fill="#fff" stroke="#ff6a00" stroke-width="1.5"/>
+                <line x1="-10" y1="170" x2="70" y2="170" stroke="#111" stroke-width="3"/>
+              </g>
+            </svg>
+          </div>
+          <div class="mech__body">
+            <h3 class="mech__title">Cascade slide, 3-stage</h3>
+            <div class="mech__meta"><span class="tag">Cascade</span><span class="tag tag--alt">viper slide</span></div>
+            <p class="mech__desc">Three nested aluminum extrusions, rigged so all stages move together. Reaches further than a continuous slide of the same retracted length.</p>
+          </div>
+        </article>
+        <article class="mech">
+          <div class="mech__visual" aria-hidden="true">
+            <svg viewBox="0 0 400 225" style="width:100%;height:100%;">
+              <defs><pattern id="m9" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#e5e5e5" stroke-width="0.5"/></pattern></defs>
+              <rect width="400" height="225" fill="url(#m9)"/>
+              <g transform="translate(170,30)">
+                <rect x="0" y="0" width="60" height="170" rx="2" fill="#fff" stroke="#cc5500" stroke-width="2"/>
+                <rect x="10" y="40" width="40" height="120" rx="2" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+                <rect x="20" y="70" width="20" height="80" rx="2" fill="#fff" stroke="#ff6a00" stroke-width="1.5"/>
+              </g>
+            </svg>
+          </div>
+          <div class="mech__body">
+            <h3 class="mech__title">Continuous-rigged slide</h3>
+            <div class="mech__meta"><span class="tag">Continuous</span></div>
+            <p class="mech__desc">One motor drives all stages via a single continuous loop. Faster top-stage motion than cascade; less total reach for the same retracted length.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Rotating Mechanisms -->
+    <section class="topic" data-cat="rotating" id="rotating">
+      <div class="topic__head">
+        <h2>Rotating mechanisms</h2>
+        <p>Pivots and turrets — anything that swings under load.</p>
+      </div>
+      <div class="mech-grid" style="margin-top: 18px;">
+        <article class="mech">
+          <div class="mech__visual" aria-hidden="true">
+            <svg viewBox="0 0 400 225" style="width:100%;height:100%;">
+              <defs><pattern id="m4" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#e5e5e5" stroke-width="0.5"/></pattern></defs>
+              <rect width="400" height="225" fill="url(#m4)"/>
+              <g transform="translate(140,40)">
+                <line x1="60" y1="0" x2="60" y2="160" stroke="#111" stroke-width="2"/>
+                <rect x="40" y="100" width="80" height="20" rx="2" fill="#fff" stroke="#cc5500" stroke-width="2" transform="rotate(-30 80 110)"/>
+                <circle cx="60" cy="150" r="6" fill="#ff6a00"/>
+                <rect x="20" y="80" width="60" height="14" rx="2" fill="#ffe9d6" stroke="#ff6a00" transform="rotate(-30 50 87)"/>
+              </g>
+            </svg>
+          </div>
+          <div class="mech__body">
+            <h3 class="mech__title">Virtual four-bar arm</h3>
+            <div class="mech__meta"><span class="tag">Pivot</span><span class="tag tag--alt">two motors</span></div>
+            <p class="mech__desc">Two parallel links keep the end effector level through the full sweep. Lighter than a vertical lift; fixed reach radius.</p>
+          </div>
+        </article>
+        <article class="mech">
+          <div class="mech__visual" aria-hidden="true">
+            <svg viewBox="0 0 400 225" style="width:100%;height:100%;">
+              <defs><pattern id="m10" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#e5e5e5" stroke-width="0.5"/></pattern></defs>
+              <rect width="400" height="225" fill="url(#m10)"/>
+              <g transform="translate(180,90)">
+                <circle cx="20" cy="20" r="50" fill="#fff" stroke="#cc5500" stroke-width="2"/>
+                <circle cx="20" cy="20" r="35" fill="#ffe9d6" stroke="#ff6a00" stroke-width="1.5"/>
+                <line x1="20" y1="20" x2="20" y2="-30" stroke="#111" stroke-width="3"/>
+              </g>
+            </svg>
+          </div>
+          <div class="mech__body">
+            <h3 class="mech__title">Slewing-ring turret</h3>
+            <div class="mech__meta"><span class="tag">Turret</span><span class="tag tag--alt">advanced</span></div>
+            <p class="mech__desc">A 360&deg; rotating platform on a slewing ring. Rare in FTC and high-payoff when the game justifies it.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="Pagination">
+      <a class="pager--prev" href="handbook.html">
+        <span class="pager__label">&larr; Previous</span>
+        <span class="pager__title">Design Handbook</span>
+      </a>
+      <a class="pager--next" href="best-practices.html">
+        <span class="pager__label">Next &rarr;</span>
+        <span class="pager__title">CAD Best Practices</span>
+      </a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__about">
+        <a class="brand" href="index.html" style="margin-bottom: 12px;"><span class="brand__mark">F</span><span>FTCDesign</span></a>
+        <p>A community-built design library for FIRST Tech Challenge teams. Independent, non-commercial, and free.</p>
+      </div>
+      <div><h5>Learn</h5><ul><li><a href="learn.html">Learning Course</a></li><li><a href="handbook.html">Design Handbook</a></li><li><a href="best-practices.html">CAD Best Practices</a></li></ul></div>
+      <div><h5>Reference</h5><ul><li><a href="mechanisms.html">Mechanism Gallery</a></li><li><a href="resources.html">Tools &amp; Resources</a></li></ul></div>
+      <div><h5>Community</h5><ul><li><a href="resources.html#community">Discord</a></li><li><a href="resources.html#contributing">Contribute</a></li></ul></div>
+    </div>
+    <div class="site-footer__bottom"><span>&copy; 2026 FTCDesign. Independent of FIRST<sup>&reg;</sup> and its program partners.</span><span>Built by FTC students, alumni, and mentors.</span></div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

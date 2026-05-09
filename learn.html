@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learning Course — FTCDesign</title>
+  <meta name="description" content="A four-stage learning course for FTC robot design in Onshape." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html"><span class="brand__mark">F</span><span>FTCDesign</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="learn.html" aria-current="page">Learning Course</a>
+        <a href="handbook.html">Design Handbook</a>
+        <a href="mechanisms.html">Mechanisms</a>
+        <a href="best-practices.html">Best Practices</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="page-head__inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span>/</span>Learning Course
+      </nav>
+      <span class="eyebrow">Learning Course</span>
+      <h1 class="page-head__title">A four-stage path to a working robot.</h1>
+      <p class="page-head__sub">Start with Setup if you've never used CAD. Otherwise, jump to whichever stage matches where you are. Stages build on each other — skipping ahead is allowed but you'll backtrack to fill in gaps.</p>
+    </div>
+  </section>
+
+  <main class="container" style="padding: 40px 0 80px;">
+
+    <div class="callout">
+      <div class="callout__icon">i</div>
+      <div>
+        <div class="callout__label">How this page is organized</div>
+        <p>Each stage is a checklist. Lessons inside a stage are meant to be done in order. The whole course assumes Onshape and goBILDA / REV hardware — the principles transfer, but the screenshots won't.</p>
+      </div>
+    </div>
+
+    <!-- Setup -->
+    <section class="stage" id="setup">
+      <div class="stage__head">
+        <span class="stage__num">0</span>
+        <span class="stage__title">Course Setup</span>
+        <span class="stage__pill">~30 min total</span>
+      </div>
+      <p class="stage__sub">Three short pages. Pick the one that matches your starting point — you don't need all three.</p>
+      <ul class="stage__list">
+        <li><a href="#"><span class="check"></span>New to CAD &mdash; what it is, why teams use it</a></li>
+        <li><a href="#"><span class="check"></span>New to Onshape &mdash; account, browser setup, document basics</a></li>
+        <li><a href="#"><span class="check"></span>Required course tools &mdash; libraries, links, accounts</a></li>
+      </ul>
+    </section>
+
+    <!-- Stage 1 -->
+    <section class="stage" id="stage-1">
+      <div class="stage__head">
+        <span class="stage__num">1</span>
+        <span class="stage__title">Stage 1 &middot; Foundations</span>
+        <span class="stage__pill">~6 hours</span>
+      </div>
+      <p class="stage__sub">The CAD vocabulary and FTC-specific concepts you'll use in every later stage. Don't skip it.</p>
+      <ul class="stage__list">
+        <li><a href="#"><span class="check"></span>Focusing on improvement &mdash; how to learn from a design</a></li>
+        <li><a href="#"><span class="check"></span>Onshape fundamentals &mdash; sketches, parts, assemblies</a></li>
+        <li><a href="#"><span class="check"></span>Power transmissions &mdash; gears, belts, chain</a></li>
+        <li><a href="#"><span class="check"></span>Practice mechanisms &mdash; small builds to apply each idea</a></li>
+        <li><a href="#"><span class="check"></span>Design methodology &mdash; defining the problem before drawing</a></li>
+        <li><a href="#"><span class="check"></span>Subsystem workflow &mdash; one studio per subsystem, top-down</a></li>
+      </ul>
+    </section>
+
+    <!-- Stage 2 -->
+    <section class="stage" id="stage-2">
+      <div class="stage__head">
+        <span class="stage__num">2</span>
+        <span class="stage__title">Stage 2 &middot; Build four subsystems</span>
+        <span class="stage__pill">~12 hours</span>
+      </div>
+      <p class="stage__sub">Apply Stage 1 to four canonical FTC mechanisms. Each is a complete, parametric design you'll fork and modify.</p>
+      <ul class="stage__list">
+        <li><a href="#"><span class="check"></span>Mecanum drivetrain &mdash; chassis, motors, wheels</a></li>
+        <li><a href="#"><span class="check"></span>Dead-axle pivot &mdash; a one-motor arm that doesn't twist</a></li>
+        <li><a href="#"><span class="check"></span>Active intake &mdash; compliant wheels, geared together</a></li>
+        <li><a href="#"><span class="check"></span>Cascade slide &mdash; vertical lift with rigging</a></li>
+      </ul>
+    </section>
+
+    <!-- Stage 3 -->
+    <section class="stage" id="stage-3">
+      <div class="stage__head">
+        <span class="stage__num">3</span>
+        <span class="stage__title">Stage 3 &middot; Full-robot integration</span>
+        <span class="stage__pill">In progress</span>
+      </div>
+      <p class="stage__sub">Putting subsystems together: layout sketches, packaging, top-down workflow. The skill that separates a working robot from a working subsystem.</p>
+      <ul class="stage__list">
+        <li><a href="#"><span class="check"></span>Robot layout sketches</a></li>
+        <li><a href="#"><span class="check"></span>Packaging within the 18&quot; cube</a></li>
+        <li><a href="#"><span class="check"></span>Wiring as a design problem</a></li>
+        <li><a href="#"><span class="check"></span>Battery and electronics placement</a></li>
+      </ul>
+    </section>
+
+    <!-- Stage 4 -->
+    <section class="stage stage--locked" id="stage-4">
+      <div class="stage__head">
+        <span class="stage__num">4</span>
+        <span class="stage__title">Stage 4 &middot; Strategic design</span>
+        <span class="stage__pill">Coming soon</span>
+      </div>
+      <p class="stage__sub">Game analysis, scope decisions, and design for reliability. Why do some teams pick the right mechanism and others spend the season iterating?</p>
+      <ul class="stage__list">
+        <li><a href="#"><span class="check"></span>Game analysis frameworks</a></li>
+        <li><a href="#"><span class="check"></span>Scope and tradeoffs</a></li>
+        <li><a href="#"><span class="check"></span>Designing for reliability</a></li>
+        <li><a href="#"><span class="check"></span>Iteration vs. revision</a></li>
+      </ul>
+    </section>
+
+    <nav class="pager" aria-label="Pagination">
+      <a class="pager--prev" href="index.html">
+        <span class="pager__label">&larr; Previous</span>
+        <span class="pager__title">Home</span>
+      </a>
+      <a class="pager--next" href="handbook.html">
+        <span class="pager__label">Next &rarr;</span>
+        <span class="pager__title">Design Handbook</span>
+      </a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__about">
+        <a class="brand" href="index.html" style="margin-bottom: 12px;"><span class="brand__mark">F</span><span>FTCDesign</span></a>
+        <p>A community-built design library for FIRST Tech Challenge teams. Independent, non-commercial, and free.</p>
+      </div>
+      <div><h5>Learn</h5><ul><li><a href="learn.html">Learning Course</a></li><li><a href="handbook.html">Design Handbook</a></li><li><a href="best-practices.html">CAD Best Practices</a></li></ul></div>
+      <div><h5>Reference</h5><ul><li><a href="mechanisms.html">Mechanism Gallery</a></li><li><a href="resources.html">Tools &amp; Resources</a></li></ul></div>
+      <div><h5>Community</h5><ul><li><a href="resources.html#community">Discord</a></li><li><a href="resources.html#contributing">Contribute</a></li></ul></div>
+    </div>
+    <div class="site-footer__bottom"><span>&copy; 2026 FTCDesign. Independent of FIRST<sup>&reg;</sup> and its program partners.</span><span>Built by FTC students, alumni, and mentors.</span></div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

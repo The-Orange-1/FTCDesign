@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tools &amp; Resources — FTCDesign</title>
+  <meta name="description" content="A short, vetted list of tools and resources worth knowing for FTC robot design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html"><span class="brand__mark">F</span><span>FTCDesign</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="handbook.html">Handbook</a>
+        <a href="mechanisms.html">Mechanisms</a>
+        <a href="best-practices.html">Best Practices</a>
+        <a href="resources.html" aria-current="page">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="page-head__inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span>/</span>Other Resources
+      </nav>
+      <span class="eyebrow">Other Resources</span>
+      <h1 class="page-head__title">A short, vetted list.</h1>
+      <p class="page-head__sub">There are hundreds of FTC resources online. Most aren't useful. This is what we open during a build season — organized by what you'd be doing when you reach for it.</p>
+    </div>
+  </section>
+
+  <main class="container" style="padding: 56px 0 80px;">
+
+    <section style="margin-bottom: 56px;">
+      <h2 style="margin-bottom: 12px;">CAD &amp; part libraries</h2>
+      <p class="lede" style="margin-bottom: 24px;">When you're modeling.</p>
+      <ul class="resource-list">
+        <li><a href="https://onshape.com" target="_blank" rel="noopener">
+          <span class="resource__icon">O</span>
+          <span><span class="resource__name">Onshape</span><div class="resource__desc">Free for FTC teams. Browser-based parametric CAD. The CAD platform every example here uses.</div></span>
+          <span class="resource__type">CAD</span>
+        </a></li>
+        <li><a href="https://www.gobilda.com/cad/" target="_blank" rel="noopener">
+          <span class="resource__icon">g</span>
+          <span><span class="resource__name">goBILDA Onshape library</span><div class="resource__desc">Every goBILDA part as an Onshape Part Studio. The official source — don't grab CAD from random forums.</div></span>
+          <span class="resource__type">Library</span>
+        </a></li>
+        <li><a href="https://www.revrobotics.com/cad-models/" target="_blank" rel="noopener">
+          <span class="resource__icon">R</span>
+          <span><span class="resource__name">REV Robotics CAD</span><div class="resource__desc">REV's parts as Onshape and STEP files. Use the Onshape versions when you can.</div></span>
+          <span class="resource__type">Library</span>
+        </a></li>
+        <li><a href="https://cad.onshape.com/documents?nodeId=&resourceType=public" target="_blank" rel="noopener">
+          <span class="resource__icon">P</span>
+          <span><span class="resource__name">Onshape public documents</span><div class="resource__desc">Other teams' robots are public by default. Search before reinventing.</div></span>
+          <span class="resource__type">Reference</span>
+        </a></li>
+      </ul>
+    </section>
+
+    <section style="margin-bottom: 56px;">
+      <h2 style="margin-bottom: 12px;">Calculators &amp; FeatureScripts</h2>
+      <p class="lede" style="margin-bottom: 24px;">For the math you don't want to redo each season.</p>
+      <ul class="resource-list">
+        <li><a href="#" rel="noopener">
+          <span class="resource__icon">&pi;</span>
+          <span><span class="resource__name">JVN design calculator</span><div class="resource__desc">A spreadsheet for sizing motors, gear ratios, and lift loads. The de facto FRC tool — works fine for FTC scale.</div></span>
+          <span class="resource__type">Calculator</span>
+        </a></li>
+        <li><a href="#" rel="noopener">
+          <span class="resource__icon">&fnof;</span>
+          <span><span class="resource__name">Slot FeatureScript</span><div class="resource__desc">Onshape custom feature for parametric slots. Used in nearly every chassis you'll model.</div></span>
+          <span class="resource__type">FeatureScript</span>
+        </a></li>
+        <li><a href="#" rel="noopener">
+          <span class="resource__icon">&Sigma;</span>
+          <span><span class="resource__name">Mass properties helper</span><div class="resource__desc">Estimate where the center of mass sits before you build. Useful for arm balance.</div></span>
+          <span class="resource__type">FeatureScript</span>
+        </a></li>
+      </ul>
+    </section>
+
+    <section style="margin-bottom: 56px;">
+      <h2 style="margin-bottom: 12px;">Programming</h2>
+      <p class="lede" style="margin-bottom: 24px;">When the CAD is done and the wires are next.</p>
+      <ul class="resource-list">
+        <li><a href="https://ftc-docs.firstinspires.org/" target="_blank" rel="noopener">
+          <span class="resource__icon">D</span>
+          <span><span class="resource__name">FTC official documentation</span><div class="resource__desc">The canonical reference for the FTC SDK, hardware setup, and the season's rules.</div></span>
+          <span class="resource__type">Docs</span>
+        </a></li>
+        <li><a href="https://acmerobotics.github.io/road-runner/" target="_blank" rel="noopener">
+          <span class="resource__icon">R</span>
+          <span><span class="resource__name">Road Runner</span><div class="resource__desc">A motion planning library for autonomous paths. Adopted by serious teams; worth the learning curve in year two.</div></span>
+          <span class="resource__type">Library</span>
+        </a></li>
+        <li><a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController" target="_blank" rel="noopener">
+          <span class="resource__icon">{ }</span>
+          <span><span class="resource__name">FtcRobotController (GitHub)</span><div class="resource__desc">The starter project. Fork this; don't try to build from scratch.</div></span>
+          <span class="resource__type">Code</span>
+        </a></li>
+      </ul>
+    </section>
+
+    <section id="community" style="margin-bottom: 56px;">
+      <h2 style="margin-bottom: 12px;">Community</h2>
+      <p class="lede" style="margin-bottom: 24px;">Where to ask, where to read, where to get a design review.</p>
+      <ul class="resource-list">
+        <li><a href="#" rel="noopener">
+          <span class="resource__icon">#</span>
+          <span><span class="resource__name">FTC Discord</span><div class="resource__desc">The main community server. Channels for design, programming, season strategy, and inspection. The place to ask "is this allowed?" and get a real answer.</div></span>
+          <span class="resource__type">Discord</span>
+        </a></li>
+        <li><a href="https://www.chiefdelphi.com/c/first-tech-challenge/" target="_blank" rel="noopener">
+          <span class="resource__icon">CD</span>
+          <span><span class="resource__name">Chief Delphi (FTC section)</span><div class="resource__desc">Long-form posts, build threads, off-season analysis. Less real-time than Discord; more depth.</div></span>
+          <span class="resource__type">Forum</span>
+        </a></li>
+        <li><a href="#" rel="noopener">
+          <span class="resource__icon">YT</span>
+          <span><span class="resource__name">Build season vlogs</span><div class="resource__desc">A handful of teams post weekly build vlogs. Useful for seeing how design decisions actually shake out across a season.</div></span>
+          <span class="resource__type">Video</span>
+        </a></li>
+      </ul>
+    </section>
+
+    <section id="contributing" style="margin-bottom: 32px;">
+      <div class="split">
+        <div>
+          <span class="eyebrow">Contributing</span>
+          <h2>Add to the library.</h2>
+          <p>FTCDesign is community-built. If you've got a mechanism worth annotating, a handbook entry to write, or a correction to file, the project lives on GitHub. Open an issue or a pull request — both get read.</p>
+          <p>The bar for contributions: a working example, an opinion attached, and the trade-offs called out. We'd rather have ten well-explained examples than a hundred uncommented ones.</p>
+          <a class="btn btn--primary" href="#">Contribute on GitHub <span class="arrow">&rarr;</span></a>
+        </div>
+        <div class="callout" style="margin: 0;">
+          <div class="callout__icon">i</div>
+          <div>
+            <div class="callout__label">What we don't take</div>
+            <p>We pass on link dumps, generic CAD tutorials, and seasonal strategy guides. The site stays useful by staying small. Plenty of other places host those resources well; we won't compete.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="Pagination">
+      <a class="pager--prev" href="best-practices.html">
+        <span class="pager__label">&larr; Previous</span>
+        <span class="pager__title">CAD Best Practices</span>
+      </a>
+      <a class="pager--next" href="index.html">
+        <span class="pager__label">Back to top &rarr;</span>
+        <span class="pager__title">Home</span>
+      </a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__about">
+        <a class="brand" href="index.html" style="margin-bottom: 12px;"><span class="brand__mark">F</span><span>FTCDesign</span></a>
+        <p>A community-built design library for FIRST Tech Challenge teams. Independent, non-commercial, and free.</p>
+      </div>
+      <div><h5>Learn</h5><ul><li><a href="learn.html">Learning Course</a></li><li><a href="handbook.html">Design Handbook</a></li><li><a href="best-practices.html">CAD Best Practices</a></li></ul></div>
+      <div><h5>Reference</h5><ul><li><a href="mechanisms.html">Mechanism Gallery</a></li><li><a href="resources.html">Tools &amp; Resources</a></li></ul></div>
+      <div><h5>Community</h5><ul><li><a href="resources.html#community">Discord</a></li><li><a href="resources.html#contributing">Contribute</a></li></ul></div>
+    </div>
+    <div class="site-footer__bottom"><span>&copy; 2026 FTCDesign. Independent of FIRST<sup>&reg;</sup> and its program partners.</span><span>Built with care, not in a hurry.</span></div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
