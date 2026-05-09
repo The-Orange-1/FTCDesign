@@ -713,7 +713,7 @@ body.no-scroll { overflow: hidden; }
   padding: 1px 7px;
   background: var(--orange-soft);
   color: var(--orange);
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 0.65rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
