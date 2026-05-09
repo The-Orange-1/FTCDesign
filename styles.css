@@ -46,7 +46,10 @@ html {
   scroll-padding-top: 72px;
   scrollbar-color: var(--line-strong) var(--bg);
   scrollbar-width: thin;
+  background: var(--bg);
+  color-scheme: dark;
 }
+html[data-theme="light"] { color-scheme: light; }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
