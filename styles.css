@@ -1,14 +1,14 @@
 /* FTCDesign — clean docs layout */
 
 :root {
-  --bg: #242321;
-  --bg-alt: #2c2b29;
+  --bg: #332f2b;
+  --bg-alt: #3c3834;
   --bg-overlay: rgba(0, 0, 0, 0.55);
   --ink: #f0f0f0;
-  --ink-soft: #b8b8b8;
-  --ink-muted: #7a7a7a;
-  --line: #383735;
-  --line-strong: #4a4845;
+  --ink-soft: #bdb8b1;
+  --ink-muted: #837e76;
+  --line: #45413d;
+  --line-strong: #57524c;
 
   --orange: #f08913;
   --orange-dark: #f5a443;
