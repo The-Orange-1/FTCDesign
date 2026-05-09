@@ -660,7 +660,7 @@ body.no-scroll { overflow: hidden; }
 .section-grid a {
   display: block;
   position: relative;
-  padding: 0 16px 12px;
+  padding: 0 16px 16px;
   background: var(--bg-alt);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -668,19 +668,21 @@ body.no-scroll { overflow: hidden; }
   text-decoration: none;
   color: var(--ink);
   transition: border-color 120ms ease, transform 120ms ease;
+  min-height: 104px;
 }
 .section-grid a::before {
   content: "";
   display: block;
-  height: 3px;
+  height: 6px;
   background: var(--orange);
-  margin: 0 -16px 10px;
+  margin: 0 -16px 16px;
 }
 .section-grid a:hover {
   border-color: var(--orange);
   transform: translateX(2px);
   text-decoration: none;
 }
+.section-grid a:hover::before { background: var(--orange-dark); }
 .section-grid .section__num { display: none; }
 .section-grid .section__title {
   display: block;
@@ -699,7 +701,7 @@ body.no-scroll { overflow: hidden; }
 }
 .section-grid .section__meta {
   position: absolute;
-  top: 14px;
+  top: 20px;
   right: 14px;
   margin-top: 0;
   padding: 1px 7px;
