@@ -420,6 +420,51 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
 }
 .toc .toc--h3 { padding-left: 22px; font-size: 0.82rem; }
 
+/* ---- Homepage right-rail (reuses .toc layout, custom content) ---- */
+.home-rail h4 { margin-top: 0; }
+.home-rail h4 + p,
+.home-rail h4 + ul { margin-top: 8px; }
+.home-rail p {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  margin: 0 0 22px;
+}
+.home-rail p a {
+  color: var(--orange-dark);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--line-strong);
+}
+.home-rail p a:hover {
+  border-bottom-color: var(--orange);
+  color: var(--orange);
+}
+.home-rail h4:not(:first-child) { margin-top: 24px; }
+.home-rail .contributors {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.home-rail .contributors li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+.home-rail .contributors li:last-child { border-bottom: none; }
+.home-rail .contributor__name {
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+.home-rail .contributor__team {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+}
+
 @media (max-width: 1100px) {
   .toc { display: none; }
   .layout, .layout--no-toc { grid-template-columns: var(--sidebar-w) minmax(0, 1fr); }
