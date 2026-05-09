@@ -186,6 +186,22 @@
     return file === here || file === '';
   });
 
+  // Instant feedback for sub-link clicks, plus initial-load highlight when the
+  // URL already has a hash. The IntersectionObserver below also updates this
+  // as the user scrolls, but we don't want to wait for scroll events on click
+  // or on cross-document hash navigation.
+  const setActiveSub = (link) => {
+    subForCurrentPage.forEach((other) => other.removeAttribute('aria-current'));
+    if (link) link.setAttribute('aria-current', 'true');
+  };
+  subForCurrentPage.forEach((a) => {
+    a.addEventListener('click', () => setActiveSub(a));
+  });
+  if (location.hash) {
+    const initial = subForCurrentPage.find((a) => a.hash === location.hash);
+    if (initial) setActiveSub(initial);
+  }
+
   const sectionMap = new Map();
   tocLinks.forEach((a) => {
     const id = a.getAttribute('href').slice(1);
@@ -218,7 +234,7 @@
           }
         });
       },
-      { rootMargin: '-25% 0px -65% 0px', threshold: 0 }
+      { root: document.querySelector('.main'), rootMargin: '-25% 0px -65% 0px', threshold: 0 }
     );
     sectionMap.forEach((_, el) => observer.observe(el));
   }

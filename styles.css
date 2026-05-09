@@ -362,8 +362,9 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
 }
 .sidebar .sub a:hover { color: var(--ink); text-decoration: none; }
 .sidebar .sub a[aria-current="true"] {
-  color: var(--orange-dark);
-  font-weight: 500;
+  color: var(--orange);
+  font-weight: 600;
+  background: var(--orange-soft);
 }
 
 .sidebar__close { display: none; }
@@ -374,6 +375,8 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
   min-height: 0;
   height: 100%;
   overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
 }
 
 .main__inner { max-width: var(--content-max); }
