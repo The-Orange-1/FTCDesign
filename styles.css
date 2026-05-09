@@ -1,14 +1,14 @@
 /* FTCDesign — clean docs layout */
 
 :root {
-  --bg: #242220;
-  --bg-alt: #2d2b28;
-  --bg-overlay: rgba(0, 0, 0, 0.55);
-  --ink: #f0f0f0;
-  --ink-soft: #bdb8b1;
-  --ink-muted: #837e76;
-  --line: #3a3835;
-  --line-strong: #4d4a46;
+  --bg: #1a1918;
+  --bg-alt: #232220;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+  --ink: #f0ece6;
+  --ink-soft: #bbb6ad;
+  --ink-muted: #807a72;
+  --line: #322f2c;
+  --line-strong: #46423e;
 
   --orange: #f08913;
   --orange-dark: #f5a443;
@@ -25,18 +25,18 @@
 }
 
 [data-theme="light"] {
-  --bg: #ffffff;
-  --bg-alt: #f5f5f5;
-  --bg-overlay: rgba(0, 0, 0, 0.4);
-  --ink: #1a1a1a;
-  --ink-soft: #4a4a4a;
-  --ink-muted: #8a8a8a;
-  --line: #e5e5e5;
-  --line-strong: #cccccc;
+  --bg: #ded8d5;
+  --bg-alt: #d2ccc8;
+  --bg-overlay: rgba(0, 0, 0, 0.35);
+  --ink: #1a1918;
+  --ink-soft: #4d4842;
+  --ink-muted: #807a72;
+  --line: #c2bcb7;
+  --line-strong: #a8a29c;
 
   --orange: #f08913;
-  --orange-dark: #ad6109;
-  --orange-soft: #fde9d0;
+  --orange-dark: #a35808;
+  --orange-soft: #f3e0c4;
 }
 
 * { box-sizing: border-box; }
