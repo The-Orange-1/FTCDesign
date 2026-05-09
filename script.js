@@ -39,12 +39,17 @@
   if (sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
   if (backdrop) backdrop.addEventListener('click', closeSidebar);
 
-  // Mark current page in sidebar
+  // Mark current page in sidebar and highlight its parent section heading
   if (sidebar) {
     const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     const key = path.replace('.html', '') || 'index';
     const current = sidebar.querySelector(`a[data-page="${key}"]`);
-    if (current) current.setAttribute('aria-current', 'page');
+    if (current) {
+      current.setAttribute('aria-current', 'page');
+      let prev = current.previousElementSibling;
+      while (prev && prev.tagName !== 'H4') prev = prev.previousElementSibling;
+      if (prev) prev.classList.add('active-section');
+    }
   }
 
   // Search modal
