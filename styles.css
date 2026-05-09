@@ -355,25 +355,9 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
 .toc .toc--h3 { padding-left: 22px; font-size: 0.82rem; }
 
 @media (max-width: 1100px) {
-  .toc, .hex-side { display: none; }
+  .toc { display: none; }
   .layout, .layout--no-toc { grid-template-columns: var(--sidebar-w) minmax(0, 1fr); }
   .main { padding: 32px 40px 64px; }
-}
-
-/* ---- Honeycomb side decoration ---- */
-.hex-side {
-  position: sticky;
-  top: var(--header-h);
-  height: calc(100vh - var(--header-h));
-  overflow: hidden;
-  padding: 24px 16px 32px 0;
-  color: var(--orange);
-  pointer-events: none;
-}
-.hex-side svg {
-  width: 100%;
-  height: 100%;
-  display: block;
 }
 
 @media (max-width: 840px) {
@@ -603,20 +587,20 @@ body.no-scroll { overflow: hidden; }
 /* ---- Section timeline (homepage) ---- */
 .section-grid {
   list-style: none;
-  padding: 0 0 0 44px;
-  margin: 28px 0 0;
+  padding: 0 0 0 38px;
+  margin: 24px 0 0;
   position: relative;
   counter-reset: section-num;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 8px;
 }
 .section-grid::before {
   content: "";
   position: absolute;
-  left: 13px;
-  top: 14px;
-  bottom: 14px;
+  left: 11px;
+  top: 12px;
+  bottom: 12px;
   width: 2px;
   background: var(--line);
 }
@@ -629,17 +613,17 @@ body.no-scroll { overflow: hidden; }
 .section-grid li::before {
   content: counter(section-num, decimal-leading-zero);
   position: absolute;
-  left: -42px;
+  left: -38px;
   top: 0;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: var(--bg);
   color: var(--orange);
   border: 2px solid var(--orange);
   font-family: var(--mono);
   font-weight: 600;
-  font-size: 0.74rem;
+  font-size: 0.66rem;
   letter-spacing: -0.02em;
   display: grid;
   place-items: center;
@@ -651,7 +635,7 @@ body.no-scroll { overflow: hidden; }
 .section-grid a {
   display: block;
   position: relative;
-  padding: 0 20px 18px;
+  padding: 0 16px 12px;
   background: var(--bg-alt);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -663,9 +647,9 @@ body.no-scroll { overflow: hidden; }
 .section-grid a::before {
   content: "";
   display: block;
-  height: 4px;
+  height: 3px;
   background: var(--orange);
-  margin: 0 -20px 16px;
+  margin: 0 -16px 10px;
 }
 .section-grid a:hover {
   border-color: var(--orange);
@@ -681,24 +665,24 @@ body.no-scroll { overflow: hidden; }
   display: block;
   font-weight: 600;
   color: var(--ink);
-  font-size: 1.15rem;
-  margin: 4px 0 6px;
+  font-size: 1rem;
+  margin: 0 0 3px;
   letter-spacing: -0.01em;
 }
 .section-grid .section__sub {
   display: block;
   color: var(--ink-soft);
-  font-size: 0.93rem;
-  line-height: 1.5;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 .section-grid .section__meta {
   display: inline-block;
-  margin-top: 12px;
-  padding: 2px 8px;
+  margin-top: 8px;
+  padding: 1px 7px;
   background: var(--orange-soft);
   color: var(--orange);
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: 3px;
