@@ -52,9 +52,32 @@ html {
 html[data-theme="light"] { color-scheme: light; }
 
 @view-transition { navigation: auto; }
+
+/* Persistent shell: header, sidebar, and footer carry a name so the browser
+   pairs them across pages and we can opt them out of the transition. */
+.site-header { view-transition-name: site-header; }
+.sidebar { view-transition-name: site-sidebar; }
+.site-footer { view-transition-name: site-footer; }
+
+::view-transition-group(site-header),
+::view-transition-group(site-sidebar),
+::view-transition-group(site-footer) {
+  animation-duration: 0s;
+}
+::view-transition-old(site-header),
+::view-transition-new(site-header),
+::view-transition-old(site-sidebar),
+::view-transition-new(site-sidebar),
+::view-transition-old(site-footer),
+::view-transition-new(site-footer) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Only the unnamed root content (main column) crossfades. */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 280ms;
+  animation-duration: 240ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 ::view-transition-old(root) { animation-name: vtFadeOut; }
@@ -80,14 +103,14 @@ body {
   color: var(--ink);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
-  animation: pageFadeIn 220ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-@keyframes pageFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.main { animation: mainFadeIn 220ms cubic-bezier(0.4, 0, 0.2, 1); }
+@keyframes mainFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@supports (view-transition-name: root) {
+  .main { animation: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  body { animation: none; }
+  .main { animation: none; }
   ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.001ms; }
 }
 
