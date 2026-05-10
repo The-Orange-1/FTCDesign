@@ -81,7 +81,6 @@
         <div class="sub">
           <a href="mechanisms.html#drivebases">Drivebases</a>
           <a href="mechanisms.html#intakes">Intakes</a>
-          <a href="mechanisms.html#manipulation">Game-piece manipulation</a>
           <a href="mechanisms.html#linear">Linear extensions</a>
           <a href="mechanisms.html#rotating">Rotating mechanisms</a>
         </div>
@@ -110,38 +109,36 @@
 
           <h2 id="drivebases">Drivebases</h2>
           <ul>
-            <li><a href="#">Mecanum drivebase, 14″ square</a> — balanced first-year choice. Strafes; loses pushing power.</li>
-            <li><a href="#">Tank drive with traction wheels</a> — when pushing matters more than strafing.</li>
-            <li><a href="#">Swerve drive (advanced)</a> — full agility; high complexity.</li>
+            <li id="parallel-plate-chassis"><a href="#">Parallel plate chassis</a> — sandwich plates flank the drivetrain. Stiff, easy to mount everything off of.</li>
+            <li id="bare-motor-chassis"><a href="#">Bare motor chassis</a> — motors as the structural members. Lightest, lowest part count, hardest to repair.</li>
+            <li id="coaxial-swerve"><a href="#">Coaxial swerve</a> — drive and steer share one axis through the wheel. Compact module, intricate transmission.</li>
+            <li id="differential-swerve"><a href="#">Differential swerve</a> — both module motors mix between drive and steer. Maximum power; highest complexity.</li>
           </ul>
 
           <h2 id="intakes">Intakes</h2>
           <ul>
-            <li><a href="#">Active compliant-wheel intake</a> — geared compliant wheels pull pieces in.</li>
-            <li><a href="#">Pivoting over-the-bumper intake</a> — drops down on a single pivot.</li>
-            <li><a href="#">Linkage-actuated intake</a> — four-bar links keep the head level.</li>
-            <li><a href="#">Under-the-bumper claw</a> — parallel-jaw, single servo.</li>
-          </ul>
-
-          <h2 id="manipulation">Game-piece manipulation</h2>
-          <ul>
-            <li><a href="#">Belt-driven indexer</a> — single-file movement from intake to release.</li>
-            <li><a href="#">Servo flap end-effector</a> — deterministic release against a back wall.</li>
-            <li><a href="#">Rotating gripper</a> — orient pieces before placement.</li>
+            <li id="compliant-wheel-intake"><a href="#">Compliant wheel intake</a> — geared compliant wheels pull pieces in. Forgiving, fast.</li>
+            <li id="optake"><a href="#">OpTake</a> — over-the-top sweeping intake; the head pulls pieces backward into the bot.</li>
+            <li id="claw"><a href="#">Claw</a> — single-servo gripper. Simplest, slowest, most deterministic.</li>
           </ul>
 
           <h2 id="linear">Linear extensions</h2>
           <ul>
-            <li><a href="#">Cascade slide, 3-stage</a> — maximum reach for retracted length.</li>
-            <li><a href="#">Continuous-rigged slide</a> — faster top-stage motion; less total reach.</li>
-            <li><a href="#">Telescoping arm</a> — single-stage horizontal extension.</li>
+            <li id="cascade-slide"><a href="#">Cascade slide, 3-stage</a> — maximum reach for retracted length.</li>
+            <li id="continuous-rigged-slide"><a href="#">Continuous-rigged slide</a> — faster top-stage motion; less total reach.</li>
+            <li id="telescoping-arm"><a href="#">Telescoping arm</a> — single-stage horizontal extension.</li>
+            <li id="boxtube"><a href="#">Boxtube</a> — square tube stages running on UHMW skids. Cheap, durable, easy to repair.</li>
+            <li id="mgn-rails"><a href="#">MGN rails</a> — linear motion guide rails on ball carriages. Precise and smooth, but expensive.</li>
           </ul>
 
           <h2 id="rotating">Rotating mechanisms</h2>
           <ul>
-            <li><a href="#">Single-pivot arm</a> — one motor; payload swings.</li>
-            <li><a href="#">Virtual four-bar arm</a> — parallel links keep the end effector level.</li>
-            <li><a href="#">Slewing-ring turret</a> — 360° rotation; high complexity.</li>
+            <li id="single-pivot-arm"><a href="#">Single-pivot arm</a> — one motor; payload swings.</li>
+            <li id="virtual-four-bar-arm"><a href="#">Virtual four-bar arm</a> — parallel links keep the end effector level.</li>
+            <li id="slewing-ring-turret"><a href="#">Slewing-ring turret</a> — 360° rotation; high complexity.</li>
+            <li id="shooter-turret"><a href="#">Shooter turret</a> — yaw stage carrying a flywheel shooter. Aim while moving.</li>
+            <li id="mini-turret"><a href="#">Mini turret</a> — small servo-driven yaw for an end effector. Quick repointing without rotating the arm.</li>
+            <li id="rotating-slides"><a href="#">Rotating slides</a> — a slide stack on a rotating base. Reach and reorient in one mechanism.</li>
           </ul>
 
           <nav class="pager">
@@ -157,10 +154,27 @@
       <h4>On this page</h4>
       <ul>
         <li><a href="#drivebases">Drivebases</a></li>
+        <li><a href="#parallel-plate-chassis" class="toc--h3">Parallel plate chassis</a></li>
+        <li><a href="#bare-motor-chassis" class="toc--h3">Bare motor chassis</a></li>
+        <li><a href="#coaxial-swerve" class="toc--h3">Coaxial swerve</a></li>
+        <li><a href="#differential-swerve" class="toc--h3">Differential swerve</a></li>
         <li><a href="#intakes">Intakes</a></li>
-        <li><a href="#manipulation">Game-piece manipulation</a></li>
+        <li><a href="#compliant-wheel-intake" class="toc--h3">Compliant wheel intake</a></li>
+        <li><a href="#optake" class="toc--h3">OpTake</a></li>
+        <li><a href="#claw" class="toc--h3">Claw</a></li>
         <li><a href="#linear">Linear extensions</a></li>
+        <li><a href="#cascade-slide" class="toc--h3">Cascade slide</a></li>
+        <li><a href="#continuous-rigged-slide" class="toc--h3">Continuous-rigged slide</a></li>
+        <li><a href="#telescoping-arm" class="toc--h3">Telescoping arm</a></li>
+        <li><a href="#boxtube" class="toc--h3">Boxtube</a></li>
+        <li><a href="#mgn-rails" class="toc--h3">MGN rails</a></li>
         <li><a href="#rotating">Rotating mechanisms</a></li>
+        <li><a href="#single-pivot-arm" class="toc--h3">Single-pivot arm</a></li>
+        <li><a href="#virtual-four-bar-arm" class="toc--h3">Virtual four-bar arm</a></li>
+        <li><a href="#slewing-ring-turret" class="toc--h3">Slewing-ring turret</a></li>
+        <li><a href="#shooter-turret" class="toc--h3">Shooter turret</a></li>
+        <li><a href="#mini-turret" class="toc--h3">Mini turret</a></li>
+        <li><a href="#rotating-slides" class="toc--h3">Rotating slides</a></li>
       </ul>
     </aside>
   </div>
