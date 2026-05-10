@@ -23,7 +23,7 @@
   --header-h: 60px;
   --sidebar-w: 260px;
   --toc-w: 260px;
-  --content-max: 720px;
+  --content-max: 1100px;
 }
 
 [data-theme="light"] {
