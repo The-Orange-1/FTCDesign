@@ -155,7 +155,7 @@
     { title: 'Design Write-ups', sub: 'Controllability, tensioning, springs, 18-inch rule', url: 'handbook.html#write-ups' },
     { title: 'Mechanism Examples', sub: 'Annotated mechanisms by category', url: 'mechanisms.html' },
     { title: 'Drivebases', sub: 'Parallel plate, bare motor, swerve', url: 'mechanisms.html#drivebases' },
-    { title: 'Intakes', sub: 'Compliant wheel, OpTake, claw', url: 'mechanisms.html#intakes' },
+    { title: 'Intake/Outtake', sub: 'Compliant wheel, OpTake, claw, hood shooter', url: 'mechanisms.html#intakes' },
     { title: 'Linear extensions', sub: 'Cascade, continuous, telescope, boxtube, MGN', url: 'mechanisms.html#linear' },
     { title: 'Rotating mechanisms', sub: 'Pivots, turrets, rotating slides', url: 'mechanisms.html#rotating' },
     { title: 'CAD Best Practices', sub: 'Five articles, in order', url: 'best-practices.html' },
