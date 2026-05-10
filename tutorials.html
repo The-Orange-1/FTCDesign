@@ -6,8 +6,8 @@
   <meta name="color-scheme" content="dark light" />
   <meta name="theme-color" content="#1a1918" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
-  <title>Learning Course — FTCDesign</title>
-  <meta name="description" content="A four-stage learning course for FTC robot design in Onshape." />
+  <title>Tutorials — FTCDesign</title>
+  <meta name="description" content="Step-by-step build tutorials for common FTC mechanisms, sorted by difficulty." />
   <script>(function(){try{var t=localStorage.getItem("ftc-theme");var p=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches;var isLight=(t||(p?"light":"dark"))==="light";var d=document.documentElement;if(isLight)d.setAttribute("data-theme","light");d.style.backgroundColor=isLight?"#fafaf7":"#1a1918";}catch(e){}})();</script>
   <style>html{background:#1a1918;color:#f0ece6}html[data-theme="light"]{background:#fafaf7;color:#1a1918}body{margin:0;background:inherit;color:inherit;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}</style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,6 +43,7 @@
       <button class="sidebar__close" aria-label="Close menu">&times;</button>
       <nav>
         <a href="index.html" data-page="index">Home</a>
+
         <h4>Learning Course</h4>
         <a href="learn.html" data-page="learn">Overview</a>
         <div class="sub">
@@ -52,6 +53,7 @@
           <a href="learn.html#stage-3">Stage 3 · Integration</a>
           <a href="learn.html#stage-4">Stage 4 · Strategy</a>
         </div>
+
         <h4>Tutorials</h4>
         <a href="tutorials.html" data-page="tutorials">Overview</a>
         <div class="sub">
@@ -59,6 +61,7 @@
           <a href="tutorials.html#medium">Medium</a>
           <a href="tutorials.html#hard">Hard</a>
         </div>
+
         <h4>Design Handbook</h4>
         <a href="handbook.html" data-page="handbook">Overview</a>
         <div class="sub">
@@ -68,6 +71,7 @@
           <a href="handbook.html#mechanisms">Mechanisms</a>
           <a href="handbook.html#write-ups">Design Write-ups</a>
         </div>
+
         <h4>Mechanism Examples</h4>
         <a href="mechanisms.html" data-page="mechanisms">Overview</a>
         <div class="sub">
@@ -77,6 +81,7 @@
           <a href="mechanisms.html#linear">Linear extensions</a>
           <a href="mechanisms.html#rotating">Rotating mechanisms</a>
         </div>
+
         <h4>Best Practices</h4>
         <a href="best-practices.html" data-page="best-practices">Overview</a>
         <div class="sub">
@@ -86,6 +91,7 @@
           <a href="best-practices.html#part-studio">4. Part studio</a>
           <a href="best-practices.html#assembly">5. Assembly</a>
         </div>
+
         <h4>Other</h4>
         <a href="resources.html" data-page="resources">Resources</a>
       </nav>
@@ -94,60 +100,41 @@
 
     <main class="main">
       <div class="main__inner">
-        <nav class="crumbs"><a href="index.html">Home</a><span>/</span>Learning Course</nav>
+        <nav class="crumbs"><a href="index.html">Home</a><span>/</span>Tutorials</nav>
 
         <article class="prose">
-          <h1>Learning Course</h1>
-          <p class="lede">A four-stage path from your first sketch in Onshape to a competition-ready robot. Each stage builds on the previous; skipping is allowed but you'll backtrack.</p>
+          <h1>Tutorials</h1>
+          <p class="lede">Build tutorials for common FTC mechanisms, sorted by how much CAD &amp; mechanical experience you'll need to follow along.</p>
 
-          <h2 id="setup">Setup</h2>
-          <p>Three short pages. Pick the one that matches your starting point — you don't need all three.</p>
-          <ul>
-            <li><a href="#">New to CAD</a> — what it is, why teams use it.</li>
-            <li><a href="#">New to Onshape</a> — account, browser setup, document basics.</li>
-            <li><a href="#">Required tools</a> — libraries, links, accounts.</li>
+          <h2 id="easy">Easy</h2>
+          <p>Pick up basic Onshape habits while building something you'll actually reuse on a robot.</p>
+          <ul class="tutorial-list">
+            <li><a href="#">Bare motor drivetrain</a> <span class="diff diff--easy">Easy</span> — direct-drive wheels on a motor pair. The simplest possible drive base; great for understanding shaft-to-wheel constraints.</li>
+            <li><a href="#">Bearing Stack</a> <span class="diff diff--easy">Easy</span> — the canonical &quot;shaft + bearings + spacers&quot; sandwich. You'll reuse this assembly everywhere.</li>
           </ul>
 
-          <h2 id="stage-1">Stage 1 · Foundations</h2>
-          <p>The CAD vocabulary and FTC-specific concepts you'll use everywhere later.</p>
-          <ol>
-            <li><a href="#">Focusing on improvement</a></li>
-            <li><a href="#">Onshape fundamentals — sketches, parts, assemblies</a></li>
-            <li><a href="#">Power transmissions — gears, belts, chain</a></li>
-            <li><a href="#">Practice mechanisms</a></li>
-            <li><a href="#">Design methodology</a></li>
-            <li><a href="#">Subsystem workflow</a></li>
-          </ol>
+          <h2 id="medium">Medium</h2>
+          <p>Multi-part assemblies that combine power transmission, structure, and a moving subsystem.</p>
+          <ul class="tutorial-list">
+            <li><a href="#">Parallel Plate Drivetrain</a> <span class="diff diff--medium">Medium</span> — sandwich-plate chassis with bearings between the plates. The most common FTC drive-base architecture.</li>
+            <li><a href="#">Claw</a> <span class="diff diff--medium">Medium</span> — single-servo gripper with a parallel-jaw linkage. Covers servo geometry, hard stops, and compliant fingers.</li>
+            <li><a href="#">Active Intake</a> <span class="diff diff--medium">Medium</span> — driven roller intake with motor + belt reduction. Introduces compliant wheels and bumper interaction.</li>
+          </ul>
 
-          <h2 id="stage-2">Stage 2 · Subsystems</h2>
-          <p>Apply Stage 1 to four canonical FTC mechanisms. Each is a complete, parametric design.</p>
-          <ol>
-            <li><a href="#">Mecanum drivetrain</a></li>
-            <li><a href="#">Dead-axle pivot arm</a></li>
-            <li><a href="#">Active intake</a></li>
-            <li><a href="#">Cascade slide</a></li>
-          </ol>
+          <h2 id="hard">Hard</h2>
+          <p>Precision mechanisms with tight tolerances, multiple degrees of freedom, or non-trivial linkages.</p>
+          <ul class="tutorial-list">
+            <li><a href="#">Coaxial virtual 4-bar differential arm</a> <span class="diff diff--hard">Hard</span> — two motors on a shared axis driving a virtual four-bar that keeps the end effector level while a differential controls wrist roll.</li>
+            <li><a href="#">Shooter</a> <span class="diff diff--hard">Hard</span> — high-RPM flywheel with hooded geometry. Demands tight tolerances and balanced rotating mass.</li>
+          </ul>
 
-          <h2 id="stage-3">Stage 3 · Integration</h2>
-          <p>Putting subsystems together: layout sketches, packaging, top-down workflow. <em>In progress.</em></p>
-          <ol>
-            <li><a href="#">Robot layout sketches</a></li>
-            <li><a href="#">Packaging within the 18″ cube</a></li>
-            <li><a href="#">Wiring as a design problem</a></li>
-            <li><a href="#">Battery and electronics placement</a></li>
-          </ol>
-
-          <h2 id="stage-4">Stage 4 · Strategy</h2>
-          <p>Game analysis, scope decisions, and design for reliability. <em>Coming soon.</em></p>
-          <ol>
-            <li><a href="#">Game analysis</a></li>
-            <li><a href="#">Scope and trade-offs</a></li>
-            <li><a href="#">Designing for reliability</a></li>
-            <li><a href="#">Iteration vs. revision</a></li>
-          </ol>
+          <div class="callout">
+            <div class="callout__label">Heads up</div>
+            <p>These are stubs — full step-by-step guides are coming. Want to contribute one? Open an issue or PR on <a href="https://github.com/The-Orange-1/FTCDesign" target="_blank" rel="noopener">GitHub</a>.</p>
+          </div>
 
           <nav class="pager">
-            <a class="pager--prev" href="index.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">Home</span></a>
+            <a class="pager--prev" href="learn.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">Learning Course</span></a>
             <a class="pager--next" href="handbook.html"><span class="pager__label">Next &rarr;</span><span class="pager__title">Design Handbook</span></a>
           </nav>
         </article>
@@ -158,11 +145,9 @@
       <button class="toc__close" aria-label="Close panel">&times;</button>
       <h4>On this page</h4>
       <ul>
-        <li><a href="#setup">Setup</a></li>
-        <li><a href="#stage-1">Stage 1 · Foundations</a></li>
-        <li><a href="#stage-2">Stage 2 · Subsystems</a></li>
-        <li><a href="#stage-3">Stage 3 · Integration</a></li>
-        <li><a href="#stage-4">Stage 4 · Strategy</a></li>
+        <li><a href="#easy">Easy</a></li>
+        <li><a href="#medium">Medium</a></li>
+        <li><a href="#hard">Hard</a></li>
       </ul>
     </aside>
   </div>

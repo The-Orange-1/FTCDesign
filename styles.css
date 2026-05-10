@@ -1215,6 +1215,26 @@ body.no-scroll { overflow: hidden; }
   .reassure__grid { grid-template-columns: 1fr; }
 }
 
+/* ---- Tutorial difficulty pills ---- */
+.diff {
+  display: inline-block;
+  padding: 1px 9px;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  margin: 0 4px 0 4px;
+  vertical-align: 0.08em;
+  white-space: nowrap;
+}
+.diff--easy { background: rgba(95, 164, 95, 0.18); color: #7fc97f; }
+.diff--medium { background: var(--orange-soft); color: var(--orange); }
+.diff--hard { background: rgba(211, 93, 93, 0.18); color: #e07b7b; }
+[data-theme="light"] .diff--easy { background: rgba(76, 132, 76, 0.16); color: #3f7a3f; }
+[data-theme="light"] .diff--hard { background: rgba(180, 50, 50, 0.14); color: #a83030; }
+
 /* ---- Footer ---- */
 .site-footer {
   border-top: 1px solid var(--line);
