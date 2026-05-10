@@ -229,14 +229,15 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
   width: 30px; height: 30px;
   border-radius: 6px;
   background: var(--orange);
-  color: #1a1a1a;
   display: inline-grid;
   place-items: center;
-  font-weight: 700;
-  font-size: 0.86rem;
-  font-family: var(--sans);
-  letter-spacing: -0.04em;
   transition: background 120ms ease;
+}
+.brand__mark img,
+.brand__mark svg {
+  width: 22px;
+  height: 22px;
+  display: block;
 }
 .brand__sep {
   display: inline-block;
