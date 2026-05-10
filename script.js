@@ -17,27 +17,51 @@
     });
   }
 
-  // Mobile sidebar
+  // Slide-out panels (left sidebar + right rail)
   const sidebar = document.getElementById('sidebar');
+  const rail = document.querySelector('.toc');
   const backdrop = document.querySelector('.sidebar-backdrop');
   const hamburger = document.querySelector('.hamburger');
   const sidebarClose = document.querySelector('.sidebar__close');
+  const railToggle = document.querySelector('.rail-toggle');
+  const railClose = document.querySelector('.toc__close');
 
+  const syncBackdrop = () => {
+    if (!backdrop) return;
+    const anyOpen = (sidebar && sidebar.classList.contains('open')) || (rail && rail.classList.contains('open'));
+    backdrop.classList.toggle('open', anyOpen);
+    document.body.classList.toggle('no-scroll', anyOpen);
+  };
   const openSidebar = () => {
     if (!sidebar) return;
+    if (rail) rail.classList.remove('open');
     sidebar.classList.add('open');
-    if (backdrop) backdrop.classList.add('open');
-    document.body.classList.add('no-scroll');
+    syncBackdrop();
   };
   const closeSidebar = () => {
     if (!sidebar) return;
     sidebar.classList.remove('open');
-    if (backdrop) backdrop.classList.remove('open');
-    document.body.classList.remove('no-scroll');
+    syncBackdrop();
   };
+  const openRail = () => {
+    if (!rail) return;
+    if (sidebar) sidebar.classList.remove('open');
+    rail.classList.add('open');
+    syncBackdrop();
+  };
+  const closeRail = () => {
+    if (!rail) return;
+    rail.classList.remove('open');
+    syncBackdrop();
+  };
+  const closeAll = () => { closeSidebar(); closeRail(); };
+
   if (hamburger) hamburger.addEventListener('click', openSidebar);
   if (sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
-  if (backdrop) backdrop.addEventListener('click', closeSidebar);
+  if (railToggle) railToggle.addEventListener('click', openRail);
+  if (railClose) railClose.addEventListener('click', closeRail);
+  if (backdrop) backdrop.addEventListener('click', closeAll);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
 
   // Mark current page in sidebar and highlight its parent section heading
   if (sidebar) {
@@ -195,10 +219,7 @@
       e.preventDefault(); openSearch(); return;
     }
 
-    if (!modalOpen) {
-      if (e.key === 'Escape' && sidebar && sidebar.classList.contains('open')) closeSidebar();
-      return;
-    }
+    if (!modalOpen) return;
 
     if (e.key === 'Escape') { e.preventDefault(); closeSearch(); return; }
     if (!searchResults) return;
