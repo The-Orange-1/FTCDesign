@@ -106,7 +106,7 @@
 
         <article class="prose">
           <h1>Learning Course</h1>
-          <p class="lede">A four-stage path from your first sketch in Onshape to a competition-ready robot. Each stage builds on the previous; skipping is allowed but you'll backtrack.</p>
+          <p class="lede">Four stages from never-touched-Onshape to driving the design of a competitive robot. Stage 1 makes the tool feel like nothing. Stage 2 lets you contribute to a real subsystem. Stage 3 puts you in charge of the whole robot. Stage 4 is the rest of your career: getting better, faster, every season.</p>
 
           <h2 id="setup">Setup</h2>
           <p>Three short pages. Pick the one that matches your starting point — you don't need all three.</p>
@@ -117,42 +117,97 @@
           </ul>
 
           <h2 id="stage-1">Stage 1 · Foundations</h2>
-          <p>The CAD vocabulary and FTC-specific concepts you'll use everywhere later.</p>
-          <ol>
-            <li><a href="#">Focusing on improvement</a></li>
-            <li><a href="#">Onshape fundamentals — sketches, parts, assemblies</a></li>
-            <li><a href="#">Power transmissions — gears, belts, chain</a></li>
-            <li><a href="#">Practice mechanisms</a></li>
-            <li><a href="#">Design methodology</a></li>
-            <li><a href="#">Subsystem workflow</a></li>
-          </ol>
+          <p>The goal of Stage 1 is one thing: get fluent enough with Onshape that the tool itself never slows you down. You won't design real robots here — you'll build muscle memory so that, when you start contributing to a subsystem, basic CAD operations don't get in the way.</p>
+
+          <h3>Documents, workspaces, and versioning</h3>
+          <p>A Document is the top-level container. Inside lives Part Studios (where parts are modeled), Assemblies (where they go together), and Drawings (for fabrication). Workspaces behave like git branches — make one for every session, never edit Main directly, and create a Version after each meaningful milestone.</p>
+
+          <h3>Sketching</h3>
+          <p>Every part starts with a sketch. Pick a plane, draw shapes, dimension them, and constrain them until the sketch turns black (fully defined). Use construction lines liberally; under-constrained sketches break unpredictably when you tweak a dimension later.</p>
+
+          <h3>Part Studio features</h3>
+          <p>Extrude, revolve, sweep, and loft create geometry; fillet, chamfer, hole, draft, and shell modify it. Booleans combine bodies; Patterns (linear and circular) repeat geometry cleanly. A typical FTC bracket is 5–20 features — fewer is usually better.</p>
+
+          <h3>Mate connectors</h3>
+          <p>Mate connectors are how Onshape defines &quot;this point on this part attaches to that point on that part.&quot; Always place named mate connectors on your parts. Implicit mates work for quick assemblies but rot the moment a part changes.</p>
+
+          <h3>Assemblies and mates</h3>
+          <p>Assemblies pull in parts and define their relationships: fastened, revolute, slider, planar. Group fasteners that move together with subassemblies. A clean mate list is a maintainable assembly; a tangled one falls over the first time you swap a part.</p>
+
+          <h3>Importing FTC part libraries</h3>
+          <p>goBILDA, REV, and MISUMI publish public Onshape libraries with every motor, servo, sprocket, bearing, and structural rail you'll use. Link them into your document and drag in the COTS parts — never re-model what you can import.</p>
 
           <h2 id="stage-2">Stage 2 · Subsystems</h2>
-          <p>Apply Stage 1 to four canonical FTC mechanisms. Each is a complete, parametric design.</p>
-          <ol>
-            <li><a href="#">Mecanum drivetrain</a></li>
-            <li><a href="#">Dead-axle pivot arm</a></li>
-            <li><a href="#">Active intake</a></li>
-            <li><a href="#">Cascade slide</a></li>
-          </ol>
+          <p>Stage 2's goal is to <em>contribute to a real robot</em>. You'll take a master sketch from a more experienced designer, fit a subsystem inside the envelope they specified, and learn what's actually possible given packaging, 3D printing, and the COTS components you have on hand. By the end you should be able to own one subsystem of a robot.</p>
+
+          <h3>Reading a master sketch</h3>
+          <p>A master sketch is a top-level drawing that defines where each subsystem lives on the robot. Read it like a contract: this is your envelope, these bolt patterns are fixed, this is the maximum height you can reach. If something doesn't fit, push back on the master sketcher with data — don't silently violate the spec.</p>
+
+          <h3>Designing within a packaging envelope</h3>
+          <p>Every subsystem fits in a box. Your job is to deliver the function inside that box. Sketch out your mechanism's range of motion early; if you can't hit the requirement, the master sketch needs to change before you build, not after.</p>
+
+          <h3>Working with COTS components</h3>
+          <p>goBILDA, REV, and MISUMI sell pre-made structure, motors, servos, sprockets, bearings, and pulleys. You assemble these with custom adapter parts. Stage-2 design is mostly &quot;arrange COTS parts and design the smallest custom bracket that connects them.&quot; Knowing when COTS exists for your need saves hours.</p>
+
+          <h3>Designing for 3D printing</h3>
+          <p>FTC teams print a lot of parts. Mind the rules: minimum walls around 1.5–2 mm; avoid overhangs above 45° or orient the part so the strong axis takes load; design tap holes ~0.2 mm undersize and clearance holes ~0.5 mm oversize; use heat-set inserts for any screw that gets removed more than once.</p>
+
+          <h3>Power transmission basics</h3>
+          <p>Gears, sprockets/chain, and belts/pulleys all carry rotation, but each has a niche. Gears are short, precise, and high-torque but loud and fussy about alignment. Chain handles long, rough power well. Belts run quiet and clean at medium torque. Pick by load and span — not by what's lying around.</p>
+
+          <h3>Live-axle vs dead-axle shafts</h3>
+          <p>Live axle: the shaft rotates with the wheel. Dead axle: the shaft is fixed and the wheel/sprocket spins on bearings around it. Dead-axle is mechanically cleaner, easier to support, and is the default for most FTC drivetrains and rotating mechanisms. Use live axle only when you need to drive a sprocket on the shaft itself.</p>
+
+          <h3>Common mechanism patterns</h3>
+          <p>Recognize the canonical shapes and you can build most of FTC: cascade slide, continuous-rigged slide, single-pivot arm, virtual 4-bar arm, parallel-jaw claw, compliant-wheel intake. They show up every season — copy the pattern and customize the dimensions.</p>
 
           <h2 id="stage-3">Stage 3 · Integration</h2>
-          <p>Putting subsystems together: layout sketches, packaging, top-down workflow. <em>In progress.</em></p>
-          <ol>
-            <li><a href="#">Robot layout sketches</a></li>
-            <li><a href="#">Packaging within the 18″ cube</a></li>
-            <li><a href="#">Wiring as a design problem</a></li>
-            <li><a href="#">Battery and electronics placement</a></li>
-          </ol>
+          <p>Stage 3 is where you stop being told what to design and start deciding. With FTC context from Stage 2, you can now think at the whole-robot level: pick the archetype, draft the master sketch yourself, choose mechanisms for each task, and tune them for the right speed and torque. This is true designing.</p>
+
+          <h3>Robot archetypes</h3>
+          <p>Most successful FTC robots fit a small set of archetypes — &quot;intake → indexer → shooter,&quot; &quot;intake → slide → claw,&quot; &quot;collect → transfer → score from height.&quot; Pick yours based on the season's scoring economy. The archetype dictates 80% of your packaging before any geometry is drawn.</p>
+
+          <h3>Master sketching from the top down</h3>
+          <p>Start with the drive base footprint and the 18″ rule. Place each subsystem's envelope on it. Constrain the envelopes by where game pieces flow between them. Resist starting from any single mechanism — when you sketch outward from one favorite subsystem, you usually paint yourself into a packaging corner.</p>
+
+          <h3>Choosing mechanism archetypes</h3>
+          <p>For each task, pick the mechanism whose cost/performance fits the season. Cascade slide buys maximum reach; continuous-rigged is faster with less reach. Virtual 4-bar keeps the end-effector level; single pivot is cheap but swings. Don't pick what looks cool in a reveal video — pick what wins the cycle.</p>
+
+          <h3>Optimizing for RPM and torque</h3>
+          <p>Every motor has a free speed and a stall torque. Every mechanism has a target speed and a worst-case load. The gear ratio is what links them; solve for it explicitly with margin (~50% of stall torque, ~70% of free speed). Don't size by eyeballing — that's how teams end up with mechanisms that stall under load or take forever to actuate.</p>
+
+          <h3>Game-piece flow paths</h3>
+          <p>Draw arrows on your master sketch showing how a game piece enters the robot, gets positioned, and leaves. Every transfer is a failure mode and a time cost. Minimize transfers; minimize the angles a piece has to turn through; design the path to be self-correcting where you can.</p>
+
+          <h3>Center of gravity and weight distribution</h3>
+          <p>Robots that tip over lose. Sketch your COG above the drive base and check it stays inside the wheelbase across every extension state — arm up, slide out, claw loaded. Counterweights, low battery placement, and pulling heavy components inward are your tools.</p>
+
+          <h3>Designing for what your team can actually build</h3>
+          <p>Whatever you design has to be built by your team in your shop with your time budget. If half the parts need a CNC mill and your shop only has a printer and a hand drill, you've designed someone else's robot. Match the design to the tools available.</p>
 
           <h2 id="stage-4">Stage 4 · Strategy</h2>
-          <p>Game analysis, scope decisions, and design for reliability. <em>Coming soon.</em></p>
-          <ol>
-            <li><a href="#">Game analysis</a></li>
-            <li><a href="#">Scope and trade-offs</a></li>
-            <li><a href="#">Designing for reliability</a></li>
-            <li><a href="#">Iteration vs. revision</a></li>
-          </ol>
+          <p>Stage 4 is what separates teams that make Worlds from teams that don't: a habit of improving how you design, not just what you design. The skills here are strategic — choosing what to build before you build it, then learning from every event so the next season is sharper than the last.</p>
+
+          <h3>Strategic design as a discipline</h3>
+          <p>Strategic design is the practice of deciding what to build by reading the game, not by gut feel. Identify the highest-value scoring action, count cycles, and design your robot around the bottleneck of that one cycle. Most lost matches are strategic-design losses, not mechanical ones.</p>
+
+          <h3>Cycle-time analysis</h3>
+          <p>Pick up + traverse + score = a cycle. Time each phase on your prototype. The longest phase is your bottleneck — fix that one before you optimize anything else. Optimizing the wrong phase is the most common waste of a build season.</p>
+
+          <h3>Reliability and single points of failure</h3>
+          <p>Every belt, chain, connector, and zip-tie is a potential SPOF. Identify the top three on your robot at every event and either eliminate them or build a redundancy. A 90%-reliable robot loses to a 60%-capable, 99%-reliable one — and the math gets worse as the match wears on.</p>
+
+          <h3>Iteration vs. revision</h3>
+          <p>Iteration is small tweaks to your existing design. Revision is ripping it out and starting over with a different approach. Most teams iterate when they should revise. If three iterations didn't fix the problem, the design is wrong — admit it early, lose a weekend, save a season.</p>
+
+          <h3>Post-mortem habits</h3>
+          <p>After every event, write down what broke, what surprised you, and what wasted time. Make it a 30-minute team ritual the day after, not a Slack message that gets forgotten. Teams that improve fastest do this religiously; teams that plateau don't.</p>
+
+          <h3>Time budgeting and scope cuts</h3>
+          <p>Map your build-season hours to your subsystems. If 60% of hours go to the drive base, 60% of competitive capability had better come from the drive base. When the budget doesn't match the priority, fix the budget — usually means cutting scope before you run out of weeks.</p>
+
+          <h3>Learning from elite teams without copying</h3>
+          <p>Watch elite teams' match videos and CAD reveals. Don't copy the mechanisms; copy the <em>decisions</em>. Why did they pick this archetype? Why did they cut this feature? What did they prototype and throw away? The reasoning transfers across seasons; the geometry doesn't.</p>
 
           <nav class="pager">
             <a class="pager--prev" href="index.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">Home</span></a>
