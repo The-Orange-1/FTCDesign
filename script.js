@@ -66,13 +66,54 @@
       const current = sidebar.querySelector(`a[data-page="${key}"]`);
       if (current) {
         current.setAttribute('aria-current', 'page');
-        let prev = current.previousElementSibling;
+        // Walk back through siblings; if the link is inside a .sub container, hop out to its previous sibling first.
+        let cursor = current.parentElement && current.parentElement.classList.contains('sub') ? current.parentElement : current;
+        let prev = cursor.previousElementSibling;
         while (prev && prev.tagName !== 'H4') prev = prev.previousElementSibling;
         if (prev) prev.classList.add('active-section');
       }
     }
     const navCurrent = document.querySelector(`.site-nav a[data-page="${key}"]`);
     if (navCurrent) navCurrent.setAttribute('aria-current', 'page');
+  }
+
+  // Collapse non-active sidebar sections; click an h4 to toggle
+  if (sidebar) {
+    const nav = sidebar.querySelector('nav');
+    if (nav) {
+      const items = [...nav.children];
+      let currentSection = null;
+      const sections = [];
+      items.forEach((el) => {
+        if (el.tagName === 'H4') {
+          currentSection = { h4: el, items: [] };
+          sections.push(currentSection);
+        } else if (currentSection) {
+          currentSection.items.push(el);
+        }
+      });
+      sections.forEach((section) => {
+        const isActive = section.h4.classList.contains('active-section');
+        if (!isActive) section.h4.classList.add('is-collapsed');
+        section.h4.setAttribute('role', 'button');
+        section.h4.setAttribute('tabindex', '0');
+        const toggle = () => {
+          const collapsed = section.h4.classList.toggle('is-collapsed');
+          section.items.forEach((el) => {
+            if (collapsed) el.setAttribute('hidden', '');
+            else el.removeAttribute('hidden');
+          });
+        };
+        // Initialize visibility based on collapsed state
+        if (section.h4.classList.contains('is-collapsed')) {
+          section.items.forEach((el) => el.setAttribute('hidden', ''));
+        }
+        section.h4.addEventListener('click', toggle);
+        section.h4.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+      });
+    }
   }
 
   // Search modal
@@ -86,10 +127,10 @@
     { title: 'Home', sub: 'FTCDesign overview', url: 'index.html' },
     { title: 'Learning Course', sub: 'Setup + 4 stages', url: 'learn.html' },
     { title: 'Setup', sub: 'Course setup', url: 'learn.html#setup' },
-    { title: 'Stage 1 · Foundations', sub: 'Sketches, parts, assemblies, power transmission', url: 'learn.html#stage-1' },
-    { title: 'Stage 2 · Subsystems', sub: 'Mecanum, pivot, intake, slide', url: 'learn.html#stage-2' },
-    { title: 'Stage 3 · Integration', sub: 'Layout, packaging, wiring', url: 'learn.html#stage-3' },
-    { title: 'Stage 4 · Strategy', sub: 'Game analysis, scope, reliability', url: 'learn.html#stage-4' },
+    { title: 'Stage 1 · Foundations', sub: 'Onshape tool fluency: sketches, parts, assemblies, libraries', url: 'stage-1.html' },
+    { title: 'Stage 2 · Subsystems', sub: 'Master sketches, packaging, COTS, 3D printing, transmission', url: 'stage-2.html' },
+    { title: 'Stage 3 · Integration', sub: 'Archetypes, master sketching, RPM/torque, flow paths, COG', url: 'stage-3.html' },
+    { title: 'Stage 4 · Strategy', sub: 'Strategic design, cycle time, reliability, post-mortems', url: 'stage-4.html' },
     { title: 'Tutorials', sub: 'Step-by-step builds by difficulty', url: 'tutorials.html' },
     { title: 'Easy tutorials', sub: 'Bearing stack, parallel plate, claw, slide insert, molding', url: 'tutorials.html#easy' },
     { title: 'Medium tutorials', sub: 'Bare motor drivetrain, active intake, swingarm PTO, shooter', url: 'tutorials.html#medium' },

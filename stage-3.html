@@ -6,8 +6,8 @@
   <meta name="color-scheme" content="dark light" />
   <meta name="theme-color" content="#1a1918" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
-  <title>Resources — FTCDesign</title>
-  <meta name="description" content="External tools, libraries, and community links for FTC robot design." />
+  <title>Stage 3 · Integration — FTCDesign</title>
+  <meta name="description" content="True designing: pick the archetype, master-sketch the whole robot, optimize mechanisms for RPM and torque." />
   <script>(function(){try{var t=localStorage.getItem("ftc-theme");var p=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches;var isLight=(t||(p?"light":"dark"))==="light";var d=document.documentElement;if(isLight)d.setAttribute("data-theme","light");d.style.backgroundColor=isLight?"#fafaf7":"#1a1918";}catch(e){}})();</script>
   <style>html{background:#1a1918;color:#f0ece6}html[data-theme="light"]{background:#fafaf7;color:#1a1918}body{margin:0;background:inherit;color:inherit;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}</style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,6 +51,7 @@
       <button class="sidebar__close" aria-label="Close menu">&times;</button>
       <nav>
         <a href="index.html" data-page="index">Home</a>
+
         <h4>Learning Course</h4>
         <a href="learn.html" data-page="learn">Overview</a>
         <div class="sub">
@@ -60,6 +61,7 @@
           <a href="stage-3.html" data-page="stage-3">Stage 3 · Integration</a>
           <a href="stage-4.html" data-page="stage-4">Stage 4 · Strategy</a>
         </div>
+
         <h4>Tutorials</h4>
         <a href="tutorials.html" data-page="tutorials">Overview</a>
         <div class="sub">
@@ -67,6 +69,7 @@
           <a href="tutorials.html#medium">Medium</a>
           <a href="tutorials.html#hard">Hard</a>
         </div>
+
         <h4>Design Handbook</h4>
         <a href="handbook.html" data-page="handbook">Overview</a>
         <div class="sub">
@@ -76,6 +79,7 @@
           <a href="handbook.html#mechanisms">Mechanisms</a>
           <a href="handbook.html#write-ups">Design Write-ups</a>
         </div>
+
         <h4>Mechanism Examples</h4>
         <a href="mechanisms.html" data-page="mechanisms">Overview</a>
         <div class="sub">
@@ -85,6 +89,7 @@
           <a href="mechanisms.html#linear">Linear extensions</a>
           <a href="mechanisms.html#rotating">Rotating mechanisms</a>
         </div>
+
         <h4>Best Practices</h4>
         <a href="best-practices.html" data-page="best-practices">Overview</a>
         <div class="sub">
@@ -94,6 +99,7 @@
           <a href="best-practices.html#part-studio">4. Part studio</a>
           <a href="best-practices.html#assembly">5. Assembly</a>
         </div>
+
         <h4>Other</h4>
         <a href="resources.html" data-page="resources">Resources</a>
       </nav>
@@ -102,38 +108,36 @@
 
     <main class="main">
       <div class="main__inner">
-        <nav class="crumbs"><a href="index.html">Home</a><span>/</span>Resources</nav>
+        <nav class="crumbs"><a href="index.html">Home</a><span>/</span><a href="learn.html">Learning Course</a><span>/</span>Stage 3 · Integration</nav>
 
         <article class="prose">
-          <h1>Resources</h1>
-          <p class="lede">External tools, libraries, and community links worth knowing. Curated, not exhaustive.</p>
+          <h1>Stage 3 · Integration</h1>
+          <p class="lede">Stage 3 is where you stop being told what to design and start deciding. With FTC context from Stage 2, you can now think at the whole-robot level: pick the archetype, draft the master sketch yourself, choose mechanisms for each task, and tune them for the right speed and torque. This is true designing.</p>
 
-          <h2 id="cad">CAD &amp; part libraries</h2>
-          <ul>
-            <li><a href="https://onshape.com" target="_blank" rel="noopener">Onshape</a> — free for FTC teams. Browser-based parametric CAD.</li>
-            <li><a href="https://www.gobilda.com/cad/" target="_blank" rel="noopener">goBILDA Onshape library</a> — every goBILDA part as an Onshape Part Studio.</li>
-            <li><a href="https://www.revrobotics.com/cad-models/" target="_blank" rel="noopener">REV Robotics CAD</a> — REV's parts as Onshape and STEP files.</li>
-          </ul>
+          <h2 id="archetypes">Robot archetypes</h2>
+          <p>Most successful FTC robots fit a small set of archetypes — &quot;intake → indexer → shooter,&quot; &quot;intake → slide → claw,&quot; &quot;collect → transfer → score from height.&quot; Pick yours based on the season's scoring economy. The archetype dictates 80% of your packaging before any geometry is drawn.</p>
 
-          <h2 id="programming">Programming</h2>
-          <ul>
-            <li><a href="https://ftc-docs.firstinspires.org/" target="_blank" rel="noopener">FTC official documentation</a> — the canonical reference for the SDK and rules.</li>
-            <li><a href="https://acmerobotics.github.io/road-runner/" target="_blank" rel="noopener">Road Runner</a> — motion planning library for autonomous paths.</li>
-            <li><a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController" target="_blank" rel="noopener">FtcRobotController</a> — the starter project on GitHub.</li>
-          </ul>
+          <h2 id="master-sketch">Master sketching from the top down</h2>
+          <p>Start with the drive base footprint and the 18″ rule. Place each subsystem's envelope on it. Constrain the envelopes by where game pieces flow between them. Resist starting from any single mechanism — when you sketch outward from one favorite subsystem, you usually paint yourself into a packaging corner.</p>
 
-          <h2 id="community">Community</h2>
-          <ul>
-            <li><a href="#">FTC Discord</a> — main community server. Channels for design, programming, season strategy, inspection.</li>
-            <li><a href="https://www.chiefdelphi.com/c/first-tech-challenge/" target="_blank" rel="noopener">Chief Delphi (FTC section)</a> — long-form posts and build threads.</li>
-          </ul>
+          <h2 id="mechanism-choice">Choosing mechanism archetypes</h2>
+          <p>For each task, pick the mechanism whose cost/performance fits the season. Cascade slide buys maximum reach; continuous-rigged is faster with less reach. Virtual 4-bar keeps the end-effector level; single pivot is cheap but swings. Don't pick what looks cool in a reveal video — pick what wins the cycle.</p>
 
-          <h2 id="contributing">Contributing</h2>
-          <p>FTCDesign is community-built. The bar for contributions: a working example, an opinion, and the trade-offs called out. <a href="https://github.com/The-Orange-1/FTCDesign" target="_blank" rel="noopener">The repo</a> takes issues and pull requests.</p>
+          <h2 id="rpm">Optimizing for RPM and torque</h2>
+          <p>Every motor has a free speed and a stall torque. Every mechanism has a target speed and a worst-case load. The gear ratio is what links them; solve for it explicitly with margin (~50% of stall torque, ~70% of free speed). Don't size by eyeballing — that's how teams end up with mechanisms that stall under load or take forever to actuate.</p>
+
+          <h2 id="flow">Game-piece flow paths</h2>
+          <p>Draw arrows on your master sketch showing how a game piece enters the robot, gets positioned, and leaves. Every transfer is a failure mode and a time cost. Minimize transfers; minimize the angles a piece has to turn through; design the path to be self-correcting where you can.</p>
+
+          <h2 id="cog">Center of gravity and weight distribution</h2>
+          <p>Robots that tip over lose. Sketch your COG above the drive base and check it stays inside the wheelbase across every extension state — arm up, slide out, claw loaded. Counterweights, low battery placement, and pulling heavy components inward are your tools.</p>
+
+          <h2 id="manufacturability">Designing for what your team can actually build</h2>
+          <p>Whatever you design has to be built by your team in your shop with your time budget. If half the parts need a CNC mill and your shop only has a printer and a hand drill, you've designed someone else's robot. Match the design to the tools available.</p>
 
           <nav class="pager">
-            <a class="pager--prev" href="best-practices.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">CAD Best Practices</span></a>
-            <a class="pager--next" href="index.html"><span class="pager__label">Back to top &rarr;</span><span class="pager__title">Home</span></a>
+            <a class="pager--prev" href="stage-2.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">Stage 2 · Subsystems</span></a>
+            <a class="pager--next" href="stage-4.html"><span class="pager__label">Next &rarr;</span><span class="pager__title">Stage 4 · Strategy</span></a>
           </nav>
         </article>
       </div>
@@ -143,10 +147,13 @@
       <button class="toc__close" aria-label="Close panel">&times;</button>
       <h4>On this page</h4>
       <ul>
-        <li><a href="#cad">CAD &amp; part libraries</a></li>
-        <li><a href="#programming">Programming</a></li>
-        <li><a href="#community">Community</a></li>
-        <li><a href="#contributing">Contributing</a></li>
+        <li><a href="#archetypes">Robot archetypes</a></li>
+        <li><a href="#master-sketch">Master sketching</a></li>
+        <li><a href="#mechanism-choice">Choosing mechanisms</a></li>
+        <li><a href="#rpm">RPM &amp; torque</a></li>
+        <li><a href="#flow">Game-piece flow</a></li>
+        <li><a href="#cog">Center of gravity</a></li>
+        <li><a href="#manufacturability">Manufacturability</a></li>
       </ul>
     </aside>
   </div>

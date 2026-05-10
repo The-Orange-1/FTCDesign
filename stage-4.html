@@ -6,8 +6,8 @@
   <meta name="color-scheme" content="dark light" />
   <meta name="theme-color" content="#1a1918" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
-  <title>Resources — FTCDesign</title>
-  <meta name="description" content="External tools, libraries, and community links for FTC robot design." />
+  <title>Stage 4 · Strategy — FTCDesign</title>
+  <meta name="description" content="Strategic design and self-improvement habits — how to get better between competitions." />
   <script>(function(){try{var t=localStorage.getItem("ftc-theme");var p=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches;var isLight=(t||(p?"light":"dark"))==="light";var d=document.documentElement;if(isLight)d.setAttribute("data-theme","light");d.style.backgroundColor=isLight?"#fafaf7":"#1a1918";}catch(e){}})();</script>
   <style>html{background:#1a1918;color:#f0ece6}html[data-theme="light"]{background:#fafaf7;color:#1a1918}body{margin:0;background:inherit;color:inherit;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}</style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,6 +51,7 @@
       <button class="sidebar__close" aria-label="Close menu">&times;</button>
       <nav>
         <a href="index.html" data-page="index">Home</a>
+
         <h4>Learning Course</h4>
         <a href="learn.html" data-page="learn">Overview</a>
         <div class="sub">
@@ -60,6 +61,7 @@
           <a href="stage-3.html" data-page="stage-3">Stage 3 · Integration</a>
           <a href="stage-4.html" data-page="stage-4">Stage 4 · Strategy</a>
         </div>
+
         <h4>Tutorials</h4>
         <a href="tutorials.html" data-page="tutorials">Overview</a>
         <div class="sub">
@@ -67,6 +69,7 @@
           <a href="tutorials.html#medium">Medium</a>
           <a href="tutorials.html#hard">Hard</a>
         </div>
+
         <h4>Design Handbook</h4>
         <a href="handbook.html" data-page="handbook">Overview</a>
         <div class="sub">
@@ -76,6 +79,7 @@
           <a href="handbook.html#mechanisms">Mechanisms</a>
           <a href="handbook.html#write-ups">Design Write-ups</a>
         </div>
+
         <h4>Mechanism Examples</h4>
         <a href="mechanisms.html" data-page="mechanisms">Overview</a>
         <div class="sub">
@@ -85,6 +89,7 @@
           <a href="mechanisms.html#linear">Linear extensions</a>
           <a href="mechanisms.html#rotating">Rotating mechanisms</a>
         </div>
+
         <h4>Best Practices</h4>
         <a href="best-practices.html" data-page="best-practices">Overview</a>
         <div class="sub">
@@ -94,6 +99,7 @@
           <a href="best-practices.html#part-studio">4. Part studio</a>
           <a href="best-practices.html#assembly">5. Assembly</a>
         </div>
+
         <h4>Other</h4>
         <a href="resources.html" data-page="resources">Resources</a>
       </nav>
@@ -102,38 +108,36 @@
 
     <main class="main">
       <div class="main__inner">
-        <nav class="crumbs"><a href="index.html">Home</a><span>/</span>Resources</nav>
+        <nav class="crumbs"><a href="index.html">Home</a><span>/</span><a href="learn.html">Learning Course</a><span>/</span>Stage 4 · Strategy</nav>
 
         <article class="prose">
-          <h1>Resources</h1>
-          <p class="lede">External tools, libraries, and community links worth knowing. Curated, not exhaustive.</p>
+          <h1>Stage 4 · Strategy</h1>
+          <p class="lede">Stage 4 is what separates teams that make Worlds from teams that don't: a habit of improving how you design, not just what you design. The skills here are strategic — choosing what to build before you build it, then learning from every event so the next season is sharper than the last.</p>
 
-          <h2 id="cad">CAD &amp; part libraries</h2>
-          <ul>
-            <li><a href="https://onshape.com" target="_blank" rel="noopener">Onshape</a> — free for FTC teams. Browser-based parametric CAD.</li>
-            <li><a href="https://www.gobilda.com/cad/" target="_blank" rel="noopener">goBILDA Onshape library</a> — every goBILDA part as an Onshape Part Studio.</li>
-            <li><a href="https://www.revrobotics.com/cad-models/" target="_blank" rel="noopener">REV Robotics CAD</a> — REV's parts as Onshape and STEP files.</li>
-          </ul>
+          <h2 id="strategic-design">Strategic design as a discipline</h2>
+          <p>Strategic design is the practice of deciding what to build by reading the game, not by gut feel. Identify the highest-value scoring action, count cycles, and design your robot around the bottleneck of that one cycle. Most lost matches are strategic-design losses, not mechanical ones.</p>
 
-          <h2 id="programming">Programming</h2>
-          <ul>
-            <li><a href="https://ftc-docs.firstinspires.org/" target="_blank" rel="noopener">FTC official documentation</a> — the canonical reference for the SDK and rules.</li>
-            <li><a href="https://acmerobotics.github.io/road-runner/" target="_blank" rel="noopener">Road Runner</a> — motion planning library for autonomous paths.</li>
-            <li><a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController" target="_blank" rel="noopener">FtcRobotController</a> — the starter project on GitHub.</li>
-          </ul>
+          <h2 id="cycle-time">Cycle-time analysis</h2>
+          <p>Pick up + traverse + score = a cycle. Time each phase on your prototype. The longest phase is your bottleneck — fix that one before you optimize anything else. Optimizing the wrong phase is the most common waste of a build season.</p>
 
-          <h2 id="community">Community</h2>
-          <ul>
-            <li><a href="#">FTC Discord</a> — main community server. Channels for design, programming, season strategy, inspection.</li>
-            <li><a href="https://www.chiefdelphi.com/c/first-tech-challenge/" target="_blank" rel="noopener">Chief Delphi (FTC section)</a> — long-form posts and build threads.</li>
-          </ul>
+          <h2 id="reliability">Reliability and single points of failure</h2>
+          <p>Every belt, chain, connector, and zip-tie is a potential SPOF. Identify the top three on your robot at every event and either eliminate them or build a redundancy. A 90%-reliable robot loses to a 60%-capable, 99%-reliable one — and the math gets worse as the match wears on.</p>
 
-          <h2 id="contributing">Contributing</h2>
-          <p>FTCDesign is community-built. The bar for contributions: a working example, an opinion, and the trade-offs called out. <a href="https://github.com/The-Orange-1/FTCDesign" target="_blank" rel="noopener">The repo</a> takes issues and pull requests.</p>
+          <h2 id="iteration">Iteration vs. revision</h2>
+          <p>Iteration is small tweaks to your existing design. Revision is ripping it out and starting over with a different approach. Most teams iterate when they should revise. If three iterations didn't fix the problem, the design is wrong — admit it early, lose a weekend, save a season.</p>
+
+          <h2 id="post-mortem">Post-mortem habits</h2>
+          <p>After every event, write down what broke, what surprised you, and what wasted time. Make it a 30-minute team ritual the day after, not a Slack message that gets forgotten. Teams that improve fastest do this religiously; teams that plateau don't.</p>
+
+          <h2 id="time-budget">Time budgeting and scope cuts</h2>
+          <p>Map your build-season hours to your subsystems. If 60% of hours go to the drive base, 60% of competitive capability had better come from the drive base. When the budget doesn't match the priority, fix the budget — usually means cutting scope before you run out of weeks.</p>
+
+          <h2 id="learning">Learning from elite teams without copying</h2>
+          <p>Watch elite teams' match videos and CAD reveals. Don't copy the mechanisms; copy the <em>decisions</em>. Why did they pick this archetype? Why did they cut this feature? What did they prototype and throw away? The reasoning transfers across seasons; the geometry doesn't.</p>
 
           <nav class="pager">
-            <a class="pager--prev" href="best-practices.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">CAD Best Practices</span></a>
-            <a class="pager--next" href="index.html"><span class="pager__label">Back to top &rarr;</span><span class="pager__title">Home</span></a>
+            <a class="pager--prev" href="stage-3.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">Stage 3 · Integration</span></a>
+            <a class="pager--next" href="tutorials.html"><span class="pager__label">Next &rarr;</span><span class="pager__title">Tutorials</span></a>
           </nav>
         </article>
       </div>
@@ -143,10 +147,13 @@
       <button class="toc__close" aria-label="Close panel">&times;</button>
       <h4>On this page</h4>
       <ul>
-        <li><a href="#cad">CAD &amp; part libraries</a></li>
-        <li><a href="#programming">Programming</a></li>
-        <li><a href="#community">Community</a></li>
-        <li><a href="#contributing">Contributing</a></li>
+        <li><a href="#strategic-design">Strategic design</a></li>
+        <li><a href="#cycle-time">Cycle-time analysis</a></li>
+        <li><a href="#reliability">Reliability &amp; SPOFs</a></li>
+        <li><a href="#iteration">Iteration vs revision</a></li>
+        <li><a href="#post-mortem">Post-mortem habits</a></li>
+        <li><a href="#time-budget">Time budgeting</a></li>
+        <li><a href="#learning">Learning from elite teams</a></li>
       </ul>
     </aside>
   </div>

@@ -6,8 +6,8 @@
   <meta name="color-scheme" content="dark light" />
   <meta name="theme-color" content="#1a1918" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
-  <title>Resources — FTCDesign</title>
-  <meta name="description" content="External tools, libraries, and community links for FTC robot design." />
+  <title>Stage 2 · Subsystems — FTCDesign</title>
+  <meta name="description" content="Contribute to a real robot: read a master sketch, fit a subsystem in its envelope, work with packaging and COTS." />
   <script>(function(){try{var t=localStorage.getItem("ftc-theme");var p=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches;var isLight=(t||(p?"light":"dark"))==="light";var d=document.documentElement;if(isLight)d.setAttribute("data-theme","light");d.style.backgroundColor=isLight?"#fafaf7":"#1a1918";}catch(e){}})();</script>
   <style>html{background:#1a1918;color:#f0ece6}html[data-theme="light"]{background:#fafaf7;color:#1a1918}body{margin:0;background:inherit;color:inherit;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}</style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,6 +51,7 @@
       <button class="sidebar__close" aria-label="Close menu">&times;</button>
       <nav>
         <a href="index.html" data-page="index">Home</a>
+
         <h4>Learning Course</h4>
         <a href="learn.html" data-page="learn">Overview</a>
         <div class="sub">
@@ -60,6 +61,7 @@
           <a href="stage-3.html" data-page="stage-3">Stage 3 · Integration</a>
           <a href="stage-4.html" data-page="stage-4">Stage 4 · Strategy</a>
         </div>
+
         <h4>Tutorials</h4>
         <a href="tutorials.html" data-page="tutorials">Overview</a>
         <div class="sub">
@@ -67,6 +69,7 @@
           <a href="tutorials.html#medium">Medium</a>
           <a href="tutorials.html#hard">Hard</a>
         </div>
+
         <h4>Design Handbook</h4>
         <a href="handbook.html" data-page="handbook">Overview</a>
         <div class="sub">
@@ -76,6 +79,7 @@
           <a href="handbook.html#mechanisms">Mechanisms</a>
           <a href="handbook.html#write-ups">Design Write-ups</a>
         </div>
+
         <h4>Mechanism Examples</h4>
         <a href="mechanisms.html" data-page="mechanisms">Overview</a>
         <div class="sub">
@@ -85,6 +89,7 @@
           <a href="mechanisms.html#linear">Linear extensions</a>
           <a href="mechanisms.html#rotating">Rotating mechanisms</a>
         </div>
+
         <h4>Best Practices</h4>
         <a href="best-practices.html" data-page="best-practices">Overview</a>
         <div class="sub">
@@ -94,6 +99,7 @@
           <a href="best-practices.html#part-studio">4. Part studio</a>
           <a href="best-practices.html#assembly">5. Assembly</a>
         </div>
+
         <h4>Other</h4>
         <a href="resources.html" data-page="resources">Resources</a>
       </nav>
@@ -102,38 +108,36 @@
 
     <main class="main">
       <div class="main__inner">
-        <nav class="crumbs"><a href="index.html">Home</a><span>/</span>Resources</nav>
+        <nav class="crumbs"><a href="index.html">Home</a><span>/</span><a href="learn.html">Learning Course</a><span>/</span>Stage 2 · Subsystems</nav>
 
         <article class="prose">
-          <h1>Resources</h1>
-          <p class="lede">External tools, libraries, and community links worth knowing. Curated, not exhaustive.</p>
+          <h1>Stage 2 · Subsystems</h1>
+          <p class="lede">Stage 2's goal is to <em>contribute to a real robot</em>. You'll take a master sketch from a more experienced designer, fit a subsystem inside the envelope they specified, and learn what's actually possible given packaging, 3D printing, and the COTS components you have on hand. By the end you should be able to own one subsystem of a robot.</p>
 
-          <h2 id="cad">CAD &amp; part libraries</h2>
-          <ul>
-            <li><a href="https://onshape.com" target="_blank" rel="noopener">Onshape</a> — free for FTC teams. Browser-based parametric CAD.</li>
-            <li><a href="https://www.gobilda.com/cad/" target="_blank" rel="noopener">goBILDA Onshape library</a> — every goBILDA part as an Onshape Part Studio.</li>
-            <li><a href="https://www.revrobotics.com/cad-models/" target="_blank" rel="noopener">REV Robotics CAD</a> — REV's parts as Onshape and STEP files.</li>
-          </ul>
+          <h2 id="master-sketch">Reading a master sketch</h2>
+          <p>A master sketch is a top-level drawing that defines where each subsystem lives on the robot. Read it like a contract: this is your envelope, these bolt patterns are fixed, this is the maximum height you can reach. If something doesn't fit, push back on the master sketcher with data — don't silently violate the spec.</p>
 
-          <h2 id="programming">Programming</h2>
-          <ul>
-            <li><a href="https://ftc-docs.firstinspires.org/" target="_blank" rel="noopener">FTC official documentation</a> — the canonical reference for the SDK and rules.</li>
-            <li><a href="https://acmerobotics.github.io/road-runner/" target="_blank" rel="noopener">Road Runner</a> — motion planning library for autonomous paths.</li>
-            <li><a href="https://github.com/FIRST-Tech-Challenge/FtcRobotController" target="_blank" rel="noopener">FtcRobotController</a> — the starter project on GitHub.</li>
-          </ul>
+          <h2 id="envelope">Designing within a packaging envelope</h2>
+          <p>Every subsystem fits in a box. Your job is to deliver the function inside that box. Sketch out your mechanism's range of motion early; if you can't hit the requirement, the master sketch needs to change before you build, not after.</p>
 
-          <h2 id="community">Community</h2>
-          <ul>
-            <li><a href="#">FTC Discord</a> — main community server. Channels for design, programming, season strategy, inspection.</li>
-            <li><a href="https://www.chiefdelphi.com/c/first-tech-challenge/" target="_blank" rel="noopener">Chief Delphi (FTC section)</a> — long-form posts and build threads.</li>
-          </ul>
+          <h2 id="cots">Working with COTS components</h2>
+          <p>goBILDA, REV, and MISUMI sell pre-made structure, motors, servos, sprockets, bearings, and pulleys. You assemble these with custom adapter parts. Stage-2 design is mostly &quot;arrange COTS parts and design the smallest custom bracket that connects them.&quot; Knowing when COTS exists for your need saves hours.</p>
 
-          <h2 id="contributing">Contributing</h2>
-          <p>FTCDesign is community-built. The bar for contributions: a working example, an opinion, and the trade-offs called out. <a href="https://github.com/The-Orange-1/FTCDesign" target="_blank" rel="noopener">The repo</a> takes issues and pull requests.</p>
+          <h2 id="3d-printing">Designing for 3D printing</h2>
+          <p>FTC teams print a lot of parts. Mind the rules: minimum walls around 1.5–2 mm; avoid overhangs above 45° or orient the part so the strong axis takes load; design tap holes ~0.2 mm undersize and clearance holes ~0.5 mm oversize; use heat-set inserts for any screw that gets removed more than once.</p>
+
+          <h2 id="transmission">Power transmission basics</h2>
+          <p>Gears, sprockets/chain, and belts/pulleys all carry rotation, but each has a niche. Gears are short, precise, and high-torque but loud and fussy about alignment. Chain handles long, rough power well. Belts run quiet and clean at medium torque. Pick by load and span — not by what's lying around.</p>
+
+          <h2 id="shafts">Live-axle vs dead-axle shafts</h2>
+          <p>Live axle: the shaft rotates with the wheel. Dead axle: the shaft is fixed and the wheel/sprocket spins on bearings around it. Dead-axle is mechanically cleaner, easier to support, and is the default for most FTC drivetrains and rotating mechanisms. Use live axle only when you need to drive a sprocket on the shaft itself.</p>
+
+          <h2 id="patterns">Common mechanism patterns</h2>
+          <p>Recognize the canonical shapes and you can build most of FTC: cascade slide, continuous-rigged slide, single-pivot arm, virtual 4-bar arm, parallel-jaw claw, compliant-wheel intake. They show up every season — copy the pattern and customize the dimensions.</p>
 
           <nav class="pager">
-            <a class="pager--prev" href="best-practices.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">CAD Best Practices</span></a>
-            <a class="pager--next" href="index.html"><span class="pager__label">Back to top &rarr;</span><span class="pager__title">Home</span></a>
+            <a class="pager--prev" href="stage-1.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">Stage 1 · Foundations</span></a>
+            <a class="pager--next" href="stage-3.html"><span class="pager__label">Next &rarr;</span><span class="pager__title">Stage 3 · Integration</span></a>
           </nav>
         </article>
       </div>
@@ -143,10 +147,13 @@
       <button class="toc__close" aria-label="Close panel">&times;</button>
       <h4>On this page</h4>
       <ul>
-        <li><a href="#cad">CAD &amp; part libraries</a></li>
-        <li><a href="#programming">Programming</a></li>
-        <li><a href="#community">Community</a></li>
-        <li><a href="#contributing">Contributing</a></li>
+        <li><a href="#master-sketch">Reading a master sketch</a></li>
+        <li><a href="#envelope">Packaging envelope</a></li>
+        <li><a href="#cots">COTS components</a></li>
+        <li><a href="#3d-printing">3D printing</a></li>
+        <li><a href="#transmission">Power transmission</a></li>
+        <li><a href="#shafts">Live vs dead axle</a></li>
+        <li><a href="#patterns">Mechanism patterns</a></li>
       </ul>
     </aside>
   </div>
