@@ -23,7 +23,6 @@
   const backdrop = document.querySelector('.sidebar-backdrop');
   const hamburger = document.querySelector('.hamburger');
   const sidebarClose = document.querySelector('.sidebar__close');
-  const railToggle = document.querySelector('.rail-toggle');
   const railClose = document.querySelector('.toc__close');
 
   const syncBackdrop = () => {
@@ -32,21 +31,9 @@
     backdrop.classList.toggle('open', anyOpen);
     document.body.classList.toggle('no-scroll', anyOpen);
   };
-  const openSidebar = () => {
-    if (!sidebar) return;
-    if (rail) rail.classList.remove('open');
-    sidebar.classList.add('open');
-    syncBackdrop();
-  };
   const closeSidebar = () => {
     if (!sidebar) return;
     sidebar.classList.remove('open');
-    syncBackdrop();
-  };
-  const openRail = () => {
-    if (!rail) return;
-    if (sidebar) sidebar.classList.remove('open');
-    rail.classList.add('open');
     syncBackdrop();
   };
   const closeRail = () => {
@@ -55,10 +42,18 @@
     syncBackdrop();
   };
   const closeAll = () => { closeSidebar(); closeRail(); };
+  const openAll = () => {
+    if (sidebar) sidebar.classList.add('open');
+    if (rail) rail.classList.add('open');
+    syncBackdrop();
+  };
+  const toggleAll = () => {
+    const anyOpen = (sidebar && sidebar.classList.contains('open')) || (rail && rail.classList.contains('open'));
+    if (anyOpen) closeAll(); else openAll();
+  };
 
-  if (hamburger) hamburger.addEventListener('click', openSidebar);
+  if (hamburger) hamburger.addEventListener('click', toggleAll);
   if (sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
-  if (railToggle) railToggle.addEventListener('click', openRail);
   if (railClose) railClose.addEventListener('click', closeRail);
   if (backdrop) backdrop.addEventListener('click', closeAll);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });

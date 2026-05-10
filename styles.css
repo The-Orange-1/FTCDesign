@@ -273,7 +273,7 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
   color: var(--ink-muted);
 }
 
-.theme-toggle, .header-link, .rail-toggle {
+.theme-toggle, .header-link {
   display: inline-grid;
   place-items: center;
   width: 32px; height: 32px;
@@ -285,7 +285,7 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
   text-decoration: none;
   flex: 0 0 auto;
 }
-.theme-toggle:hover, .header-link:hover, .rail-toggle:hover {
+.theme-toggle:hover, .header-link:hover {
   border-color: var(--ink-muted);
   color: var(--ink);
 }
