@@ -327,6 +327,25 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
 }
 .sidebar.open { transform: translateX(0); }
 
+/* Inner pages dock the sidebar into a fixed left column at desktop widths */
+@media (min-width: 841px) {
+  .layout--with-sidebar {
+    grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+  }
+  .layout--with-sidebar .sidebar {
+    position: relative;
+    inset: auto;
+    width: auto;
+    max-width: none;
+    z-index: auto;
+    height: 100%;
+    transform: none;
+    transition: none;
+  }
+  .layout--with-sidebar .sidebar__close { display: none; }
+  .layout--with-sidebar .sidebar-backdrop { left: var(--sidebar-w); }
+}
+
 .sidebar nav { display: flex; flex-direction: column; gap: 1px; }
 .sidebar nav > a {
   padding: 5px 10px;
