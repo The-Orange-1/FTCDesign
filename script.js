@@ -58,17 +58,21 @@
   if (backdrop) backdrop.addEventListener('click', closeAll);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
 
-  // Mark current page in sidebar and highlight its parent section heading
-  if (sidebar) {
+  // Mark current page in sidebar + top nav, highlight parent section heading
+  {
     const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     const key = path.replace('.html', '') || 'index';
-    const current = sidebar.querySelector(`a[data-page="${key}"]`);
-    if (current) {
-      current.setAttribute('aria-current', 'page');
-      let prev = current.previousElementSibling;
-      while (prev && prev.tagName !== 'H4') prev = prev.previousElementSibling;
-      if (prev) prev.classList.add('active-section');
+    if (sidebar) {
+      const current = sidebar.querySelector(`a[data-page="${key}"]`);
+      if (current) {
+        current.setAttribute('aria-current', 'page');
+        let prev = current.previousElementSibling;
+        while (prev && prev.tagName !== 'H4') prev = prev.previousElementSibling;
+        if (prev) prev.classList.add('active-section');
+      }
     }
+    const navCurrent = document.querySelector(`.site-nav a[data-page="${key}"]`);
+    if (navCurrent) navCurrent.setAttribute('aria-current', 'page');
   }
 
   // Search modal

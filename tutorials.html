@@ -36,6 +36,14 @@
         <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
     </div>
+    <nav class="site-nav" aria-label="Categories">
+      <a href="learn.html" data-page="learn">Learning Course</a>
+      <a href="tutorials.html" data-page="tutorials" class="site-nav__featured">Tutorials</a>
+      <a href="handbook.html" data-page="handbook">Design Handbook</a>
+      <a href="mechanisms.html" data-page="mechanisms">Mechanism Examples</a>
+      <a href="best-practices.html" data-page="best-practices">Best Practices</a>
+      <a href="resources.html" data-page="resources">Resources</a>
+    </nav>
   </header>
 
   <div class="layout layout--with-sidebar">
@@ -108,25 +116,88 @@
 
           <h2 id="easy">Easy</h2>
           <p>Pick up basic Onshape habits while building something you'll actually reuse on a robot.</p>
-          <ul class="tutorial-list">
-            <li><a href="#">Bare motor drivetrain</a> <span class="diff diff--easy">Easy</span> — direct-drive wheels on a motor pair. The simplest possible drive base; great for understanding shaft-to-wheel constraints.</li>
-            <li><a href="#">Bearing Stack</a> <span class="diff diff--easy">Easy</span> — the canonical &quot;shaft + bearings + spacers&quot; sandwich. You'll reuse this assembly everywhere.</li>
-          </ul>
+          <div class="tutorial-grid">
+            <a class="tut-card" href="#">
+              <div class="tut-card__media" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="1.6"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>
+              </div>
+              <div class="tut-card__body">
+                <span class="diff diff--easy">Easy</span>
+                <h3 class="tut-card__title">Bare motor drivetrain</h3>
+                <p class="tut-card__sub">Direct-drive wheels on a motor pair. The simplest possible drive base; great for understanding shaft-to-wheel constraints.</p>
+              </div>
+            </a>
+            <a class="tut-card" href="#">
+              <div class="tut-card__media" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="1.6"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>
+              </div>
+              <div class="tut-card__body">
+                <span class="diff diff--easy">Easy</span>
+                <h3 class="tut-card__title">Bearing Stack</h3>
+                <p class="tut-card__sub">The canonical &quot;shaft + bearings + spacers&quot; sandwich. You'll reuse this assembly everywhere.</p>
+              </div>
+            </a>
+          </div>
 
           <h2 id="medium">Medium</h2>
           <p>Multi-part assemblies that combine power transmission, structure, and a moving subsystem.</p>
-          <ul class="tutorial-list">
-            <li><a href="#">Parallel Plate Drivetrain</a> <span class="diff diff--medium">Medium</span> — sandwich-plate chassis with bearings between the plates. The most common FTC drive-base architecture.</li>
-            <li><a href="#">Claw</a> <span class="diff diff--medium">Medium</span> — single-servo gripper with a parallel-jaw linkage. Covers servo geometry, hard stops, and compliant fingers.</li>
-            <li><a href="#">Active Intake</a> <span class="diff diff--medium">Medium</span> — driven roller intake with motor + belt reduction. Introduces compliant wheels and bumper interaction.</li>
-          </ul>
+          <div class="tutorial-grid">
+            <a class="tut-card" href="#">
+              <div class="tut-card__media" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="1.6"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>
+              </div>
+              <div class="tut-card__body">
+                <span class="diff diff--medium">Medium</span>
+                <h3 class="tut-card__title">Parallel Plate Drivetrain</h3>
+                <p class="tut-card__sub">Sandwich-plate chassis with bearings between the plates. The most common FTC drive-base architecture.</p>
+              </div>
+            </a>
+            <a class="tut-card" href="#">
+              <div class="tut-card__media" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="1.6"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>
+              </div>
+              <div class="tut-card__body">
+                <span class="diff diff--medium">Medium</span>
+                <h3 class="tut-card__title">Claw</h3>
+                <p class="tut-card__sub">Single-servo gripper with a parallel-jaw linkage. Covers servo geometry, hard stops, and compliant fingers.</p>
+              </div>
+            </a>
+            <a class="tut-card" href="#">
+              <div class="tut-card__media" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="1.6"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>
+              </div>
+              <div class="tut-card__body">
+                <span class="diff diff--medium">Medium</span>
+                <h3 class="tut-card__title">Active Intake</h3>
+                <p class="tut-card__sub">Driven roller intake with motor + belt reduction. Introduces compliant wheels and bumper interaction.</p>
+              </div>
+            </a>
+          </div>
 
           <h2 id="hard">Hard</h2>
           <p>Precision mechanisms with tight tolerances, multiple degrees of freedom, or non-trivial linkages.</p>
-          <ul class="tutorial-list">
-            <li><a href="#">Coaxial virtual 4-bar differential arm</a> <span class="diff diff--hard">Hard</span> — two motors on a shared axis driving a virtual four-bar that keeps the end effector level while a differential controls wrist roll.</li>
-            <li><a href="#">Shooter</a> <span class="diff diff--hard">Hard</span> — high-RPM flywheel with hooded geometry. Demands tight tolerances and balanced rotating mass.</li>
-          </ul>
+          <div class="tutorial-grid">
+            <a class="tut-card" href="#">
+              <div class="tut-card__media" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="1.6"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>
+              </div>
+              <div class="tut-card__body">
+                <span class="diff diff--hard">Hard</span>
+                <h3 class="tut-card__title">Coaxial virtual 4-bar differential arm</h3>
+                <p class="tut-card__sub">Two motors on a shared axis driving a virtual four-bar that keeps the end effector level while a differential controls wrist roll.</p>
+              </div>
+            </a>
+            <a class="tut-card" href="#">
+              <div class="tut-card__media" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="1.6"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>
+              </div>
+              <div class="tut-card__body">
+                <span class="diff diff--hard">Hard</span>
+                <h3 class="tut-card__title">Shooter</h3>
+                <p class="tut-card__sub">High-RPM flywheel with hooded geometry. Demands tight tolerances and balanced rotating mass.</p>
+              </div>
+            </a>
+          </div>
 
           <div class="callout">
             <div class="callout__label">Heads up</div>
