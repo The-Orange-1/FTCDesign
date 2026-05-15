@@ -135,18 +135,18 @@
     { title: 'Easy tutorials', sub: 'Bearing stack, parallel plate, claw, slide insert, molding', url: 'tutorials.html#easy' },
     { title: 'Medium tutorials', sub: 'Bare motor drivetrain, active intake, swingarm PTO, shooter', url: 'tutorials.html#medium' },
     { title: 'Hard tutorials', sub: 'Coaxial 4-bar diff arm, full Decode + Into the Deep robots', url: 'tutorials.html#hard' },
-    { title: 'Bearing Stack', sub: 'Tutorial · Easy', url: 'tutorials.html#easy' },
-    { title: 'Parallel Plate Drivetrain', sub: 'Tutorial · Easy', url: 'tutorials.html#easy' },
-    { title: 'Claw', sub: 'Tutorial · Easy', url: 'tutorials.html#easy' },
-    { title: 'Linear Slide insert', sub: 'Tutorial · Easy', url: 'tutorials.html#easy' },
-    { title: 'Silicone / Polyurethane molding', sub: 'Tutorial · Easy', url: 'tutorials.html#easy' },
-    { title: 'Bare motor drivetrain', sub: 'Tutorial · Medium', url: 'tutorials.html#medium' },
-    { title: 'Active Intake', sub: 'Tutorial · Medium', url: 'tutorials.html#medium' },
-    { title: 'Swingarm PTO', sub: 'Tutorial · Medium', url: 'tutorials.html#medium' },
-    { title: 'Shooter', sub: 'Tutorial · Medium', url: 'tutorials.html#medium' },
-    { title: 'Coaxial virtual 4-bar differential arm', sub: 'Tutorial · Hard', url: 'tutorials.html#hard' },
-    { title: 'Full Decode robot', sub: 'Tutorial · Hard', url: 'tutorials.html#hard' },
-    { title: 'Full Into the Deep robot', sub: 'Tutorial · Hard', url: 'tutorials.html#hard' },
+    { title: 'Bearing Stack', sub: 'Tutorial · Easy', url: 'tutorial-bearing-stack.html' },
+    { title: 'Parallel Plate Drivetrain', sub: 'Tutorial · Easy', url: 'tutorial-parallel-plate.html' },
+    { title: 'Claw', sub: 'Tutorial · Easy', url: 'tutorial-claw.html' },
+    { title: 'Linear Slide insert', sub: 'Tutorial · Easy', url: 'tutorial-slide-insert.html' },
+    { title: 'Silicone / Polyurethane molding', sub: 'Tutorial · Easy', url: 'tutorial-molding.html' },
+    { title: 'Bare motor drivetrain', sub: 'Tutorial · Medium', url: 'tutorial-bare-motor-drive.html' },
+    { title: 'Active Intake', sub: 'Tutorial · Medium', url: 'tutorial-active-intake.html' },
+    { title: 'Swingarm PTO', sub: 'Tutorial · Medium', url: 'tutorial-swingarm-pto.html' },
+    { title: 'Shooter', sub: 'Tutorial · Medium', url: 'tutorial-shooter.html' },
+    { title: 'Coaxial virtual 4-bar differential arm', sub: 'Tutorial · Hard', url: 'tutorial-diff-arm.html' },
+    { title: 'Full Decode robot', sub: 'Tutorial · Hard', url: 'tutorial-decode-robot.html' },
+    { title: 'Full Into the Deep robot', sub: 'Tutorial · Hard', url: 'tutorial-into-the-deep-robot.html' },
     { title: 'Design Handbook', sub: 'Reference for the why behind every choice', url: 'handbook.html' },
     { title: 'Strategic Design', sub: 'Game analysis, scope, execution', url: 'handbook.html#strategic-design' },
     { title: 'Hardware', sub: 'Materials, structure, fasteners, 3D printing', url: 'handbook.html#hardware' },
@@ -335,6 +335,26 @@
     entry.subLink = a;
     sectionMap.set(el, entry);
   });
+
+  // Tip popups on tutorial pages: click-to-pin so they work on touch.
+  document.querySelectorAll('.tip').forEach((tip) => {
+    tip.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wasOpen = tip.classList.contains('is-open');
+      document.querySelectorAll('.tip.is-open').forEach((t) => t.classList.remove('is-open'));
+      if (!wasOpen) tip.classList.add('is-open');
+    });
+  });
+  if (document.querySelector('.tip')) {
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.tip.is-open').forEach((t) => t.classList.remove('is-open'));
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.tip.is-open').forEach((t) => t.classList.remove('is-open'));
+      }
+    });
+  }
 
   if (sectionMap.size) {
     const observer = new IntersectionObserver(

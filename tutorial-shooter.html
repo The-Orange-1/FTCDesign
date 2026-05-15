@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#1a1918" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+  <title>Shooter — Tutorials — FTCDesign</title>
+  <meta name="description" content="High-RPM flywheel with hooded geometry. Tight tolerances and balanced rotating mass for repeatable shots — the foundation for any projectile scoring." />
+  <script>(function(){try{var t=localStorage.getItem("ftc-theme");var p=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches;var isLight=(t||(p?"light":"dark"))==="light";var d=document.documentElement;if(isLight)d.setAttribute("data-theme","light");d.style.backgroundColor=isLight?"#fafaf7":"#1a1918";}catch(e){}})();</script>
+  <style>html{background:#1a1918;color:#f0ece6}html[data-theme="light"]{background:#fafaf7;color:#1a1918}body{margin:0;background:inherit;color:inherit;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <a class="brand" href="index.html"><span class="brand__mark"><img src="assets/logo.svg" alt="" width="22" height="22"></span><span>FTCDesign</span><span class="brand__sep"></span><span class="brand__sub">Design Guide</span></a>
+      <button class="search-trigger" aria-label="Search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <span class="search-trigger__label">Search</span>
+        <span><kbd>Alt</kbd> <kbd>C</kbd></span>
+      </button>
+      <a class="header-link" href="https://discord.gg/CCM3KC9DQz" aria-label="Discord server" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09-.01-.02-.04-.03-.07-.03-1.5.26-2.93.71-4.27 1.33-.01 0-.02.01-.03.02-2.72 4.07-3.47 8.03-3.1 11.95 0 .02.01.04.03.05 1.8 1.32 3.53 2.12 5.24 2.65.03.01.06 0 .07-.02.4-.55.76-1.13 1.07-1.74.02-.04 0-.08-.04-.09-.57-.22-1.11-.48-1.64-.78-.04-.02-.04-.08-.01-.11.11-.08.22-.17.33-.25.02-.02.05-.02.07-.01 3.44 1.57 7.15 1.57 10.55 0 .02-.01.05-.01.07.01.11.09.22.17.33.26.04.03.04.09-.01.11-.52.31-1.07.56-1.64.78-.04.01-.05.06-.04.09.32.61.68 1.19 1.07 1.74.03.01.06.02.09.01 1.72-.53 3.45-1.33 5.25-2.65.02-.01.03-.03.03-.05.44-4.53-.73-8.46-3.1-11.95-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.83 2.12-1.89 2.12z"/></svg>
+      </a>
+      <a class="header-link" href="https://github.com/The-Orange-1/FTCDesign" aria-label="GitHub repository" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97 0 1.95.13 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.66.8.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+      </a>
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </div>
+    <nav class="site-nav" aria-label="Categories">
+      <a href="learn.html" data-page="learn">Learning Course</a>
+      <a href="tutorials.html" data-page="tutorials" class="site-nav__featured">Tutorials</a>
+      <a href="handbook.html" data-page="handbook">Design Handbook</a>
+      <a href="mechanisms.html" data-page="mechanisms">Mechanism Examples</a>
+      <a href="best-practices.html" data-page="best-practices">Best Practices</a>
+      <a href="resources.html" data-page="resources">Resources</a>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-sidebar layout--with-toc">
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar__close" aria-label="Close menu">&times;</button>
+      <nav>
+        <a href="index.html" data-page="index">Home</a>
+
+        <h4>Learning Course</h4>
+        <a href="learn.html" data-page="learn">Overview</a>
+        <div class="sub">
+          <a href="learn.html#setup">Setup</a>
+          <a href="stage-1.html" data-page="stage-1">Stage 1 · Foundations</a>
+          <a href="stage-2.html" data-page="stage-2">Stage 2 · Subsystems</a>
+          <a href="stage-3.html" data-page="stage-3">Stage 3 · Integration</a>
+          <a href="stage-4.html" data-page="stage-4">Stage 4 · Strategy</a>
+        </div>
+
+        <h4>Tutorials</h4>
+        <a href="tutorials.html" data-page="tutorials">Overview</a>
+        <div class="sub">
+          <a href="tutorial-bearing-stack.html" data-page="tutorial-bearing-stack">Bearing Stack</a>
+          <a href="tutorial-parallel-plate.html" data-page="tutorial-parallel-plate">Parallel Plate Drivetrain</a>
+          <a href="tutorial-claw.html" data-page="tutorial-claw">Claw</a>
+          <a href="tutorial-slide-insert.html" data-page="tutorial-slide-insert">Linear Slide insert</a>
+          <a href="tutorial-molding.html" data-page="tutorial-molding">Silicone molding</a>
+          <a href="tutorial-bare-motor-drive.html" data-page="tutorial-bare-motor-drive">Bare motor drivetrain</a>
+          <a href="tutorial-active-intake.html" data-page="tutorial-active-intake">Active Intake</a>
+          <a href="tutorial-swingarm-pto.html" data-page="tutorial-swingarm-pto">Swingarm PTO</a>
+          <a href="tutorial-shooter.html" data-page="tutorial-shooter">Shooter</a>
+          <a href="tutorial-diff-arm.html" data-page="tutorial-diff-arm">Coaxial 4-bar arm</a>
+          <a href="tutorial-decode-robot.html" data-page="tutorial-decode-robot">Full Decode robot</a>
+          <a href="tutorial-into-the-deep-robot.html" data-page="tutorial-into-the-deep-robot">Full Into the Deep</a>
+        </div>
+
+        <h4>Design Handbook</h4>
+        <a href="handbook.html" data-page="handbook">Overview</a>
+        <div class="sub">
+          <a href="handbook.html#strategic-design">Strategic Design</a>
+          <a href="handbook.html#hardware">Hardware</a>
+          <a href="handbook.html#power-transmission">Power Transmission</a>
+          <a href="handbook.html#mechanisms">Mechanisms</a>
+          <a href="handbook.html#write-ups">Design Write-ups</a>
+        </div>
+
+        <h4>Mechanism Examples</h4>
+        <a href="mechanisms.html" data-page="mechanisms">Overview</a>
+        <div class="sub">
+          <a href="mechanisms.html#drivebases">Drivebases</a>
+          <a href="mechanisms.html#intakes">Intake/Outtake</a>
+          <a href="mechanisms.html#linear">Linear extensions</a>
+          <a href="mechanisms.html#rotating">Rotating mechanisms</a>
+        </div>
+
+        <h4>Best Practices</h4>
+        <a href="best-practices.html" data-page="best-practices">Overview</a>
+        <div class="sub">
+          <a href="best-practices.html#document-setup">1. Document setup</a>
+          <a href="best-practices.html#sub-document">2. Sub-document setup</a>
+          <a href="best-practices.html#layout-sketch">3. Layout sketches</a>
+          <a href="best-practices.html#part-studio">4. Part studio</a>
+          <a href="best-practices.html#assembly">5. Assembly</a>
+        </div>
+
+        <h4>Other</h4>
+        <a href="resources.html" data-page="resources">Resources</a>
+      </nav>
+    </aside>
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main">
+      <div class="main__inner">
+        <nav class="crumbs"><a href="index.html">Home</a><span>/</span><a href="tutorials.html">Tutorials</a><span>/</span>Shooter</nav>
+
+        <article class="prose">
+          <h1>Shooter</h1>
+          <p class="lede">High-RPM flywheel with hooded geometry. Tight tolerances and balanced rotating mass for repeatable shots — the foundation for any projectile scoring.</p>
+
+          <div class="tut-meta">
+            <span class="diff diff--medium">Medium</span>
+            <span>~6 hours</span>
+            <span class="tut-meta__dot">&bull;</span>
+            <span>Onshape, high-RPM motor, flywheel, hood plate</span>
+            <span class="tut-meta__dot">&bull;</span>
+            <span>Skills: rotating mass balancing, hood geometry, RPM targeting</span>
+          </div>
+
+          <div class="tut-hero" aria-hidden="true">
+            <span class="tut-hero__label">Placeholder &middot; final assembly render</span>
+          </div>
+
+          <h2 id="setup">Before you start</h2>
+          <p>Decide on a single-flywheel or dual-flywheel design. <span class="tip" tabindex="0">Dual flywheel<span class="tip__pop">Two opposed wheels grab the piece from both sides — better launch energy and less reliance on hood friction. But you need two motors or a transfer belt to drive both.</span></span> shoots harder; single-flywheel is simpler and lighter.</p>
+
+          <section class="tut-step" id="step-1">
+            <div class="tut-step__figure" aria-hidden="true"><span class="tut-step__figure-label">Placeholder &middot; step 1</span></div>
+            <div class="tut-step__body">
+              <h3><span class="tut-step__num">1</span>Calculate the launch RPM you need</h3>
+              <p>Treat the piece as a projectile: launch velocity = (gravity × range)^0.5 × something-something. Compute the surface speed you need at the flywheel, then back into RPM via wheel diameter.</p>
+              <p>Target ~10–20% above your minimum so you have margin for game piece wear and friction losses.</p>
+            </div>
+          </section>
+
+          <section class="tut-step" id="step-2">
+            <div class="tut-step__figure" aria-hidden="true"><span class="tut-step__figure-label">Placeholder &middot; step 2</span></div>
+            <div class="tut-step__body">
+              <h3><span class="tut-step__num">2</span>Pick and size the flywheel</h3>
+              <p>Flywheel diameter trades surface speed for rotational inertia. Larger wheels at lower RPM are more forgiving; smaller wheels at higher RPM accelerate faster between shots.</p>
+              <p><span class="tip" tabindex="0">Compliance on the flywheel<span class="tip__pop">A bare aluminum flywheel will slip on the game piece. Wrap it with grip tape or use a compliant tread for the piece to grab against. Surface texture is half the launch energy.</span></span> matters as much as the RPM.</p>
+            </div>
+          </section>
+
+          <section class="tut-step" id="step-3">
+            <div class="tut-step__figure" aria-hidden="true"><span class="tut-step__figure-label">Placeholder &middot; step 3</span></div>
+            <div class="tut-step__body">
+              <h3><span class="tut-step__num">3</span>Design the hood</h3>
+              <p>The hood is the curved plate above the flywheel that guides the piece. Hood angle sets the launch trajectory; hood-to-flywheel gap sets the compression on the piece.</p>
+              <p>Compression should squish the piece by 10–20% of its diameter — too little and it slips, too much and you bog the motor.</p>
+            </div>
+          </section>
+
+          <section class="tut-step" id="step-4">
+            <div class="tut-step__figure" aria-hidden="true"><span class="tut-step__figure-label">Placeholder &middot; step 4</span></div>
+            <div class="tut-step__body">
+              <h3><span class="tut-step__num">4</span>Balance the rotating mass</h3>
+              <p>Print or machine the flywheel concentric to its hex bore. <span class="tip" tabindex="0">Imbalance vibration<span class="tip__pop">A 1mm offset of mass at 5000 RPM creates forces large enough to shake the whole robot. Always cut a flywheel symmetric, or balance it after printing by drilling small holes opposite heavy spots.</span></span> at high RPM will tear bearings out of mounts.</p>
+              <p>Use the same hex shaft / bearings sub-assembly from the bearing-stack tutorial — same parts, different scale.</p>
+            </div>
+          </section>
+
+          <section class="tut-step" id="step-5">
+            <div class="tut-step__figure" aria-hidden="true"><span class="tut-step__figure-label">Placeholder &middot; step 5</span></div>
+            <div class="tut-step__body">
+              <h3><span class="tut-step__num">5</span>Mount and stress-test the assembly</h3>
+              <p>Bolt the shooter to the chassis through a stiff bracket — flywheel vibration transmits through any flex point. Spin the motor up to target RPM in the assembly and confirm clearance around the flywheel envelope.</p>
+              <p>Add a feeder gate that admits exactly one piece at a time — feeding two pieces at once double-loads the motor and crashes the RPM mid-burst.</p>
+            </div>
+          </section>
+
+          <div class="callout">
+            <div class="callout__label">You're done — what you learned</div>
+            <p>You have a repeatable shooter. The hard part is now ammo management — making sure pieces arrive at the flywheel one at a time, the same way each time.</p>
+          </div>
+
+          <nav class="pager">
+            <a class="pager--prev" href="tutorial-swingarm-pto.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">Swingarm PTO</span></a>
+            <a class="pager--next" href="tutorial-diff-arm.html"><span class="pager__label">Next &rarr;</span><span class="pager__title">Coaxial Virtual 4-bar Differential Arm</span></a>
+          </nav>
+        </article>
+      </div>
+    </main>
+
+    <aside class="toc">
+      <button class="toc__close" aria-label="Close panel">&times;</button>
+      <h4>On this page</h4>
+      <ul>
+        <li><a href="#setup">Before you start</a></li>
+        <li><a href="#step-1">Step 1 &middot; Calculate the launch RPM you…</a></li>
+        <li><a href="#step-2">Step 2 &middot; Pick and size the flywheel</a></li>
+        <li><a href="#step-3">Step 3 &middot; Design the hood</a></li>
+        <li><a href="#step-4">Step 4 &middot; Balance the rotating mass</a></li>
+        <li><a href="#step-5">Step 5 &middot; Mount and stress-test the assembly</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span>&copy; 2026 FTCDesign &middot; Independent of FIRST<sup>&reg;</sup></span>
+      <span><a href="https://github.com/The-Orange-1/FTCDesign" target="_blank" rel="noopener">GitHub</a> &middot; Built by FTC students, alumni, and mentors</span>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal" aria-hidden="true" role="dialog" aria-label="Search">
+    <div class="search-modal__panel">
+      <div class="search-modal__input-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <input class="search-modal__input" type="search" placeholder="Search the site…" aria-label="Search" autocomplete="off" />
+        <button class="search-modal__close" aria-label="Close search">Esc</button>
+      </div>
+      <ul class="search-results"></ul>
+      <div class="search-modal__hints">
+        <span><kbd>&uarr;&darr;</kbd>navigate</span>
+        <span><kbd>&crarr;</kbd>open</span>
+        <span><kbd>Esc</kbd>close</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

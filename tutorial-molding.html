@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#1a1918" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+  <title>Silicone / Polyurethane Molding — Tutorials — FTCDesign</title>
+  <meta name="description" content="Cast custom rollers, treads, and compliant grippers from silicone or polyurethane. Mold-making and pour-cast fundamentals you'll reach for whenever a COTS part is the wrong shape." />
+  <script>(function(){try{var t=localStorage.getItem("ftc-theme");var p=window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches;var isLight=(t||(p?"light":"dark"))==="light";var d=document.documentElement;if(isLight)d.setAttribute("data-theme","light");d.style.backgroundColor=isLight?"#fafaf7":"#1a1918";}catch(e){}})();</script>
+  <style>html{background:#1a1918;color:#f0ece6}html[data-theme="light"]{background:#fafaf7;color:#1a1918}body{margin:0;background:inherit;color:inherit;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <a class="brand" href="index.html"><span class="brand__mark"><img src="assets/logo.svg" alt="" width="22" height="22"></span><span>FTCDesign</span><span class="brand__sep"></span><span class="brand__sub">Design Guide</span></a>
+      <button class="search-trigger" aria-label="Search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <span class="search-trigger__label">Search</span>
+        <span><kbd>Alt</kbd> <kbd>C</kbd></span>
+      </button>
+      <a class="header-link" href="https://discord.gg/CCM3KC9DQz" aria-label="Discord server" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09-.01-.02-.04-.03-.07-.03-1.5.26-2.93.71-4.27 1.33-.01 0-.02.01-.03.02-2.72 4.07-3.47 8.03-3.1 11.95 0 .02.01.04.03.05 1.8 1.32 3.53 2.12 5.24 2.65.03.01.06 0 .07-.02.4-.55.76-1.13 1.07-1.74.02-.04 0-.08-.04-.09-.57-.22-1.11-.48-1.64-.78-.04-.02-.04-.08-.01-.11.11-.08.22-.17.33-.25.02-.02.05-.02.07-.01 3.44 1.57 7.15 1.57 10.55 0 .02-.01.05-.01.07.01.11.09.22.17.33.26.04.03.04.09-.01.11-.52.31-1.07.56-1.64.78-.04.01-.05.06-.04.09.32.61.68 1.19 1.07 1.74.03.01.06.02.09.01 1.72-.53 3.45-1.33 5.25-2.65.02-.01.03-.03.03-.05.44-4.53-.73-8.46-3.1-11.95-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.83 2.12-1.89 2.12z"/></svg>
+      </a>
+      <a class="header-link" href="https://github.com/The-Orange-1/FTCDesign" aria-label="GitHub repository" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55v-2.13c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.39.97 0 1.95.13 2.86.39 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.66.8.55C20.21 21.39 23.5 17.07 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+      </a>
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+        <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </div>
+    <nav class="site-nav" aria-label="Categories">
+      <a href="learn.html" data-page="learn">Learning Course</a>
+      <a href="tutorials.html" data-page="tutorials" class="site-nav__featured">Tutorials</a>
+      <a href="handbook.html" data-page="handbook">Design Handbook</a>
+      <a href="mechanisms.html" data-page="mechanisms">Mechanism Examples</a>
+      <a href="best-practices.html" data-page="best-practices">Best Practices</a>
+      <a href="resources.html" data-page="resources">Resources</a>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-sidebar layout--with-toc">
+    <aside class="sidebar" id="sidebar">
+      <button class="sidebar__close" aria-label="Close menu">&times;</button>
+      <nav>
+        <a href="index.html" data-page="index">Home</a>
+
+        <h4>Learning Course</h4>
+        <a href="learn.html" data-page="learn">Overview</a>
+        <div class="sub">
+          <a href="learn.html#setup">Setup</a>
+          <a href="stage-1.html" data-page="stage-1">Stage 1 · Foundations</a>
+          <a href="stage-2.html" data-page="stage-2">Stage 2 · Subsystems</a>
+          <a href="stage-3.html" data-page="stage-3">Stage 3 · Integration</a>
+          <a href="stage-4.html" data-page="stage-4">Stage 4 · Strategy</a>
+        </div>
+
+        <h4>Tutorials</h4>
+        <a href="tutorials.html" data-page="tutorials">Overview</a>
+        <div class="sub">
+          <a href="tutorial-bearing-stack.html" data-page="tutorial-bearing-stack">Bearing Stack</a>
+          <a href="tutorial-parallel-plate.html" data-page="tutorial-parallel-plate">Parallel Plate Drivetrain</a>
+          <a href="tutorial-claw.html" data-page="tutorial-claw">Claw</a>
+          <a href="tutorial-slide-insert.html" data-page="tutorial-slide-insert">Linear Slide insert</a>
+          <a href="tutorial-molding.html" data-page="tutorial-molding">Silicone molding</a>
+          <a href="tutorial-bare-motor-drive.html" data-page="tutorial-bare-motor-drive">Bare motor drivetrain</a>
+          <a href="tutorial-active-intake.html" data-page="tutorial-active-intake">Active Intake</a>
+          <a href="tutorial-swingarm-pto.html" data-page="tutorial-swingarm-pto">Swingarm PTO</a>
+          <a href="tutorial-shooter.html" data-page="tutorial-shooter">Shooter</a>
+          <a href="tutorial-diff-arm.html" data-page="tutorial-diff-arm">Coaxial 4-bar arm</a>
+          <a href="tutorial-decode-robot.html" data-page="tutorial-decode-robot">Full Decode robot</a>
+          <a href="tutorial-into-the-deep-robot.html" data-page="tutorial-into-the-deep-robot">Full Into the Deep</a>
+        </div>
+
+        <h4>Design Handbook</h4>
+        <a href="handbook.html" data-page="handbook">Overview</a>
+        <div class="sub">
+          <a href="handbook.html#strategic-design">Strategic Design</a>
+          <a href="handbook.html#hardware">Hardware</a>
+          <a href="handbook.html#power-transmission">Power Transmission</a>
+          <a href="handbook.html#mechanisms">Mechanisms</a>
+          <a href="handbook.html#write-ups">Design Write-ups</a>
+        </div>
+
+        <h4>Mechanism Examples</h4>
+        <a href="mechanisms.html" data-page="mechanisms">Overview</a>
+        <div class="sub">
+          <a href="mechanisms.html#drivebases">Drivebases</a>
+          <a href="mechanisms.html#intakes">Intake/Outtake</a>
+          <a href="mechanisms.html#linear">Linear extensions</a>
+          <a href="mechanisms.html#rotating">Rotating mechanisms</a>
+        </div>
+
+        <h4>Best Practices</h4>
+        <a href="best-practices.html" data-page="best-practices">Overview</a>
+        <div class="sub">
+          <a href="best-practices.html#document-setup">1. Document setup</a>
+          <a href="best-practices.html#sub-document">2. Sub-document setup</a>
+          <a href="best-practices.html#layout-sketch">3. Layout sketches</a>
+          <a href="best-practices.html#part-studio">4. Part studio</a>
+          <a href="best-practices.html#assembly">5. Assembly</a>
+        </div>
+
+        <h4>Other</h4>
+        <a href="resources.html" data-page="resources">Resources</a>
+      </nav>
+    </aside>
+    <div class="sidebar-backdrop"></div>
+
+    <main class="main">
+      <div class="main__inner">
+        <nav class="crumbs"><a href="index.html">Home</a><span>/</span><a href="tutorials.html">Tutorials</a><span>/</span>Silicone / Polyurethane Molding</nav>
+
+        <article class="prose">
+          <h1>Silicone / Polyurethane Molding</h1>
+          <p class="lede">Cast custom rollers, treads, and compliant grippers from silicone or polyurethane. Mold-making and pour-cast fundamentals you'll reach for whenever a COTS part is the wrong shape.</p>
+
+          <div class="tut-meta">
+            <span class="diff diff--easy">Easy</span>
+            <span>~3 hours active + overnight cure</span>
+            <span class="tut-meta__dot">&bull;</span>
+            <span>Mold-Star or Smooth-Cast resin, 3D printer, mixing cups</span>
+            <span class="tut-meta__dot">&bull;</span>
+            <span>Skills: mold design, resin chemistry, vacuum degas (optional)</span>
+          </div>
+
+          <div class="tut-hero" aria-hidden="true">
+            <span class="tut-hero__label">Placeholder &middot; final assembly render</span>
+          </div>
+
+          <h2 id="setup">Before you start</h2>
+          <p>Pick the right resin. <span class="tip" tabindex="0">Shore hardness<span class="tip__pop">Shore A is the scale for soft rubbery materials. ~20A is gummy-bear soft; ~60A is car-tire firm; ~80A is shoe-sole firm. Pick by feel and what the part has to grip.</span></span> determines how much your part will deform under load.</p>
+
+          <section class="tut-step" id="step-1">
+            <div class="tut-step__figure" aria-hidden="true"><span class="tut-step__figure-label">Placeholder &middot; step 1</span></div>
+            <div class="tut-step__body">
+              <h3><span class="tut-step__num">1</span>Design the part you want to cast</h3>
+              <p>Model the final part shape in Onshape. Account for ~0.5% shrinkage on cure for most polyurethanes; silicones shrink less but still some.</p>
+              <p>Avoid undercuts unless you're willing to build a multi-part mold.</p>
+            </div>
+          </section>
+
+          <section class="tut-step" id="step-2">
+            <div class="tut-step__figure" aria-hidden="true"><span class="tut-step__figure-label">Placeholder &middot; step 2</span></div>
+            <div class="tut-step__body">
+              <h3><span class="tut-step__num">2</span>Design the mold around the part</h3>
+              <p>Use Onshape's Boolean Subtract to subtract the part body from a block — what's left is the mold cavity. Add <span class="tip" tabindex="0">pour spout and vent<span class="tip__pop">Resin enters through a spout at the lowest point and air escapes through a vent at the highest. Without a vent you'll trap an air pocket exactly where you don't want one.</span></span> channels.</p>
+              <p>Add alignment pins or tabs if your mold is multi-part.</p>
+            </div>
+          </section>
+
+          <section class="tut-step" id="step-3">
+            <div class="tut-step__figure" aria-hidden="true"><span class="tut-step__figure-label">Placeholder &middot; step 3</span></div>
+            <div class="tut-step__body">
+              <h3><span class="tut-step__num">3</span>Print the mold halves</h3>
+              <p>Print in PLA or PETG with 0.2mm layers. Smooth the inner cavity surface with a quick wipe of acetone (for PETG) or by post-printing primer for a glass-smooth finish — surface texture transfers 1:1 to the casting.</p>
+              <p>Apply <span class="tip" tabindex="0">mold release<span class="tip__pop">Even if the resin claims no release is needed, use one anyway. Ease Release 200 or a simple wax coat means you'll actually be able to demold without tearing the part.</span></span> before pouring.</p>
+            </div>
+          </section>
+
+          <section class="tut-step" id="step-4">
+            <div class="tut-step__figure" aria-hidden="true"><span class="tut-step__figure-label">Placeholder &middot; step 4</span></div>
+            <div class="tut-step__body">
+              <h3><span class="tut-step__num">4</span>Mix and pour the resin</h3>
+              <p>Mix Part A and Part B by weight (not volume) — most kits are 1:1A but read the data sheet. Stir slowly for 90 seconds, scraping the cup sides. Pour in a thin steady stream from one corner to let air escape ahead of the resin.</p>
+              <p>If you have a vacuum chamber, degas the mixed resin for 60 seconds before pouring; without one, pour from height to let bubbles burst on impact.</p>
+            </div>
+          </section>
+
+          <section class="tut-step" id="step-5">
+            <div class="tut-step__figure" aria-hidden="true"><span class="tut-step__figure-label">Placeholder &middot; step 5</span></div>
+            <div class="tut-step__body">
+              <h3><span class="tut-step__num">5</span>Let it cure, then demold</h3>
+              <p>Most polyurethanes need 16–24 hours at room temperature; silicones are usually 4–6 hours. Resist the urge to demold early — green parts tear and never recover their full strength.</p>
+              <p>Trim the flash with a sharp knife. The cast part is now the actual rubber roller, tread, or finger pad you designed.</p>
+            </div>
+          </section>
+
+          <div class="callout">
+            <div class="callout__label">You're done — what you learned</div>
+            <p>You can now cast any shape you can model. Rollers with embedded hex bores, finger pads with built-in V-grooves, treaded wheels — anything COTS doesn't sell.</p>
+          </div>
+
+          <nav class="pager">
+            <a class="pager--prev" href="tutorial-slide-insert.html"><span class="pager__label">&larr; Previous</span><span class="pager__title">Linear Slide insert</span></a>
+            <a class="pager--next" href="tutorial-bare-motor-drive.html"><span class="pager__label">Next &rarr;</span><span class="pager__title">Bare Motor Drivetrain</span></a>
+          </nav>
+        </article>
+      </div>
+    </main>
+
+    <aside class="toc">
+      <button class="toc__close" aria-label="Close panel">&times;</button>
+      <h4>On this page</h4>
+      <ul>
+        <li><a href="#setup">Before you start</a></li>
+        <li><a href="#step-1">Step 1 &middot; Design the part you want…</a></li>
+        <li><a href="#step-2">Step 2 &middot; Design the mold around the…</a></li>
+        <li><a href="#step-3">Step 3 &middot; Print the mold halves</a></li>
+        <li><a href="#step-4">Step 4 &middot; Mix and pour the resin</a></li>
+        <li><a href="#step-5">Step 5 &middot; Let it cure, then demold</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span>&copy; 2026 FTCDesign &middot; Independent of FIRST<sup>&reg;</sup></span>
+      <span><a href="https://github.com/The-Orange-1/FTCDesign" target="_blank" rel="noopener">GitHub</a> &middot; Built by FTC students, alumni, and mentors</span>
+    </div>
+  </footer>
+
+  <div class="search-modal" id="search-modal" aria-hidden="true" role="dialog" aria-label="Search">
+    <div class="search-modal__panel">
+      <div class="search-modal__input-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <input class="search-modal__input" type="search" placeholder="Search the site…" aria-label="Search" autocomplete="off" />
+        <button class="search-modal__close" aria-label="Close search">Esc</button>
+      </div>
+      <ul class="search-results"></ul>
+      <div class="search-modal__hints">
+        <span><kbd>&uarr;&darr;</kbd>navigate</span>
+        <span><kbd>&crarr;</kbd>open</span>
+        <span><kbd>Esc</kbd>close</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

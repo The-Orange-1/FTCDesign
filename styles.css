@@ -226,20 +226,19 @@ hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
   line-height: 1;
 }
 .brand:hover { color: var(--ink); text-decoration: none; }
-.brand:hover .brand__mark { background: var(--orange-dark); }
+.brand:hover .brand__mark img,
+.brand:hover .brand__mark svg { filter: brightness(0.92); }
 .brand__mark {
-  width: 30px; height: 30px;
-  border-radius: 6px;
-  background: var(--orange);
+  width: 32px; height: 32px;
   display: inline-grid;
   place-items: center;
-  transition: background 120ms ease;
 }
 .brand__mark img,
 .brand__mark svg {
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: 32px;
   display: block;
+  transition: filter 120ms ease;
 }
 .brand__sep {
   display: inline-block;
@@ -1549,4 +1548,180 @@ body.no-scroll { overflow: hidden; }
   margin-right: 4px;
   color: var(--ink-soft);
   font-size: 0.7rem;
+}
+
+/* ---- Tutorial detail pages ---- */
+.tut-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: center;
+  margin: 0 0 18px;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+.tut-meta .diff { margin: 0; }
+.tut-meta__dot { color: var(--line-strong); }
+
+.tut-hero {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  margin: 0 0 28px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      color-mix(in srgb, var(--orange) 6%, var(--bg)) 0 14px,
+      var(--bg-alt) 14px 28px
+    );
+  display: grid;
+  place-items: center;
+  color: var(--ink-muted);
+  overflow: hidden;
+}
+.tut-hero__label {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+
+.tut-step {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 22px;
+  margin: 28px 0;
+  align-items: start;
+}
+.tut-step__figure {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--orange) 5%, var(--bg)) 0 12px,
+      var(--bg-alt) 12px 24px
+    );
+  display: grid;
+  place-items: center;
+  color: var(--ink-muted);
+  overflow: hidden;
+}
+.tut-step__figure-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+.tut-step__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #1a1918;
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin-right: 8px;
+  vertical-align: 0.12em;
+}
+.tut-step__body h3 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  letter-spacing: -0.012em;
+}
+.tut-step__body p { margin: 0 0 10px; }
+@media (max-width: 760px) {
+  .tut-step { grid-template-columns: 1fr; }
+  .tut-step__figure { aspect-ratio: 16 / 9; }
+}
+
+/* Inline clickable tip — example text that pops up next to a phrase. */
+.tip {
+  position: relative;
+  display: inline;
+  border-bottom: 1px dashed var(--orange);
+  color: var(--ink);
+  cursor: help;
+  padding: 0 1px;
+  font: inherit;
+  background: none;
+  outline: none;
+}
+.tip::after {
+  content: "i";
+  display: inline-grid;
+  place-items: center;
+  width: 13px;
+  height: 13px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-soft);
+  border-radius: 999px;
+  margin: 0 2px 0 4px;
+  vertical-align: 0.1em;
+  line-height: 1;
+}
+.tip:hover, .tip:focus-visible, .tip.is-open {
+  background: var(--orange-soft);
+}
+.tip__pop {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  top: calc(100% + 8px);
+  min-width: 240px;
+  max-width: 320px;
+  padding: 10px 12px;
+  background: var(--bg);
+  border: 1px solid var(--orange);
+  border-radius: 5px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 140ms ease, transform 140ms ease, visibility 0s linear 140ms;
+  pointer-events: none;
+  white-space: normal;
+}
+.tip__pop::before {
+  content: "Tip";
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 4px;
+}
+.tip:hover .tip__pop,
+.tip:focus-within .tip__pop,
+.tip.is-open .tip__pop {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: opacity 140ms ease, transform 140ms ease, visibility 0s linear 0s;
+}
+@media (max-width: 540px) {
+  .tip__pop { min-width: 200px; max-width: 80vw; }
 }
