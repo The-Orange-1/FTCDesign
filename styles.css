@@ -10,10 +10,10 @@
   --line: #322f2c;
   --line-strong: #46423e;
 
-  --orange: #f08913;
-  --orange-dark: #f5a443;
-  --orange-soft: #2c1c08;
-
+  --orange: #2382e1;
+  --orange-dark: #52a0f2;
+  --orange-soft: #0a1b2d;
+  
   --track: #100f0e;
 
   --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -37,9 +37,9 @@
   --line: #e4e1d9;
   --line-strong: #c7c2b8;
 
-  --orange: #f08913;
-  --orange-dark: #b8650c;
-  --orange-soft: #fce4c4;
+  --orange: #2382e1;
+  --orange-dark: #52a0f2;
+  --orange-soft: #0a1b2d;
 
   --track: #ebe7df;
 }
